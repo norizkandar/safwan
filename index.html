@@ -1,1 +1,2732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<meta name="google-site-verification" content="v5mDBIUS65HTOal5Eomv26ZHuoqDJNgRkTEBId_ix-A">
+
+<title>Mohamad safwan |top student university</title>
+
+<meta name="description"
+content="mohamad safwan-top student university kuala lumpur.">
+
+<h1>Norizkandar</h1>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+:root{
+    --bg:#02030a;
+    --blue:#00e5ff;
+    --green:#00ff9d;
+    --purple:#7657ff;
+    --white:#f5f7ff;
+    --muted:#8c96aa;
+    --glass:rgba(7,11,25,.58);
+}
+
+body{
+    background:#02030a;
+    color:var(--white);
+    font-family:Arial,Helvetica,sans-serif;
+    overflow-x:hidden;
+}
+
+/* =====================================================
+   GALAXY CANVAS
+===================================================== */
+
+#spaceCanvas{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100%;
+    z-index:-20;
+    pointer-events:none;
+}
+
+.space-overlay{
+    position:fixed;
+    inset:0;
+    z-index:-19;
+    pointer-events:none;
+    background:
+        radial-gradient(circle at 50% 50%,transparent 0%,rgba(2,3,10,.1) 45%,rgba(2,3,10,.72) 100%);
+}
+
+.nebula{
+    position:fixed;
+    border-radius:50%;
+    filter:blur(100px);
+    opacity:.15;
+    z-index:-18;
+    pointer-events:none;
+    mix-blend-mode:screen;
+}
+
+.nebula.a{
+    width:600px;
+    height:300px;
+    background:#004cff;
+    top:-100px;
+    left:-200px;
+    transform:rotate(-25deg);
+    animation:nebulaA 14s ease-in-out infinite alternate;
+}
+
+.nebula.b{
+    width:650px;
+    height:350px;
+    background:#00e5ff;
+    right:-250px;
+    top:30%;
+    transform:rotate(25deg);
+    animation:nebulaB 17s ease-in-out infinite alternate;
+}
+
+.nebula.c{
+    width:700px;
+    height:300px;
+    background:#00ff9d;
+    bottom:-180px;
+    left:25%;
+    animation:nebulaC 20s ease-in-out infinite alternate;
+}
+
+@keyframes nebulaA{
+    to{transform:translate(90px,60px) rotate(-10deg)}
+}
+
+@keyframes nebulaB{
+    to{transform:translate(-80px,50px) rotate(10deg)}
+}
+
+@keyframes nebulaC{
+    to{transform:translate(60px,-50px)}
+}
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+#loader{
+    position:fixed;
+    inset:0;
+    z-index:99999;
+    background:#010208;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    transition:opacity 1s ease,visibility 1s ease;
+}
+
+#loader.hide{
+    opacity:0;
+    visibility:hidden;
+}
+
+.loader-stars{
+    position:absolute;
+    inset:-100%;
+    background-image:
+        radial-gradient(circle,rgba(255,255,255,.8) 1px,transparent 2px),
+        radial-gradient(circle,rgba(0,229,255,.6) 1px,transparent 2px);
+    background-size:100px 100px,180px 180px;
+    animation:loaderStarMove 45s linear infinite;
+}
+
+@keyframes loaderStarMove{
+    to{
+        transform:translate(-300px,-450px);
+    }
+}
+
+.loader-content{
+    width:min(560px,86%);
+    position:relative;
+}
+
+.loader-small{
+    color:var(--blue);
+    font-family:monospace;
+    font-size:11px;
+    letter-spacing:5px;
+    margin-bottom:22px;
+}
+
+.loader-title{
+    font-size:clamp(45px,10vw,90px);
+    font-weight:900;
+    letter-spacing:-5px;
+    text-shadow:
+        0 0 20px rgba(0,229,255,.2),
+        0 0 60px rgba(0,229,255,.08);
+}
+
+.loader-status{
+    color:var(--muted);
+    margin-top:15px;
+    font-family:monospace;
+    font-size:11px;
+    letter-spacing:2px;
+}
+
+.loader-bar{
+    height:4px;
+    background:#101522;
+    border-radius:10px;
+    margin-top:35px;
+    overflow:hidden;
+}
+
+.loader-fill{
+    width:0%;
+    height:100%;
+    background:linear-gradient(90deg,var(--blue),var(--green));
+    box-shadow:0 0 25px var(--blue);
+}
+
+.loader-percent{
+    color:var(--green);
+    margin-top:13px;
+    font-family:monospace;
+    font-size:12px;
+}
+
+/* =====================================================
+   CURSOR
+===================================================== */
+
+.cursor{
+    width:24px;
+    height:24px;
+    border:1px solid var(--blue);
+    border-radius:50%;
+    position:fixed;
+    pointer-events:none;
+    z-index:9998;
+    transform:translate(-50%,-50%);
+    box-shadow:0 0 20px rgba(0,229,255,.45);
+}
+
+.cursor-dot{
+    width:4px;
+    height:4px;
+    border-radius:50%;
+    background:var(--green);
+    position:fixed;
+    pointer-events:none;
+    z-index:9999;
+    transform:translate(-50%,-50%);
+    box-shadow:0 0 12px var(--green);
+}
+
+/* =====================================================
+   NAV
+===================================================== */
+
+nav{
+    position:fixed;
+    top:18px;
+    left:50%;
+    transform:translateX(-50%);
+    width:min(1120px,92%);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 20px;
+    background:rgba(2,5,14,.62);
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(20px);
+    border-radius:18px;
+    z-index:2000;
+}
+
+.logo{
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+.logo span{
+    color:var(--blue);
+}
+
+nav ul{
+    display:flex;
+    gap:24px;
+    list-style:none;
+}
+
+nav a{
+    text-decoration:none;
+    color:#8993a7;
+    font-size:10px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--blue);
+}
+
+.dev-btn{
+    color:var(--blue);
+    border:1px solid rgba(0,229,255,.5);
+    border-radius:9px;
+    padding:8px 12px;
+    font-size:9px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.dev-btn:hover{
+    background:rgba(0,229,255,.08);
+    box-shadow:0 0 20px rgba(0,229,255,.2);
+}
+
+/* =====================================================
+   GENERAL
+===================================================== */
+
+section{
+    width:min(1150px,90%);
+    margin:auto;
+    padding:120px 0;
+}
+
+.section-label{
+    color:var(--blue);
+    font-family:monospace;
+    font-size:10px;
+    letter-spacing:4px;
+    margin-bottom:15px;
+}
+
+.section-title{
+    font-size:clamp(35px,6vw,68px);
+    letter-spacing:-4px;
+    margin-bottom:40px;
+}
+
+.glass{
+    background:var(--glass);
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    border-radius:25px;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    min-height:100vh;
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    align-items:center;
+    gap:70px;
+    padding-top:130px;
+}
+
+.status{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    padding:9px 14px;
+    border:1px solid rgba(0,255,157,.25);
+    background:rgba(0,255,157,.035);
+    border-radius:30px;
+    color:var(--green);
+    font-size:10px;
+    margin-bottom:25px;
+}
+
+.status-dot{
+    width:7px;
+    height:7px;
+    background:var(--green);
+    border-radius:50%;
+    box-shadow:0 0 15px var(--green);
+    animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+    50%{opacity:.3}
+}
+
+.hero h1{
+    font-size:clamp(48px,7vw,92px);
+    line-height:.9;
+    letter-spacing:-6px;
+}
+
+.hero h1 span{
+    color:transparent;
+    -webkit-text-stroke:1px var(--blue);
+    text-shadow:0 0 35px rgba(0,229,255,.15);
+}
+
+.hero-description{
+    max-width:600px;
+    margin-top:25px;
+    color:var(--muted);
+    line-height:1.8;
+    font-size:16px;
+}
+
+.typing{
+    margin-top:20px;
+    color:var(--green);
+    font-family:monospace;
+    font-size:13px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:13px;
+    flex-wrap:wrap;
+    margin-top:35px;
+}
+
+.btn{
+    color:white;
+    text-decoration:none;
+    padding:14px 22px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,.12);
+    font-size:11px;
+    transition:.3s;
+}
+
+.btn.primary{
+    color:#00120c;
+    font-weight:bold;
+    background:linear-gradient(90deg,var(--blue),var(--green));
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 35px rgba(0,229,255,.18);
+}
+
+/* =====================================================
+   ORBIT PROFILE
+===================================================== */
+
+.universe{
+    position:relative;
+    width:440px;
+    height:440px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.universe::before,
+.universe::after{
+    content:"";
+    position:absolute;
+    border:1px solid rgba(0,229,255,.14);
+    border-radius:50%;
+}
+
+.universe::before{
+    width:440px;
+    height:180px;
+    transform:rotate(-25deg);
+}
+
+.universe::after{
+    width:360px;
+    height:150px;
+    transform:rotate(55deg);
+}
+
+.profile-card{
+    width:270px;
+    height:355px;
+    padding:9px;
+    border-radius:28px;
+    background:linear-gradient(135deg,var(--blue),var(--purple),var(--green));
+    box-shadow:
+        0 0 60px rgba(0,229,255,.2),
+        0 0 100px rgba(118,87,255,.1);
+    position:relative;
+    z-index:3;
+    animation:floatProfile 5s ease-in-out infinite;
+}
+
+.profile-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:20px;
+    display:block;
+}
+
+@keyframes floatProfile{
+    50%{
+        transform:translateY(-12px) rotateY(5deg);
+    }
+}
+
+.orbit{
+    position:absolute;
+    border:1px solid rgba(0,229,255,.2);
+    border-radius:50%;
+    animation:orbitSpin 10s linear infinite;
+}
+
+.orbit.one{
+    width:390px;
+    height:160px;
+    transform:rotate(-25deg);
+}
+
+.orbit.two{
+    width:340px;
+    height:130px;
+    transform:rotate(55deg);
+    animation-duration:14s;
+    animation-direction:reverse;
+}
+
+.orbit-dot{
+    width:10px;
+    height:10px;
+    background:var(--blue);
+    border-radius:50%;
+    position:absolute;
+    top:50%;
+    right:-5px;
+    box-shadow:0 0 20px var(--blue);
+}
+
+@keyframes orbitSpin{
+    to{transform:rotate(335deg)}
+}
+
+/* =====================================================
+   STATS
+===================================================== */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.stat{
+    padding:30px;
+    text-align:center;
+    transition:.4s;
+}
+
+.stat:hover{
+    transform:translateY(-8px);
+    border-color:rgba(0,229,255,.3);
+}
+
+.stat h3{
+    color:var(--blue);
+    font-size:38px;
+}
+
+.stat p{
+    margin-top:8px;
+    color:var(--muted);
+    font-size:9px;
+    letter-spacing:2px;
+}
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.about-card{
+    padding:30px;
+    transition:.4s;
+}
+
+.about-card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(0,229,255,.25);
+}
+
+.about-card h3{
+    margin-bottom:15px;
+}
+
+.about-card p{
+    color:var(--muted);
+    line-height:1.8;
+    font-size:14px;
+}
+
+/* =====================================================
+   SKILLS
+===================================================== */
+
+.skills{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.skill{
+    padding:25px;
+}
+
+.skill-top{
+    display:flex;
+    justify-content:space-between;
+    font-size:12px;
+    margin-bottom:12px;
+}
+
+.skill-top span:last-child{
+    color:var(--blue);
+}
+
+.skill-bar{
+    height:7px;
+    background:#101722;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.skill-fill{
+    width:0;
+    height:100%;
+    background:linear-gradient(90deg,var(--blue),var(--green));
+    transition:2s ease;
+}
+
+/* =====================================================
+   COMMAND CENTER
+===================================================== */
+
+.command{
+    padding:30px;
+    position:relative;
+    overflow:hidden;
+}
+
+.command::before{
+    content:"COMMAND CENTER";
+    position:absolute;
+    right:20px;
+    top:20px;
+    color:rgba(0,229,255,.08);
+    font-size:35px;
+    font-weight:900;
+}
+
+.command-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid rgba(255,255,255,.07);
+    padding-bottom:15px;
+    margin-bottom:20px;
+}
+
+.command-status{
+    color:var(--green);
+    font-family:monospace;
+    font-size:11px;
+}
+
+.command-body{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:12px;
+}
+
+.system-box{
+    padding:18px;
+    background:rgba(255,255,255,.025);
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:14px;
+}
+
+.system-box small{
+    display:block;
+    color:var(--muted);
+    font-size:9px;
+    margin-bottom:8px;
+}
+
+.system-box strong{
+    color:var(--blue);
+    font-family:monospace;
+}
+
+/* =====================================================
+   TERMINAL
+===================================================== */
+
+.terminal{
+    background:rgba(0,2,8,.82);
+    padding:25px;
+    border-radius:20px;
+    border:1px solid rgba(0,229,255,.15);
+    font-family:monospace;
+    box-shadow:0 0 50px rgba(0,229,255,.05);
+}
+
+.terminal-head{
+    display:flex;
+    gap:7px;
+    margin-bottom:20px;
+}
+
+.terminal-head i{
+    width:10px;
+    height:10px;
+    background:#273244;
+    border-radius:50%;
+}
+
+.terminal-line{
+    line-height:2;
+    color:#8be9fd;
+    font-size:12px;
+}
+
+.green{
+    color:var(--green);
+}
+
+.muted{
+    color:#687286;
+}
+
+/* =====================================================
+   PROJECT
+===================================================== */
+
+.project{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:35px;
+    padding:32px;
+    align-items:center;
+    transition:.25s;
+}
+
+.project-info h3{
+    font-size:38px;
+    margin-bottom:15px;
+}
+
+.project-info p{
+    color:var(--muted);
+    line-height:1.8;
+    font-size:14px;
+}
+
+.tags{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.tag{
+    color:var(--blue);
+    border:1px solid rgba(0,229,255,.2);
+    border-radius:8px;
+    padding:7px 10px;
+    font-size:9px;
+}
+
+.phone{
+    width:250px;
+    height:480px;
+    margin:auto;
+    border:7px solid #151b25;
+    border-radius:36px;
+    padding:10px;
+    background:#040810;
+    box-shadow:0 0 60px rgba(0,229,255,.15);
+    transform:rotateY(-7deg);
+    transition:.5s;
+}
+
+.project:hover .phone{
+    transform:rotateY(8deg) translateY(-8px);
+}
+
+.phone-screen{
+    height:100%;
+    padding:20px 14px;
+    border-radius:25px;
+    background:
+        radial-gradient(circle at top right,rgba(0,229,255,.2),transparent 40%),
+        #070c14;
+}
+
+.phone-logo{
+    color:var(--blue);
+    font-weight:bold;
+    font-size:18px;
+}
+
+.phone-small{
+    color:#758094;
+    font-size:9px;
+    margin-top:5px;
+}
+
+.fake-card{
+    padding:15px;
+    margin-top:18px;
+    border-radius:15px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.07);
+}
+
+.fake-card strong{
+    font-size:12px;
+}
+
+.fake-line{
+    height:7px;
+    background:#1b2634;
+    border-radius:10px;
+    margin-top:9px;
+}
+
+/* =====================================================
+   FEATURES
+===================================================== */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.feature{
+    padding:25px;
+    transition:.4s;
+}
+
+.feature:hover{
+    transform:translateY(-10px) rotateX(3deg);
+    border-color:rgba(0,229,255,.35);
+    box-shadow:0 20px 50px rgba(0,229,255,.08);
+}
+
+.feature-number{
+    color:var(--blue);
+    font-family:monospace;
+    margin-bottom:20px;
+}
+
+.feature h3{
+    margin-bottom:10px;
+}
+
+.feature p{
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.7;
+}
+
+/* =====================================================
+   NEURAL NETWORK
+===================================================== */
+
+.neural{
+    position:relative;
+    height:360px;
+    border-radius:25px;
+    overflow:hidden;
+    background:rgba(2,5,13,.5);
+    border:1px solid rgba(255,255,255,.07);
+}
+
+.node{
+    position:absolute;
+    width:12px;
+    height:12px;
+    background:var(--blue);
+    border-radius:50%;
+    box-shadow:0 0 20px var(--blue);
+    animation:nodePulse 2s infinite alternate;
+}
+
+.node::after{
+    content:"";
+    position:absolute;
+    width:100px;
+    height:1px;
+    background:linear-gradient(90deg,var(--blue),transparent);
+    transform-origin:left;
+    opacity:.35;
+}
+
+.node:nth-child(1){left:15%;top:25%}
+.node:nth-child(2){left:40%;top:45%}
+.node:nth-child(3){left:70%;top:22%}
+.node:nth-child(4){left:82%;top:65%}
+.node:nth-child(5){left:30%;top:78%}
+.node:nth-child(6){left:58%;top:72%}
+
+@keyframes nodePulse{
+    to{
+        transform:scale(1.6);
+        opacity:.5;
+    }
+}
+
+.neural-title{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    pointer-events:none;
+}
+
+.neural-title h3{
+    font-size:35px;
+}
+
+.neural-title p{
+    color:var(--muted);
+    margin-top:8px;
+    font-size:12px;
+}
+
+/* =====================================================
+   JOURNEY
+===================================================== */
+
+.timeline{
+    border-left:1px solid rgba(0,229,255,.25);
+    margin-left:15px;
+}
+
+.timeline-item{
+    position:relative;
+    padding:0 0 45px 35px;
+}
+
+.timeline-item::before{
+    content:"";
+    position:absolute;
+    left:-5px;
+    top:5px;
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:var(--blue);
+    box-shadow:0 0 15px var(--blue);
+}
+
+.timeline-item span{
+    color:var(--green);
+    font-family:monospace;
+    font-size:10px;
+}
+
+.timeline-item h3{
+    margin:8px 0;
+}
+
+.timeline-item p{
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.7;
+}
+
+/* =====================================================
+   LAB
+===================================================== */
+
+.lab{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.lab-card{
+    min-height:190px;
+    padding:25px;
+    position:relative;
+    overflow:hidden;
+}
+
+.lab-card h3{
+    color:var(--green);
+    margin-bottom:12px;
+}
+
+.lab-card p{
+    color:var(--muted);
+    line-height:1.7;
+    font-size:13px;
+}
+
+.lab-card::after{
+    content:"EXPERIMENT";
+    position:absolute;
+    right:-30px;
+    bottom:15px;
+    transform:rotate(-20deg);
+    color:rgba(255,255,255,.025);
+    font-size:34px;
+    font-weight:900;
+}
+
+/* =====================================================
+   ROADMAP
+===================================================== */
+
+.roadmap{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.road{
+    padding:30px;
+    transition:.4s;
+}
+
+.road:hover{
+    transform:translateY(-8px);
+}
+
+.road-number{
+    color:rgba(0,229,255,.22);
+    font-size:45px;
+    font-weight:900;
+}
+
+.road h3{
+    margin:15px 0;
+}
+
+.road p{
+    color:var(--muted);
+    line-height:1.7;
+    font-size:13px;
+}
+
+/* =====================================================
+   SOCIAL
+===================================================== */
+
+.social{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.social-card{
+    padding:30px;
+    color:white;
+    text-decoration:none;
+    transition:.4s;
+}
+
+.social-card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(0,229,255,.4);
+}
+
+.social-card span{
+    color:var(--blue);
+    font-family:monospace;
+    font-size:10px;
+    letter-spacing:3px;
+}
+
+.social-card h3{
+    margin-top:10px;
+}
+
+/* =====================================================
+   FINAL
+===================================================== */
+
+.final{
+    min-height:80vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    flex-direction:column;
+}
+
+.final h2{
+    font-size:clamp(50px,10vw,115px);
+    line-height:.85;
+    letter-spacing:-7px;
+}
+
+.final h2 span{
+    color:var(--blue);
+    text-shadow:0 0 40px rgba(0,229,255,.25);
+}
+
+.final p{
+    color:var(--muted);
+    margin-top:25px;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#4f5a6d;
+    border-top:1px solid rgba(255,255,255,.05);
+    font-size:11px;
+}
+
+/* =====================================================
+   DEV MODE
+===================================================== */
+
+#devPanel{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.97);
+    z-index:9000;
+    display:none;
+    padding:100px 8%;
+    color:var(--green);
+    font-family:monospace;
+}
+
+#devPanel.active{
+    display:block;
+}
+
+.close-dev{
+    position:absolute;
+    right:40px;
+    top:30px;
+    color:var(--blue);
+    cursor:pointer;
+}
+
+/* =====================================================
+   REVEAL
+===================================================== */
+
+.reveal{
+    opacity:0;
+    transform:translateY(45px);
+    transition:1s ease;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:none;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:850px){
+
+    nav ul{
+        display:none;
+    }
+
+    section{
+        padding:90px 0;
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .hero-description{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .universe{
+        width:330px;
+        height:380px;
+    }
+
+    .universe::before{
+        width:330px;
+    }
+
+    .universe::after{
+        width:280px;
+    }
+
+    .orbit.one{
+        width:300px;
+    }
+
+    .orbit.two{
+        width:260px;
+    }
+
+    .profile-card{
+        width:235px;
+        height:315px;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .about-grid,
+    .skills,
+    .project,
+    .social{
+        grid-template-columns:1fr;
+    }
+
+    .features,
+    .lab,
+    .roadmap{
+        grid-template-columns:1fr;
+    }
+
+    .command-body{
+        grid-template-columns:1fr;
+    }
+
+    .cursor,
+    .cursor-dot{
+        display:none;
+    }
+
+    .neural{
+        height:280px;
+    }
+
+    .final h2{
+        letter-spacing:-4px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     AUTO LOADER
+===================================================== -->
+
+<div id="loader">
+
+    <div class="loader-stars"></div>
+
+    <div class="loader-content">
+
+        <div class="loader-small">
+            NORIZKANDAR // DIGITAL UNIVERSE
+        </div>
+
+        <div class="loader-title">
+            LOADING
+        </div>
+
+        <div class="loader-status" id="loaderStatus">
+            INITIALIZING SYSTEM...
+        </div>
+
+        <div class="loader-bar">
+            <div class="loader-fill" id="loaderFill"></div>
+        </div>
+
+        <div class="loader-percent" id="loaderPercent">
+            0%
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =====================================================
+     GALAXY
+===================================================== -->
+
+<canvas id="spaceCanvas"></canvas>
+
+<div class="space-overlay"></div>
+
+<div class="nebula a"></div>
+<div class="nebula b"></div>
+<div class="nebula c"></div>
+
+<!-- =====================================================
+     CURSOR
+===================================================== -->
+
+<div class="cursor"></div>
+<div class="cursor-dot"></div>
+
+<!-- =====================================================
+     NAV
+===================================================== -->
+
+<nav>
+
+    <div class="logo">
+        NORI<span>.</span>DEV
+    </div>
+
+    <ul>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#skills">SKILLS</a></li>
+        <li><a href="#project">PROJECT</a></li>
+        <li><a href="#journey">JOURNEY</a></li>
+        <li><a href="#lab">LAB</a></li>
+    </ul>
+
+    <div class="dev-btn" onclick="openDev()">
+        DEV MODE
+    </div>
+
+</nav>
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+    <div class="reveal">
+
+        <div class="status">
+            <span class="status-dot"></span>
+            ONLINE • BUILDING IDEAS
+        </div>
+
+        <h1>
+            MOHAMAD<br>
+            <span>NORIZKANDAR</span>
+        </h1>
+
+        <p class="hero-description">
+            I turn creative ideas into modern mobile applications,
+            digital experiences and futuristic interfaces.
+        </p>
+
+        <div class="typing">
+            > <span id="typingText"></span>
+        </div>
+
+        <div class="hero-buttons">
+
+            <a href="#project" class="btn primary">
+                EXPLORE UNIVERSE
+            </a>
+
+            <a href="https://github.com/norizkandar"
+               target="_blank"
+               class="btn">
+                GITHUB ↗
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="universe reveal">
+
+        <div class="orbit one">
+            <div class="orbit-dot"></div>
+        </div>
+
+        <div class="orbit two">
+            <div class="orbit-dot"></div>
+        </div>
+
+        <div class="profile-card">
+            <img src="profile.jpg"
+                 alt="Mohamad Norizkandar">
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     STATS
+===================================================== -->
+
+<section>
+
+    <div class="stats">
+
+        <div class="stat glass reveal">
+            <h3 data-count="14">0</h3>
+            <p>AGE</p>
+        </div>
+
+        <div class="stat glass reveal">
+            <h3 data-count="5">0</h3>
+            <p>TECH STACK</p>
+        </div>
+
+        <div class="stat glass reveal">
+            <h3 data-count="1">0</h3>
+            <p>MAIN PROJECT</p>
+        </div>
+
+        <div class="stat glass reveal">
+            <h3>∞</h3>
+            <p>IDEAS</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section id="about">
+
+    <div class="section-label reveal">
+        01 // ABOUT
+    </div>
+
+    <h2 class="section-title reveal">
+        Building from
+        <span style="color:var(--blue)">
+            curiosity.
+        </span>
+    </h2>
+
+    <div class="about-grid">
+
+        <div class="about-card glass reveal">
+
+            <h3>Who I Am</h3>
+
+            <p>
+                I'm Mohamad Norizkandar Bin Mohamad Faizal, a young developer from
+                Taiping, Perak, Malaysia. I enjoy learning how
+                technology works and turning ideas into real projects.
+            </p>
+
+        </div>
+
+        <div class="about-card glass reveal">
+
+            <h3>My Focus</h3>
+
+            <p>
+                My current focus is mobile app development,
+                UI design, programming and experimenting with
+                new digital ideas.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     SKILLS
+===================================================== -->
+
+<section id="skills">
+
+    <div class="section-label reveal">
+        02 // TECH STACK
+    </div>
+
+    <h2 class="section-title reveal">
+        Tools I
+        <span style="color:var(--green)">
+            build with.
+        </span>
+    </h2>
+
+    <div class="skills">
+
+        <div class="skill glass reveal">
+            <div class="skill-top">
+                <span>JavaScript</span>
+                <span>90%</span>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-fill" data-width="90%"></div>
+            </div>
+        </div>
+
+        <div class="skill glass reveal">
+            <div class="skill-top">
+                <span>React Native</span>
+                <span>85%</span>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-fill" data-width="85%"></div>
+            </div>
+        </div>
+
+        <div class="skill glass reveal">
+            <div class="skill-top">
+                <span>Expo</span>
+                <span>85%</span>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-fill" data-width="85%"></div>
+            </div>
+        </div>
+
+        <div class="skill glass reveal">
+            <div class="skill-top">
+                <span>Supabase</span>
+                <span>75%</span>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-fill" data-width="75%"></div>
+            </div>
+        </div>
+
+        <div class="skill glass reveal">
+            <div class="skill-top">
+                <span>VS Code</span>
+                <span>95%</span>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-fill" data-width="95%"></div>
+            </div>
+        </div>
+
+        <div class="skill glass reveal">
+            <div class="skill-top">
+                <span>Creative UI</span>
+                <span>90%</span>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-fill" data-width="90%"></div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     COMMAND CENTER
+===================================================== -->
+
+<section>
+
+    <div class="section-label reveal">
+        03 // COMMAND CENTER
+    </div>
+
+    <h2 class="section-title reveal">
+        System
+        <span style="color:var(--blue)">
+            control.
+        </span>
+    </h2>
+
+    <div class="command glass reveal">
+
+        <div class="command-head">
+
+            <strong>
+                NORIZKANDAR OS
+            </strong>
+
+            <div class="command-status">
+                ● ALL SYSTEMS ONLINE
+            </div>
+
+        </div>
+
+        <div class="command-body">
+
+            <div class="system-box">
+                <small>CORE</small>
+                <strong>ACTIVE</strong>
+            </div>
+
+            <div class="system-box">
+                <small>PROJECT</small>
+                <strong>SMART_ACADEMY</strong>
+            </div>
+
+            <div class="system-box">
+                <small>MODE</small>
+                <strong>BUILDING</strong>
+            </div>
+
+            <div class="system-box">
+                <small>ENGINE</small>
+                <strong>JAVASCRIPT</strong>
+            </div>
+
+            <div class="system-box">
+                <small>INTERFACE</small>
+                <strong>FUTURISTIC</strong>
+            </div>
+
+            <div class="system-box">
+                <small>STATUS</small>
+                <strong>READY ✓</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     TERMINAL
+===================================================== -->
+
+<section>
+
+    <div class="section-label reveal">
+        04 // TERMINAL
+    </div>
+
+    <h2 class="section-title reveal">
+        Developer
+        <span style="color:var(--green)">
+            console.
+        </span>
+    </h2>
+
+    <div class="terminal reveal">
+
+        <div class="terminal-head">
+            <i></i>
+            <i></i>
+            <i></i>
+        </div>
+
+        <div class="terminal-line">
+            <span class="green">
+                norizkandar@universe
+            </span>:~$ whoami
+        </div>
+
+        <div class="terminal-line muted">
+            Mohamad Norizkandar — App Developer
+        </div>
+
+        <div class="terminal-line">
+            <span class="green">
+                norizkandar@universe
+            </span>:~$ scan projects
+        </div>
+
+        <div class="terminal-line muted">
+            Smart Academy detected...
+        </div>
+
+        <div class="terminal-line">
+            <span class="green">
+                norizkandar@universe
+            </span>:~$ system status
+        </div>
+
+        <div class="terminal-line green">
+            ALL SYSTEMS OPERATIONAL ✓
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     SMART ACADEMY
+===================================================== -->
+
+<section id="project">
+
+    <div class="section-label reveal">
+        05 // FEATURED PROJECT
+    </div>
+
+    <h2 class="section-title reveal">
+        Smart
+        <span style="color:var(--green)">
+            Academy.
+        </span>
+    </h2>
+
+    <div class="project glass reveal">
+
+        <div class="project-info">
+
+            <h3>Smart Academy</h3>
+
+            <p>
+                A modern tuition platform concept designed to
+                connect students and teachers through interactive
+                digital learning experiences.
+            </p>
+
+            <div class="tags">
+
+                <div class="tag">AI ASSISTANT</div>
+                <div class="tag">WHITEBOARD</div>
+                <div class="tag">STUDENT LIVE</div>
+                <div class="tag">ACHIEVEMENT</div>
+                <div class="tag">TEACHER RATING</div>
+                <div class="tag">STUDENT & TEACHER</div>
+
+            </div>
+
+            <div class="hero-buttons" style="margin-top:25px;">
+                <a href="https://norizkandar.github.io/eonix-tech-studio/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="btn primary">
+                    🚀 OPEN SMART ACADEMY
+                </a>
+            </div>
+
+        </div>
+
+        <div class="phone">
+
+            <div class="phone-screen">
+
+                <div class="phone-logo">
+                    Smart Academy
+                </div>
+
+                <div class="phone-small">
+                    created by norizkandar
+                </div>
+
+                <div class="fake-card">
+                    <strong>
+                        Welcome back 👋
+                    </strong>
+                    <div class="fake-line"></div>
+                    <div class="fake-line"></div>
+                </div>
+
+                <div class="fake-card">
+                    <strong>
+                        Live Class
+                    </strong>
+                    <div class="fake-line"></div>
+                    <div class="fake-line"></div>
+                    <div class="fake-line"></div>
+                </div>
+
+                <div class="fake-card">
+                    <strong>
+                        Achievement 🏆
+                    </strong>
+                    <div class="fake-line"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     FEATURES
+===================================================== -->
+
+<section>
+
+    <div class="section-label reveal">
+        06 // FEATURES
+    </div>
+
+    <h2 class="section-title reveal">
+        Inside the
+        <span style="color:var(--blue)">
+            system.
+        </span>
+    </h2>
+
+    <div class="features">
+
+        <div class="feature glass reveal">
+            <div class="feature-number">01</div>
+            <h3>AI Assistant</h3>
+            <p>
+                A dedicated AI concept designed to support
+                students while learning.
+            </p>
+        </div>
+
+        <div class="feature glass reveal">
+            <div class="feature-number">02</div>
+            <h3>Whiteboard</h3>
+            <p>
+                Interactive digital space for explaining
+                and presenting ideas.
+            </p>
+        </div>
+
+        <div class="feature glass reveal">
+            <div class="feature-number">03</div>
+            <h3>Student Live</h3>
+            <p>
+                Students can present using video in an
+                interactive live experience.
+            </p>
+        </div>
+
+        <div class="feature glass reveal">
+            <div class="feature-number">04</div>
+            <h3>Achievement</h3>
+            <p>
+                A system concept for tracking student
+                achievements and progress.
+            </p>
+        </div>
+
+        <div class="feature glass reveal">
+            <div class="feature-number">05</div>
+            <h3>Teacher Rating</h3>
+            <p>
+                Students can provide ratings for teachers
+                and learning experiences.
+            </p>
+        </div>
+
+        <div class="feature glass reveal">
+            <div class="feature-number">06</div>
+            <h3>Student & Teacher</h3>
+            <p>
+                Separate experiences designed for both
+                students and teachers.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     NEURAL NETWORK
+===================================================== -->
+
+<section>
+
+    <div class="section-label reveal">
+        07 // DEVELOPER MINDSET
+    </div>
+
+    <h2 class="section-title reveal">
+        Connected
+        <span style="color:var(--green)">
+            ideas.
+        </span>
+    </h2>
+
+    <div class="neural reveal">
+
+        <div class="node"></div>
+        <div class="node"></div>
+        <div class="node"></div>
+        <div class="node"></div>
+        <div class="node"></div>
+        <div class="node"></div>
+
+        <div class="neural-title">
+            <div>
+                <h3>CREATE → BUILD → IMPROVE</h3>
+                <p>
+                    Every idea is another connection.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     JOURNEY
+===================================================== -->
+
+<section id="journey">
+
+    <div class="section-label reveal">
+        08 // CODING JOURNEY
+    </div>
+
+    <h2 class="section-title reveal">
+        From learning to
+        <span style="color:var(--blue)">
+            building.
+        </span>
+    </h2>
+
+    <div class="timeline">
+
+        <div class="timeline-item reveal">
+            <span>START</span>
+            <h3>Started Learning Code</h3>
+            <p>
+                Began exploring programming and discovering
+                how software is built.
+            </p>
+        </div>
+
+        <div class="timeline-item reveal">
+            <span>BUILD</span>
+            <h3>Started Building Apps</h3>
+            <p>
+                Started experimenting with JavaScript,
+                React Native and Expo.
+            </p>
+        </div>
+
+        <div class="timeline-item reveal">
+            <span>CREATE</span>
+            <h3>Smart Academy</h3>
+            <p>
+                Turned a tuition app idea into a working
+                project concept.
+            </p>
+        </div>
+
+        <div class="timeline-item reveal">
+            <span>NEXT</span>
+            <h3>Keep Building</h3>
+            <p>
+                Continue learning, experimenting and
+                creating better digital experiences.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     EXPERIMENTAL LAB
+===================================================== -->
+
+<section id="lab">
+
+    <div class="section-label reveal">
+        09 // EXPERIMENTAL LAB
+    </div>
+
+    <h2 class="section-title reveal">
+        Ideas under
+        <span style="color:var(--green)">
+            construction.
+        </span>
+    </h2>
+
+    <div class="lab">
+
+        <div class="lab-card glass reveal">
+            <h3>AI Experiments</h3>
+            <p>
+                Exploring how AI can become part of future
+                applications and learning experiences.
+            </p>
+        </div>
+
+        <div class="lab-card glass reveal">
+            <h3>UI Experiments</h3>
+            <p>
+                Creating futuristic interfaces, animations
+                and interactive experiences.
+            </p>
+        </div>
+
+        <div class="lab-card glass reveal">
+            <h3>Future Apps</h3>
+            <p>
+                New application ideas waiting to be turned
+                into real prototypes.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     ROADMAP
+===================================================== -->
+
+<section>
+
+    <div class="section-label reveal">
+        10 // ROADMAP
+    </div>
+
+    <h2 class="section-title reveal">
+        What's
+        <span style="color:var(--blue)">
+            next?
+        </span>
+    </h2>
+
+    <div class="roadmap">
+
+        <div class="road glass reveal">
+            <div class="road-number">01</div>
+            <h3>Learn</h3>
+            <p>
+                Improve programming knowledge and explore
+                new technologies.
+            </p>
+        </div>
+
+        <div class="road glass reveal">
+            <div class="road-number">02</div>
+            <h3>Build</h3>
+            <p>
+                Turn more ideas into functional applications
+                and prototypes.
+            </p>
+        </div>
+
+        <div class="road glass reveal">
+            <div class="road-number">03</div>
+            <h3>Launch</h3>
+            <p>
+                Share projects with more people and continue
+                improving them.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     SOCIAL
+===================================================== -->
+
+<section>
+
+    <div class="section-label reveal">
+        11 // TRANSMISSION
+    </div>
+
+    <h2 class="section-title reveal">
+        Find me
+        <span style="color:var(--green)">
+            online.
+        </span>
+    </h2>
+
+    <div class="social">
+
+        <a class="social-card glass reveal"
+           href="https://github.com/norizkandar"
+           target="_blank">
+
+            <span>GITHUB</span>
+
+            <h3>
+                @norizkandar ↗
+            </h3>
+
+        </a>
+
+        <a class="social-card glass reveal"
+           href="https://www.tiktok.com/@iz_andar"
+           target="_blank">
+
+            <span>TIKTOK</span>
+
+            <h3>
+                @iz_andar ↗
+            </h3>
+
+        </a>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     FINAL
+===================================================== -->
+
+<section class="final">
+
+    <div class="section-label reveal">
+        12 // END OF TRANSMISSION
+    </div>
+
+    <h2 class="reveal">
+        KEEP<br>
+        <span>BUILDING.</span>
+    </h2>
+
+    <p class="reveal">
+        The journey has just begun.
+    </p>
+
+</section>
+
+<footer>
+    © 2026 Mohamad Norizkandar • Built with code & curiosity.
+</footer>
+
+<!-- =====================================================
+     DEV PANEL
+===================================================== -->
+
+<div id="devPanel">
+
+    <div class="close-dev"
+         onclick="closeDev()">
+        [ CLOSE ]
+    </div>
+
+    <h2>NORIZKANDAR // DEV MODE</h2>
+
+    <br>
+
+    <p>> booting developer interface...</p>
+    <p>> loading JavaScript...</p>
+    <p>> loading React Native...</p>
+    <p>> loading Expo...</p>
+    <p>> loading Supabase...</p>
+    <p>> scanning Smart Academy...</p>
+    <p>> connecting digital universe...</p>
+    <p class="green">
+        > ALL SYSTEMS OPERATIONAL ✓
+    </p>
+
+</div>
+
+<script>
+
+/* =====================================================
+   AUTO LOADING
+===================================================== */
+
+let progress = 0;
+
+const fill =
+    document.getElementById("loaderFill");
+
+const percent =
+    document.getElementById("loaderPercent");
+
+const loaderStatus =
+    document.getElementById("loaderStatus");
+
+const loaderMessages = [
+
+    "INITIALIZING SYSTEM...",
+    "LOADING DIGITAL CORE...",
+    "SCANNING PROJECTS...",
+    "LOADING SMART ACADEMY...",
+    "CALIBRATING GALAXY...",
+    "CONNECTING INTERFACE...",
+    "SYSTEM READY..."
+
+];
+
+const loading =
+setInterval(() => {
+
+    progress++;
+
+    fill.style.width =
+        progress + "%";
+
+    percent.textContent =
+        progress + "%";
+
+    if(progress < 15)
+        loaderStatus.textContent =
+            loaderMessages[0];
+
+    else if(progress < 30)
+        loaderStatus.textContent =
+            loaderMessages[1];
+
+    else if(progress < 45)
+        loaderStatus.textContent =
+            loaderMessages[2];
+
+    else if(progress < 60)
+        loaderStatus.textContent =
+            loaderMessages[3];
+
+    else if(progress < 75)
+        loaderStatus.textContent =
+            loaderMessages[4];
+
+    else if(progress < 95)
+        loaderStatus.textContent =
+            loaderMessages[5];
+
+    else
+        loaderStatus.textContent =
+            loaderMessages[6];
+
+    if(progress >= 100){
+
+        clearInterval(loading);
+
+        setTimeout(() => {
+
+            document
+                .getElementById("loader")
+                .classList
+                .add("hide");
+
+        },700);
+
+    }
+
+},32);
+
+
+/* =====================================================
+   TYPING
+===================================================== */
+
+const phrases = [
+
+    "building mobile apps...",
+    "designing digital experiences...",
+    "experimenting with AI...",
+    "turning ideas into code...",
+    "exploring the digital universe..."
+
+];
+
+let p = 0;
+let c = 0;
+let deleting = false;
+
+function typing(){
+
+    const current =
+        phrases[p];
+
+    const element =
+        document.getElementById("typingText");
+
+    if(!deleting){
+
+        element.textContent =
+            current.substring(0,c++);
+
+    }else{
+
+        element.textContent =
+            current.substring(0,c--);
+
+    }
+
+    if(!deleting && c > current.length){
+
+        deleting = true;
+
+        setTimeout(typing,1200);
+
+        return;
+    }
+
+    if(deleting && c < 0){
+
+        deleting = false;
+        p = (p + 1) % phrases.length;
+        c = 0;
+
+    }
+
+    setTimeout(
+        typing,
+        deleting ? 35 : 70
+    );
+}
+
+typing();
+
+
+/* =====================================================
+   CURSOR + GALAXY PARALLAX
+===================================================== */
+
+const cursor =
+    document.querySelector(".cursor");
+
+const dot =
+    document.querySelector(".cursor-dot");
+
+document.addEventListener(
+    "mousemove",
+    e => {
+
+        cursor.style.left =
+            e.clientX + "px";
+
+        cursor.style.top =
+            e.clientY + "px";
+
+        dot.style.left =
+            e.clientX + "px";
+
+        dot.style.top =
+            e.clientY + "px";
+
+        mouseX =
+            e.clientX;
+
+        mouseY =
+            e.clientY;
+
+    }
+);
+
+
+/* =====================================================
+   REVEAL
+===================================================== */
+
+const revealObserver =
+new IntersectionObserver(
+    entries => {
+
+        entries.forEach(entry => {
+
+            if(entry.isIntersecting){
+
+                entry.target
+                    .classList
+                    .add("show");
+
+                const fill =
+                    entry.target
+                    .querySelector(".skill-fill");
+
+                if(fill){
+
+                    fill.style.width =
+                        fill.dataset.width;
+
+                }
+
+            }
+
+        });
+
+    },
+    {
+        threshold:.15
+    }
+);
+
+document
+    .querySelectorAll(".reveal")
+    .forEach(el =>
+        revealObserver.observe(el)
+    );
+
+
+/* =====================================================
+   COUNTERS
+===================================================== */
+
+const counterObserver =
+new IntersectionObserver(
+    entries => {
+
+        entries.forEach(entry => {
+
+            if(!entry.isIntersecting)
+                return;
+
+            const counter =
+                entry.target;
+
+            const target =
+                Number(counter.dataset.count);
+
+            let value = 0;
+
+            const timer =
+                setInterval(() => {
+
+                    value++;
+
+                    counter.textContent =
+                        value;
+
+                    if(value >= target)
+                        clearInterval(timer);
+
+                },70);
+
+            counterObserver
+                .unobserve(counter);
+
+        });
+
+    },
+    {
+        threshold:.7
+    }
+);
+
+document
+    .querySelectorAll("[data-count]")
+    .forEach(el =>
+        counterObserver.observe(el)
+    );
+
+
+/* =====================================================
+   DEV MODE
+===================================================== */
+
+function openDev(){
+
+    document
+        .getElementById("devPanel")
+        .classList
+        .add("active");
+
+}
+
+function closeDev(){
+
+    document
+        .getElementById("devPanel")
+        .classList
+        .remove("active");
+
+}
+
+
+/* =====================================================
+   PROJECT 3D
+===================================================== */
+
+const project =
+    document.querySelector(".project");
+
+if(project){
+
+    project.addEventListener(
+        "mousemove",
+        e => {
+
+            const rect =
+                project.getBoundingClientRect();
+
+            const x =
+                (e.clientX - rect.left)
+                / rect.width - .5;
+
+            const y =
+                (e.clientY - rect.top)
+                / rect.height - .5;
+
+            project.style.transform =
+                `perspective(1000px)
+                 rotateY(${x*5}deg)
+                 rotateX(${-y*4}deg)`;
+
+        }
+    );
+
+    project.addEventListener(
+        "mouseleave",
+        () => {
+
+            project.style.transform = "";
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   MAGNETIC BUTTONS
+===================================================== */
+
+document
+.querySelectorAll(
+    ".btn,.dev-btn,.social-card"
+)
+.forEach(button => {
+
+    button.addEventListener(
+        "mousemove",
+        e => {
+
+            const rect =
+                button.getBoundingClientRect();
+
+            const x =
+                e.clientX -
+                rect.left -
+                rect.width/2;
+
+            const y =
+                e.clientY -
+                rect.top -
+                rect.height/2;
+
+            button.style.transform =
+                `translate(${x*.08}px,${y*.08}px)`;
+
+        }
+    );
+
+    button.addEventListener(
+        "mouseleave",
+        () => {
+
+            button.style.transform = "";
+
+        }
+    );
+
+});
+
+
+/* =====================================================
+   GALAXY PARTICLE ENGINE
+===================================================== */
+
+const canvas =
+    document.getElementById("spaceCanvas");
+
+const ctx =
+    canvas.getContext("2d");
+
+let width;
+let height;
+
+let mouseX = 0;
+let mouseY = 0;
+
+let stars = [];
+
+function resize(){
+
+    width =
+        canvas.width =
+        window.innerWidth;
+
+    height =
+        canvas.height =
+        window.innerHeight;
+
+    stars = [];
+
+    const amount =
+        Math.min(
+            700,
+            Math.floor(
+                width * height / 1500
+            )
+        );
+
+    for(let i=0;i<amount;i++){
+
+        stars.push({
+
+            x:Math.random()*width,
+            y:Math.random()*height,
+
+            z:Math.random(),
+
+            size:
+                Math.random()*1.5+.2,
+
+            speed:
+                Math.random()*.35+.05,
+
+            twinkle:
+                Math.random()*Math.PI*2
+
+        });
+
+    }
+
+}
+
+resize();
+
+window.addEventListener(
+    "resize",
+    resize
+);
+
+
+function animateGalaxy(){
+
+    ctx.clearRect(
+        0,
+        0,
+        width,
+        height
+    );
+
+    const px =
+        (mouseX / width - .5);
+
+    const py =
+        (mouseY / height - .5);
+
+    for(const star of stars){
+
+        star.y -= star.speed;
+
+        if(star.y < -10)
+            star.y = height + 10;
+
+        star.twinkle += .02;
+
+        const opacity =
+            .35 +
+            Math.sin(star.twinkle)*.3;
+
+        const depth =
+            star.z * 18;
+
+        const x =
+            star.x +
+            px * depth;
+
+        const y =
+            star.y +
+            py * depth;
+
+        ctx.beginPath();
+
+        ctx.arc(
+            x,
+            y,
+            star.size * (0.5 + star.z),
+            0,
+            Math.PI*2
+        );
+
+        ctx.fillStyle =
+            `rgba(190,235,255,${opacity})`;
+
+        ctx.fill();
+
+    }
+
+    requestAnimationFrame(
+        animateGalaxy
+    );
+
+}
+
+animateGalaxy();
+
+
+/* =====================================================
+   SECRET EASTER EGGS
+===================================================== */
+
+let secret = "";
+
+document.addEventListener(
+    "keydown",
+    e => {
+
+        secret +=
+            e.key.toLowerCase();
+
+        if(secret.length > 8)
+            secret =
+                secret.slice(-8);
+
+        /* nori */
+
+        if(secret === "nori"){
+
+            document.body.style
+                .transform =
+                "scale(1.015)";
+
+            document.body.style
+                .filter =
+                "hue-rotate(100deg)";
+
+            setTimeout(() => {
+
+                document.body.style
+                    .transform = "";
+
+                document.body.style
+                    .filter = "";
+
+            },1800);
+
+            secret = "";
+
+        }
+
+        /* galaxy */
+
+        if(secret === "galaxy"){
+
+            document.body.style
+                .filter =
+                "hue-rotate(180deg)";
+
+            setTimeout(() => {
+
+                document.body.style
+                    .filter = "";
+
+            },3000);
+
+            secret = "";
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
