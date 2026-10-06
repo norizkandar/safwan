@@ -1,46 +1,31 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <title>Muhammad Safwan | Top Student at UniKL BMI</title>
+  <title>Muhammad Safwan bin Shahrul Baharin | Electrical Engineering Technology</title>
 
   <meta
     name="description"
-    content="Official personal portfolio of Muhammad Safwan bin Shahrul Baharin, Top Student at Universiti Kuala Lumpur British Malaysian Institute."
+    content="Muhammad Safwan bin Shahrul Baharin — Electrical Engineering Technology graduate with experience in leadership, project and program management, and engineering."
   >
 
-  <meta
-    name="keywords"
-    content="Muhammad Safwan, UniKL BMI, British Malaysian Institute, Top Student, Student Portfolio"
-  >
-
-  <meta name="theme-color" content="#050711">
+  <meta name="theme-color" content="#07111f">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@500;600;700;800&display=swap"
     rel="stylesheet"
   >
 
   <style>
 
-    /* =====================================================
+    /* =========================================================
        RESET
-    ===================================================== */
+    ========================================================= */
 
     * {
       margin: 0;
@@ -54,9 +39,10 @@
 
     body {
       font-family: "Inter", sans-serif;
+      background: #050914;
       color: #f5f7fb;
-      background: #050711;
       overflow-x: hidden;
+      line-height: 1.6;
     }
 
     a {
@@ -69,2153 +55,1396 @@
     }
 
 
-    /* =====================================================
-       VARIABLES
-    ===================================================== */
+    /* =========================================================
+       BACKGROUND
+    ========================================================= */
 
-    :root {
-
-      --bg: #050711;
-      --bg2: #080d1c;
-
-      --white: #ffffff;
-      --text: #f5f7fb;
-      --muted: #8f9caf;
-
-      --gold: #d8b56a;
-      --gold2: #f3d99b;
-
-      --blue: #4ca7ff;
-      --cyan: #54e1ff;
-
-      --green: #62e6b0;
-
-      --card: rgba(255,255,255,0.045);
-      --card2: rgba(255,255,255,0.075);
-
-      --border: rgba(255,255,255,0.10);
-    }
-
-
-    /* =====================================================
-       LOADER
-    ===================================================== */
-
-    #loader {
-
+    body::before {
+      content: "";
       position: fixed;
-
       inset: 0;
-
-      z-index: 99999;
-
-      display: flex;
-
-      align-items: center;
-      justify-content: center;
-
-      flex-direction: column;
-
-      background: #050711;
-
-      transition:
-        opacity .6s ease,
-        visibility .6s ease;
-    }
-
-    #loader.hide {
-      opacity: 0;
-      visibility: hidden;
-    }
-
-    .loader-logo {
-
-      font-family: "Playfair Display", serif;
-
-      font-size: 45px;
-
-      margin-bottom: 20px;
-
-      background:
-        linear-gradient(
-          90deg,
-          #fff,
-          var(--gold),
-          var(--cyan)
-        );
-
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .loader-line {
-
-      width: 150px;
-      height: 2px;
-
-      overflow: hidden;
-
-      background: rgba(255,255,255,.1);
-
-      border-radius: 50px;
-    }
-
-    .loader-line span {
-
-      display: block;
-
-      width: 50%;
-
-      height: 100%;
-
-      background: var(--gold);
-
-      animation:
-        loaderMove 1.1s infinite ease-in-out;
-    }
-
-    @keyframes loaderMove {
-
-      0% {
-        transform: translateX(-150%);
-      }
-
-      100% {
-        transform: translateX(300%);
-      }
-
-    }
-
-
-    /* =====================================================
-       PARTICLES
-    ===================================================== */
-
-    #particles {
-
-      position: fixed;
-
-      inset: 0;
-
       z-index: -5;
 
+      background:
+        radial-gradient(
+          circle at 10% 10%,
+          rgba(0, 195, 255, 0.13),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 90% 20%,
+          rgba(50, 100, 255, 0.12),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 50% 90%,
+          rgba(0, 255, 190, 0.08),
+          transparent 35%
+        ),
+        #050914;
+    }
+
+    .grid-bg {
+      position: fixed;
+      inset: 0;
+      z-index: -4;
+      opacity: 0.18;
       pointer-events: none;
 
+      background-image:
+        linear-gradient(
+          rgba(255,255,255,0.035) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,0.035) 1px,
+          transparent 1px
+        );
+
+      background-size: 60px 60px;
+    }
+
+
+    /* =========================================================
+       PARTICLES
+    ========================================================= */
+
+    .particles {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -2;
       overflow: hidden;
     }
 
     .particle {
-
       position: absolute;
-
-      width: 2px;
-      height: 2px;
-
+      width: 3px;
+      height: 3px;
+      background: #42d9ff;
       border-radius: 50%;
+      opacity: 0.5;
 
-      background: rgba(255,255,255,.55);
-
-      animation:
-        floatParticle linear infinite;
+      animation: floatParticle linear infinite;
     }
 
     @keyframes floatParticle {
-
       from {
-        transform:
-          translateY(110vh);
-        opacity: 0;
-      }
-
-      10% {
-        opacity: 1;
-      }
-
-      90% {
-        opacity: 1;
+        transform: translateY(110vh);
       }
 
       to {
-        transform:
-          translateY(-10vh);
-        opacity: 0;
+        transform: translateY(-10vh);
       }
-
     }
 
 
-    /* =====================================================
-       BACKGROUND GLOW
-    ===================================================== */
+    /* =========================================================
+       LOADER
+    ========================================================= */
 
-    .glow {
-
+    #loader {
       position: fixed;
+      inset: 0;
+      background: #050914;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 99999;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
 
-      width: 420px;
-      height: 420px;
+    #loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
 
+    .loader-content {
+      text-align: center;
+    }
+
+    .loader-logo {
+      width: 70px;
+      height: 70px;
       border-radius: 50%;
 
-      filter: blur(110px);
+      border: 2px solid rgba(255,255,255,0.08);
+      border-top-color: #43dcff;
+      border-right-color: #5b7cff;
 
-      opacity: .13;
+      animation: spin 1s linear infinite;
 
-      pointer-events: none;
-
-      z-index: -4;
+      margin: auto auto 20px;
     }
 
-    .glow-one {
-
-      background: var(--blue);
-
-      top: 5%;
-      left: -220px;
+    .loader-content p {
+      color: #8c9ab5;
+      font-size: 13px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
     }
 
-    .glow-two {
-
-      background: var(--gold);
-
-      top: 50%;
-      right: -220px;
-    }
-
-    .glow-three {
-
-      background: var(--cyan);
-
-      bottom: -250px;
-      left: 35%;
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
     }
 
 
-    /* =====================================================
-       CURSOR GLOW
-    ===================================================== */
+    /* =========================================================
+       NAVBAR
+    ========================================================= */
 
-    .cursor-glow {
-
+    .navbar {
       position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
 
-      width: 280px;
-      height: 280px;
+      height: 78px;
 
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 0 7%;
+
+      background: rgba(5, 9, 20, 0.68);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+
+      z-index: 1000;
+    }
+
+    .logo {
+      font-family: "Montserrat", sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: #43dcff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      color: #9ba8c1;
+      transition: 0.3s;
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -7px;
+      width: 0;
+      height: 2px;
+      background: #43dcff;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: none;
+      color: white;
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      min-height: 100vh;
+
+      display: flex;
+      align-items: center;
+
+      padding: 130px 7% 80px;
+
+      position: relative;
+    }
+
+    .hero-container {
+      width: 100%;
+      max-width: 1250px;
+      margin: auto;
+
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+
+      padding: 9px 14px;
+
+      border: 1px solid rgba(67,220,255,0.18);
+      background: rgba(67,220,255,0.06);
+
+      border-radius: 50px;
+
+      color: #6ee5ff;
+      font-size: 12px;
+      font-weight: 700;
+
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+
+      margin-bottom: 22px;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
+      background: #46e0a0;
+      box-shadow: 0 0 12px #46e0a0;
+    }
+
+    .hero h1 {
+      font-family: "Montserrat", sans-serif;
+
+      font-size: clamp(45px, 6vw, 78px);
+      line-height: 1.02;
+      letter-spacing: -3px;
+
+      margin-bottom: 24px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(
+        90deg,
+        #ffffff,
+        #6ce4ff,
+        #6d82ff
+      );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      min-height: 32px;
+
+      font-size: 20px;
+      color: #b6c2d9;
+      font-weight: 600;
+
+      margin-bottom: 18px;
+    }
+
+    .typing {
+      color: #43dcff;
+    }
+
+    .hero-description {
+      max-width: 650px;
+
+      color: #8491aa;
+      font-size: 16px;
+
+      margin-bottom: 34px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 13px 21px;
+
+      border-radius: 12px;
+
+      font-size: 13px;
+      font-weight: 700;
+
+      transition: 0.3s;
+
+      cursor: pointer;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      color: #031018;
+
+      background: linear-gradient(
+        135deg,
+        #5de6ff,
+        #6d86ff
+      );
+
+      box-shadow:
+        0 10px 30px rgba(67,220,255,0.15);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow:
+        0 15px 35px rgba(67,220,255,0.25);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.035);
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-3px);
+      background: rgba(255,255,255,0.07);
+    }
+
+
+    /* =========================================================
+       PROFILE CARD
+    ========================================================= */
+
+    .profile-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+
+    .profile-card {
+      position: relative;
+
+      width: min(390px, 100%);
+      aspect-ratio: 0.78;
+
+      border-radius: 30px;
+
+      padding: 8px;
 
       background:
-        radial-gradient(
-          circle,
-          rgba(76,167,255,.08),
-          transparent 65%
+        linear-gradient(
+          135deg,
+          rgba(67,220,255,0.5),
+          rgba(76,95,255,0.25),
+          rgba(255,255,255,0.04)
         );
 
-      transform:
-        translate(-50%, -50%);
+      box-shadow:
+        0 35px 90px rgba(0,0,0,0.45),
+        0 0 70px rgba(67,220,255,0.08);
+    }
 
+    .profile-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+      border-radius: 24px;
+      overflow: hidden;
+
+      background: #0a1120;
+    }
+
+    .real-photo {
+      position: absolute;
+      inset: 0;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      object-position: center;
+
+      z-index: 1;
+    }
+
+    .profile-inner::after {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          to top,
+          rgba(4,7,16,0.98) 0%,
+          rgba(4,7,16,0.55) 38%,
+          rgba(4,7,16,0.05) 75%
+        );
+
+      z-index: 2;
       pointer-events: none;
+    }
 
-      z-index: 9998;
+    .profile-info {
+      position: absolute;
 
-      transition:
-        left .12s ease,
-        top .12s ease;
+      left: 25px;
+      right: 25px;
+      bottom: 25px;
+
+      z-index: 3;
+    }
+
+    .profile-info small {
+      color: #5edfff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .profile-info h3 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 23px;
+      margin: 5px 0;
+    }
+
+    .profile-info p {
+      color: #aab5c9;
+      font-size: 12px;
+    }
+
+    .floating-badge {
+      position: absolute;
+
+      top: 22px;
+      right: 22px;
+
+      z-index: 4;
+
+      padding: 9px 12px;
+
+      border-radius: 10px;
+
+      background: rgba(4,8,17,0.65);
+      border: 1px solid rgba(255,255,255,0.1);
+
+      backdrop-filter: blur(12px);
+
+      font-size: 10px;
+      font-weight: 800;
+
+      color: #dffbff;
+
+      letter-spacing: 1px;
     }
 
 
-    /* =====================================================
-       NAVBAR
-    ===================================================== */
+    /* =========================================================
+       SECTION
+    ========================================================= */
 
-    nav {
+    section {
+      padding: 110px 7%;
+    }
 
-      position: fixed;
+    .section-container {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .section-heading {
+      margin-bottom: 55px;
+    }
+
+    .section-label {
+      color: #45ddff;
+
+      font-size: 11px;
+      font-weight: 800;
+
+      letter-spacing: 3px;
+      text-transform: uppercase;
+
+      margin-bottom: 12px;
+    }
+
+    .section-heading h2 {
+      font-family: "Montserrat", sans-serif;
+
+      font-size: clamp(30px, 4vw, 48px);
+
+      letter-spacing: -1.5px;
+    }
+
+    .section-heading p {
+      max-width: 650px;
+
+      color: #7e8ba4;
+      margin-top: 14px;
+    }
+
+
+    /* =========================================================
+       STATS
+    ========================================================= */
+
+    .stats {
+      padding-top: 30px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .stat-card {
+      padding: 27px 20px;
+
+      background: rgba(255,255,255,0.035);
+
+      border: 1px solid rgba(255,255,255,0.07);
+
+      border-radius: 18px;
+
+      text-align: center;
+
+      transition: 0.35s;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(67,220,255,0.25);
+      background: rgba(67,220,255,0.045);
+    }
+
+    .stat-number {
+      font-family: "Montserrat", sans-serif;
+
+      font-size: 30px;
+      font-weight: 800;
+
+      color: #65e2ff;
+    }
+
+    .stat-card p {
+      margin-top: 5px;
+
+      color: #8390a8;
+      font-size: 12px;
+    }
+
+
+    /* =========================================================
+       ABOUT
+    ========================================================= */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .glass-card {
+      background: rgba(255,255,255,0.035);
+
+      border: 1px solid rgba(255,255,255,0.07);
+
+      border-radius: 22px;
+
+      padding: 32px;
+
+      backdrop-filter: blur(14px);
+
+      transition: 0.35s;
+    }
+
+    .glass-card:hover {
+      border-color: rgba(67,220,255,0.2);
+      transform: translateY(-4px);
+    }
+
+    .glass-card h3 {
+      font-family: "Montserrat", sans-serif;
+
+      margin-bottom: 15px;
+
+      font-size: 20px;
+    }
+
+    .glass-card p {
+      color: #8793aa;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .highlight {
+      color: #61e3ff;
+      font-weight: 700;
+    }
+
+
+    /* =========================================================
+       EDUCATION
+    ========================================================= */
+
+    .timeline {
+      position: relative;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .timeline::before {
+      content: "";
+
+      position: absolute;
+
+      left: 15px;
+      top: 0;
+      bottom: 0;
+
+      width: 1px;
+
+      background:
+        linear-gradient(
+          to bottom,
+          #43dcff,
+          rgba(67,220,255,0.05)
+        );
+    }
+
+    .timeline-item {
+      position: relative;
+
+      padding-left: 55px;
+      margin-bottom: 35px;
+    }
+
+    .timeline-dot {
+      position: absolute;
+
+      left: 8px;
+      top: 7px;
+
+      width: 15px;
+      height: 15px;
+
+      border-radius: 50%;
+
+      background: #43dcff;
+
+      box-shadow:
+        0 0 0 5px rgba(67,220,255,0.08),
+        0 0 20px rgba(67,220,255,0.5);
+    }
+
+    .timeline-card {
+      padding: 28px;
+
+      background: rgba(255,255,255,0.035);
+
+      border: 1px solid rgba(255,255,255,0.07);
+
+      border-radius: 20px;
+    }
+
+    .timeline-date {
+      color: #4fdfff;
+
+      font-size: 11px;
+      font-weight: 800;
+
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .timeline-card h3 {
+      margin-top: 8px;
+
+      font-family: "Montserrat", sans-serif;
+
+      font-size: 20px;
+    }
+
+    .timeline-card h4 {
+      color: #aab5c9;
+
+      margin: 5px 0 12px;
+
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .timeline-card p {
+      color: #7e8ba3;
+      font-size: 13px;
+    }
+
+    .cgpa {
+      display: inline-block;
+
+      margin-top: 15px;
+
+      padding: 6px 10px;
+
+      border-radius: 8px;
+
+      background: rgba(67,220,255,0.07);
+
+      border: 1px solid rgba(67,220,255,0.12);
+
+      color: #62e3ff;
+
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+
+    /* =========================================================
+       EXPERIENCE
+    ========================================================= */
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      gap: 20px;
+    }
+
+    .experience-card {
+      position: relative;
+
+      padding: 30px;
+
+      border-radius: 22px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,0.05),
+          rgba(255,255,255,0.02)
+        );
+
+      border: 1px solid rgba(255,255,255,0.07);
+
+      overflow: hidden;
+
+      transition: 0.35s;
+    }
+
+    .experience-card:hover {
+      transform: translateY(-5px);
+
+      border-color: rgba(67,220,255,0.2);
+    }
+
+    .experience-card::before {
+      content: "";
+
+      position: absolute;
 
       top: 0;
       left: 0;
 
       width: 100%;
-
-      height: 76px;
-
-      z-index: 5000;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: space-between;
-
-      padding: 0 6%;
-
-      border-bottom:
-        1px solid transparent;
-
-      transition: .35s;
-    }
-
-    nav.scrolled {
-
-      background:
-        rgba(5,7,17,.82);
-
-      backdrop-filter:
-        blur(20px);
-
-      border-color:
-        rgba(255,255,255,.08);
-    }
-
-
-    .logo {
-
-      font-family:
-        "Playfair Display",
-        serif;
-
-      font-size: 25px;
-
-      font-weight: 800;
-
-      letter-spacing: .5px;
-    }
-
-    .logo span {
-      color: var(--gold);
-    }
-
-
-    .nav-links {
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 30px;
-
-      list-style: none;
-    }
-
-    .nav-links a {
-
-      color: #929caf;
-
-      font-size: 13px;
-
-      font-weight: 600;
-
-      transition: .3s;
-
-      position: relative;
-    }
-
-    .nav-links a::after {
-
-      content: "";
-
-      position: absolute;
-
-      left: 0;
-      bottom: -7px;
-
-      width: 0;
-
-      height: 1px;
-
-      background:
-        var(--gold);
-
-      transition: .3s;
-    }
-
-    .nav-links a:hover {
-
-      color: white;
-    }
-
-    .nav-links a:hover::after {
-
-      width: 100%;
-    }
-
-
-    .nav-button {
-
-      padding:
-        10px 17px;
-
-      border:
-        1px solid
-        rgba(216,181,106,.35);
-
-      border-radius:
-        10px;
-
-      color:
-        var(--gold2) !important;
-
-      background:
-        rgba(216,181,106,.06);
-    }
-
-
-    /* MOBILE NAV */
-
-    .menu-button {
-
-      display: none;
-
-      border: none;
-
-      background: none;
-
-      color: white;
-
-      font-size: 25px;
-
-      cursor: pointer;
-    }
-
-
-    /* =====================================================
-       HERO
-    ===================================================== */
-
-    .hero {
-
-      min-height: 100vh;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      position: relative;
-
-      padding:
-        130px 6% 90px;
-
-      overflow: hidden;
-    }
-
-
-    .hero-grid {
-
-      width:
-        min(1180px, 100%);
-
-      display: grid;
-
-      grid-template-columns:
-        1.15fr
-        .85fr;
-
-      gap: 70px;
-
-      align-items: center;
-    }
-
-
-    .hero-left {
-
-      animation:
-        heroIn 1s ease both;
-    }
-
-
-    .status {
-
-      display: inline-flex;
-
-      align-items: center;
-
-      gap: 9px;
-
-      padding:
-        9px 15px;
-
-      border:
-        1px solid
-        rgba(98,230,176,.22);
-
-      border-radius:
-        50px;
-
-      color:
-        #b9f6dc;
-
-      background:
-        rgba(98,230,176,.05);
-
-      font-size: 11px;
-
-      font-weight: 800;
-
-      letter-spacing:
-        1.5px;
-
-      margin-bottom: 25px;
-    }
-
-    .status-dot {
-
-      width: 7px;
-      height: 7px;
-
-      border-radius: 50%;
-
-      background:
-        var(--green);
-
-      box-shadow:
-        0 0 12px
-        var(--green);
-    }
-
-
-    .hero h1 {
-
-      font-family:
-        "Playfair Display",
-        serif;
-
-      font-size:
-        clamp(48px, 6.5vw, 82px);
-
-      line-height:
-        1.02;
-
-      letter-spacing:
-        -2px;
-
-      margin-bottom: 22px;
-    }
-
-
-    .hero h1 .gold {
-
-      display: block;
+      height: 2px;
 
       background:
         linear-gradient(
           90deg,
-          #f5e2b3,
-          var(--gold),
-          #ffffff,
-          var(--cyan)
-        );
-
-      background-size:
-        250% auto;
-
-      animation:
-        gradientMove 6s ease infinite;
-
-      -webkit-background-clip:
-        text;
-
-      -webkit-text-fill-color:
-        transparent;
-    }
-
-
-    .typing {
-
-      color:
-        var(--gold2);
-
-      font-weight:
-        700;
-    }
-
-
-    .hero-description {
-
-      max-width:
-        650px;
-
-      color:
-        var(--muted);
-
-      line-height:
-        1.9;
-
-      font-size:
-        16px;
-
-      margin-bottom:
-        32px;
-    }
-
-
-    .hero-buttons {
-
-      display:
-        flex;
-
-      flex-wrap:
-        wrap;
-
-      gap:
-        13px;
-    }
-
-
-    .btn {
-
-      display:
-        inline-flex;
-
-      align-items:
-        center;
-
-      justify-content:
-        center;
-
-      gap:
-        9px;
-
-      padding:
-        14px 21px;
-
-      border-radius:
-        12px;
-
-      font-size:
-        13px;
-
-      font-weight:
-        800;
-
-      transition:
-        .3s;
-
-      cursor:
-        pointer;
-    }
-
-
-    .btn-primary {
-
-      background:
-        var(--gold);
-
-      color:
-        #111;
-    }
-
-    .btn-primary:hover {
-
-      transform:
-        translateY(-4px);
-
-      box-shadow:
-        0 15px 35px
-        rgba(216,181,106,.18);
-    }
-
-
-    .btn-secondary {
-
-      background:
-        rgba(255,255,255,.04);
-
-      border:
-        1px solid
-        var(--border);
-
-      color:
-        white;
-    }
-
-    .btn-secondary:hover {
-
-      background:
-        rgba(255,255,255,.08);
-
-      transform:
-        translateY(-4px);
-    }
-
-
-    /* =====================================================
-       PROFILE CARD
-    ===================================================== */
-
-    .hero-right {
-
-      display:
-        flex;
-
-      justify-content:
-        center;
-
-      animation:
-        heroCard 1.1s .2s ease both;
-    }
-
-
-    .profile-card {
-
-      width:
-        min(380px, 100%);
-
-      position:
-        relative;
-
-      padding:
-        12px;
-
-      border-radius:
-        30px;
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(255,255,255,.14),
-          rgba(255,255,255,.03)
-        );
-
-      border:
-        1px solid
-        rgba(255,255,255,.12);
-
-      box-shadow:
-        0 35px 100px
-        rgba(0,0,0,.45);
-    }
-
-
-    .profile-inner {
-
-      border-radius:
-        22px;
-
-      min-height:
-        450px;
-
-      display:
-        flex;
-
-      flex-direction:
-        column;
-
-      justify-content:
-        flex-end;
-
-      padding:
-        30px;
-
-      position:
-        relative;
-
-      overflow:
-        hidden;
-
-      background:
-        linear-gradient(
-          145deg,
-          #111a2e,
-          #070b16
+          #43dcff,
+          #657cff,
+          transparent
         );
     }
 
+    .experience-icon {
+      width: 45px;
+      height: 45px;
 
-    /* PROFILE PHOTO PLACEHOLDER */
+      border-radius: 13px;
 
-    .profile-photo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-      position:
-        absolute;
+      background: rgba(67,220,255,0.08);
 
-      inset:
-        0;
+      border: 1px solid rgba(67,220,255,0.12);
 
-      display:
-        flex;
+      margin-bottom: 18px;
 
-      align-items:
-        center;
+      font-size: 20px;
+    }
 
-      justify-content:
-        center;
+    .experience-card h3 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 19px;
+    }
 
-      font-size:
-        100px;
+    .experience-card .role {
+      color: #5fdfff;
+      font-size: 12px;
+      margin: 5px 0 13px;
+      font-weight: 700;
+    }
+
+    .experience-card p {
+      color: #7f8ba3;
+      font-size: 13px;
+    }
+
+
+    /* =========================================================
+       LEADERSHIP
+    ========================================================= */
+
+    .leadership-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 18px;
+    }
+
+    .leadership-card {
+      padding: 28px;
+
+      border-radius: 20px;
+
+      background: rgba(255,255,255,0.035);
+
+      border: 1px solid rgba(255,255,255,0.07);
+
+      transition: 0.35s;
+    }
+
+    .leadership-card:hover {
+      transform: translateY(-5px);
+
+      background: rgba(67,220,255,0.045);
+
+      border-color: rgba(67,220,255,0.2);
+    }
+
+    .leadership-card .number {
+      font-size: 11px;
+
+      color: #4edfff;
+
+      font-weight: 800;
+
+      letter-spacing: 2px;
+    }
+
+    .leadership-card h3 {
+      font-family: "Montserrat", sans-serif;
+
+      font-size: 17px;
+
+      margin: 13px 0 9px;
+    }
+
+    .leadership-card p {
+      color: #7f8ba2;
+      font-size: 12px;
+    }
+
+
+    /* =========================================================
+       CERTIFICATIONS
+    ========================================================= */
+
+    .cert-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 15px;
+    }
+
+    .cert-card {
+      padding: 24px;
+
+      text-align: center;
+
+      border-radius: 18px;
+
+      background: rgba(255,255,255,0.035);
+
+      border: 1px solid rgba(255,255,255,0.07);
+
+      transition: 0.3s;
+    }
+
+    .cert-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(67,220,255,0.22);
+    }
+
+    .cert-card span {
+      display: block;
+
+      font-size: 26px;
+
+      margin-bottom: 10px;
+    }
+
+    .cert-card h3 {
+      font-size: 13px;
+    }
+
+    .cert-card p {
+      color: #77849d;
+
+      font-size: 10px;
+
+      margin-top: 5px;
+    }
+
+
+    /* =========================================================
+       SKILLS
+    ========================================================= */
+
+    .skills {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+    }
+
+    .skill {
+      padding: 9px 14px;
+
+      border-radius: 50px;
+
+      background: rgba(67,220,255,0.055);
+
+      border: 1px solid rgba(67,220,255,0.12);
+
+      color: #b9eefa;
+
+      font-size: 12px;
+
+      transition: 0.3s;
+    }
+
+    .skill:hover {
+      background: rgba(67,220,255,0.1);
+      transform: translateY(-2px);
+    }
+
+
+    /* =========================================================
+       QUOTE
+    ========================================================= */
+
+    .quote-section {
+      padding-top: 60px;
+      padding-bottom: 100px;
+    }
+
+    .quote-box {
+      max-width: 900px;
+
+      margin: auto;
+
+      text-align: center;
+
+      padding: 60px 30px;
+
+      border-radius: 28px;
 
       background:
         radial-gradient(
-          circle at 50% 35%,
-          rgba(76,167,255,.16),
-          transparent 35%
-        );
-    }
-
-
-    .profile-photo::after {
-
-      content:
-        "PROFILE PHOTO";
-
-      position:
-        absolute;
-
-      bottom:
-        150px;
-
-      left:
-        50%;
-
-      transform:
-        translateX(-50%);
-
-      color:
-        rgba(255,255,255,.25);
-
-      font-size:
-        10px;
-
-      letter-spacing:
-        2px;
-
-      font-weight:
-        800;
-    }
-
-
-    .profile-info {
-
-      position:
-        relative;
-
-      z-index:
-        2;
-
-      padding-top:
-        250px;
-    }
-
-
-    .profile-info small {
-
-      color:
-        var(--gold2);
-
-      font-size:
-        11px;
-
-      letter-spacing:
-        2px;
-
-      font-weight:
-        800;
-    }
-
-
-    .profile-info h2 {
-
-      font-family:
-        "Playfair Display",
-        serif;
-
-      font-size:
-        27px;
-
-      margin:
-        8px 0;
-    }
-
-
-    .profile-info p {
-
-      color:
-        var(--muted);
-
-      font-size:
-        12px;
-
-      line-height:
-        1.6;
-    }
-
-
-    /* =====================================================
-       STATS
-    ===================================================== */
-
-    .stats {
-
-      width:
-        min(1180px, 90%);
-
-      margin:
-        -45px auto 0;
-
-      position:
-        relative;
-
-      z-index:
-        5;
-
-      display:
-        grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
-
-      gap:
-        15px;
-    }
-
-
-    .stat {
-
-      padding:
-        25px;
-
-      text-align:
-        center;
-
-      border:
-        1px solid
-        var(--border);
-
-      background:
-        rgba(255,255,255,.035);
-
-      backdrop-filter:
-        blur(15px);
-
-      border-radius:
-        18px;
-    }
-
-
-    .stat-number {
-
-      font-family:
-        "Playfair Display",
-        serif;
-
-      font-size:
-        32px;
-
-      color:
-        var(--gold2);
-
-      margin-bottom:
-        5px;
-    }
-
-
-    .stat-label {
-
-      color:
-        var(--muted);
-
-      font-size:
-        11px;
-
-      letter-spacing:
-        1px;
-
-      text-transform:
-        uppercase;
-    }
-
-
-    /* =====================================================
-       GENERAL SECTIONS
-    ===================================================== */
-
-    section {
-
-      width:
-        min(1180px, 90%);
-
-      margin:
-        auto;
-
-      padding:
-        115px 0;
-    }
-
-
-    .section-tag {
-
-      color:
-        var(--gold);
-
-      font-size:
-        11px;
-
-      font-weight:
-        800;
-
-      letter-spacing:
-        2.5px;
-
-      text-transform:
-        uppercase;
-
-      margin-bottom:
-        10px;
-    }
-
-
-    .section-title {
-
-      font-family:
-        "Playfair Display",
-        serif;
-
-      font-size:
-        clamp(35px, 5vw, 52px);
-
-      line-height:
-        1.1;
-
-      margin-bottom:
-        50px;
-    }
-
-
-    /* =====================================================
-       ABOUT
-    ===================================================== */
-
-    .about-grid {
-
-      display:
-        grid;
-
-      grid-template-columns:
-        1.1fr .9fr;
-
-      gap:
-        70px;
-
-      align-items:
-        center;
-    }
-
-
-    .about-text p {
-
-      color:
-        var(--muted);
-
-      font-size:
-        15px;
-
-      line-height:
-        1.95;
-
-      margin-bottom:
-        20px;
-    }
-
-
-    .about-text strong {
-
-      color:
-        white;
-    }
-
-
-    .about-card {
-
-      padding:
-        35px;
-
-      border-radius:
-        25px;
-
-      background:
-        rgba(255,255,255,.045);
-
-      border:
-        1px solid
-        var(--border);
-
-      backdrop-filter:
-        blur(18px);
-    }
-
-
-    .info-row {
-
-      display:
-        flex;
-
-      justify-content:
-        space-between;
-
-      gap:
-        20px;
-
-      padding:
-        18px 0;
-
-      border-bottom:
-        1px solid
-        rgba(255,255,255,.07);
-    }
-
-
-    .info-row:last-child {
-      border-bottom: none;
-    }
-
-
-    .info-label {
-      color:
-        var(--muted);
-
-      font-size:
-        12px;
-    }
-
-
-    .info-value {
-
-      color:
-        white;
-
-      font-size:
-        12px;
-
-      font-weight:
-        700;
-
-      text-align:
-        right;
-    }
-
-
-    /* =====================================================
-       ACHIEVEMENT
-    ===================================================== */
-
-    .achievement {
-
-      position:
-        relative;
-
-      overflow:
-        hidden;
-
-      padding:
-        70px 40px;
-
-      text-align:
-        center;
-
-      border-radius:
-        32px;
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(216,181,106,.11),
-          rgba(76,167,255,.07)
+          circle at center,
+          rgba(67,220,255,0.08),
+          rgba(255,255,255,0.025)
         );
 
-      border:
-        1px solid
-        rgba(216,181,106,.22);
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .quote-mark {
+      font-size: 50px;
+      color: #43dcff;
+
+      line-height: 1;
+    }
+
+    .quote-box h2 {
+      max-width: 700px;
+
+      margin: 15px auto;
+
+      font-family: "Montserrat", sans-serif;
+
+      font-size: clamp(25px, 4vw, 38px);
+
+      line-height: 1.3;
+    }
+
+    .quote-box p {
+      color: #7e8aa3;
+      font-size: 13px;
     }
 
 
-    .achievement::before {
-
-      content:
-        "";
-
-      position:
-        absolute;
-
-      width:
-        350px;
-
-      height:
-        350px;
-
-      border-radius:
-        50%;
-
-      background:
-        rgba(216,181,106,.10);
-
-      filter:
-        blur(100px);
-
-      top:
-        -220px;
-
-      left:
-        -100px;
-    }
-
-
-    .trophy {
-
-      font-size:
-        68px;
-
-      margin-bottom:
-        20px;
-
-      position:
-        relative;
-    }
-
-
-    .achievement h3 {
-
-      position:
-        relative;
-
-      font-family:
-        "Playfair Display",
-        serif;
-
-      font-size:
-        38px;
-
-      margin-bottom:
-        17px;
-    }
-
-
-    .achievement p {
-
-      position:
-        relative;
-
-      max-width:
-        720px;
-
-      margin:
-        auto;
-
-      color:
-        var(--muted);
-
-      line-height:
-        1.9;
-
-      font-size:
-        14px;
-    }
-
-
-    /* =====================================================
-       EDUCATION TIMELINE
-    ===================================================== */
-
-    .timeline {
-
-      position:
-        relative;
-
-      max-width:
-        850px;
-    }
-
-
-    .timeline::before {
-
-      content:
-        "";
-
-      position:
-        absolute;
-
-      left:
-        14px;
-
-      top:
-        0;
-
-      bottom:
-        0;
-
-      width:
-        1px;
-
-      background:
-        linear-gradient(
-          var(--gold),
-          rgba(216,181,106,0)
-        );
-    }
-
-
-    .timeline-item {
-
-      position:
-        relative;
-
-      padding:
-        0 0 50px 55px;
-    }
-
-
-    .timeline-dot {
-
-      position:
-        absolute;
-
-      left:
-        8px;
-
-      top:
-        5px;
-
-      width:
-        13px;
-
-      height:
-        13px;
-
-      border-radius:
-        50%;
-
-      background:
-        var(--gold);
-
-      box-shadow:
-        0 0 20px
-        rgba(216,181,106,.6);
-    }
-
-
-    .timeline-card {
-
-      padding:
-        28px;
-
-      border-radius:
-        20px;
-
-      background:
-        var(--card);
-
-      border:
-        1px solid
-        var(--border);
-
-      transition:
-        .3s;
-    }
-
-
-    .timeline-card:hover {
-
-      transform:
-        translateX(7px);
-
-      border-color:
-        rgba(216,181,106,.25);
-    }
-
-
-    .timeline-year {
-
-      color:
-        var(--gold2);
-
-      font-size:
-        11px;
-
-      font-weight:
-        800;
-
-      letter-spacing:
-        1.5px;
-
-      margin-bottom:
-        8px;
-    }
-
-
-    .timeline-card h3 {
-
-      font-size:
-        19px;
-
-      margin-bottom:
-        8px;
-    }
-
-
-    .timeline-card h4 {
-
-      color:
-        var(--muted);
-
-      font-size:
-        13px;
-
-      margin-bottom:
-        12px;
-    }
-
-
-    .timeline-card p {
-
-      color:
-        #7f8ca0;
-
-      font-size:
-        13px;
-
-      line-height:
-        1.8;
-    }
-
-
-    /* =====================================================
-       VALUES
-    ===================================================== */
-
-    .cards {
-
-      display:
-        grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
-
-      gap:
-        18px;
-    }
-
-
-    .card {
-
-      padding:
-        32px;
-
-      border-radius:
-        22px;
-
-      background:
-        var(--card);
-
-      border:
-        1px solid
-        var(--border);
-
-      transition:
-        .35s;
-    }
-
-
-    .card:hover {
-
-      transform:
-        translateY(-9px);
-
-      background:
-        var(--card2);
-
-      border-color:
-        rgba(255,255,255,.16);
-    }
-
-
-    .card-icon {
-
-      width:
-        50px;
-
-      height:
-        50px;
-
-      display:
-        flex;
-
-      align-items:
-        center;
-
-      justify-content:
-        center;
-
-      border-radius:
-        15px;
-
-      background:
-        rgba(216,181,106,.08);
-
-      font-size:
-        24px;
-
-      margin-bottom:
-        22px;
-    }
-
-
-    .card h3 {
-
-      font-size:
-        17px;
-
-      margin-bottom:
-        11px;
-    }
-
-
-    .card p {
-
-      color:
-        var(--muted);
-
-      line-height:
-        1.8;
-
-      font-size:
-        13px;
-    }
-
-
-    /* =====================================================
-       QUOTE
-    ===================================================== */
-
-    .quote-box {
-
-      text-align:
-        center;
-
-      padding:
-        75px 30px;
-
-      border-top:
-        1px solid
-        var(--border);
-
-      border-bottom:
-        1px solid
-        var(--border);
-    }
-
-
-    .quote {
-
-      max-width:
-        850px;
-
-      margin:
-        auto;
-
-      font-family:
-        "Playfair Display",
-        serif;
-
-      font-size:
-        clamp(27px, 4vw, 43px);
-
-      line-height:
-        1.4;
-
-      color:
-        #edf2f8;
-    }
-
-
-    .quote span {
-      color:
-        var(--gold);
-    }
-
-
-    /* =====================================================
+    /* =========================================================
        CONTACT
-    ===================================================== */
+    ========================================================= */
 
-    .contact {
+    .contact-card {
+      display: grid;
 
-      text-align:
-        center;
-    }
+      grid-template-columns: 1.3fr 0.7fr;
 
+      gap: 30px;
 
-    .contact-box {
+      padding: 45px;
 
-      padding:
-        70px 30px;
-
-      border-radius:
-        30px;
+      border-radius: 25px;
 
       background:
         linear-gradient(
           135deg,
-          rgba(76,167,255,.07),
-          rgba(216,181,106,.07)
+          rgba(67,220,255,0.07),
+          rgba(255,255,255,0.025)
         );
 
-      border:
-        1px solid
-        var(--border);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .contact-card h2 {
+      font-family: "Montserrat", sans-serif;
+
+      font-size: 32px;
+
+      margin-bottom: 10px;
+    }
+
+    .contact-card p {
+      color: #8290a9;
+      font-size: 14px;
+    }
+
+    .contact-links {
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 10px;
+
+      justify-content: center;
+    }
+
+    .contact-link {
+      padding: 13px 15px;
+
+      border-radius: 12px;
+
+      background: rgba(255,255,255,0.04);
+
+      border: 1px solid rgba(255,255,255,0.06);
+
+      color: #dce5f4;
+
+      font-size: 12px;
+
+      transition: 0.3s;
+    }
+
+    .contact-link:hover {
+      transform: translateX(5px);
+
+      border-color: rgba(67,220,255,0.2);
+
+      color: #63e3ff;
     }
 
 
-    .contact-box p {
-
-      max-width:
-        650px;
-
-      margin:
-        0 auto 30px;
-
-      color:
-        var(--muted);
-
-      line-height:
-        1.8;
-
-      font-size:
-        14px;
-    }
-
-
-    .socials {
-
-      display:
-        flex;
-
-      justify-content:
-        center;
-
-      gap:
-        10px;
-
-      flex-wrap:
-        wrap;
-
-      margin-top:
-        28px;
-    }
-
-
-    .social {
-
-      padding:
-        11px 16px;
-
-      border:
-        1px solid
-        var(--border);
-
-      border-radius:
-        10px;
-
-      color:
-        var(--muted);
-
-      font-size:
-        12px;
-
-      transition:
-        .3s;
-    }
-
-
-    .social:hover {
-
-      color:
-        white;
-
-      border-color:
-        rgba(216,181,106,.3);
-
-      transform:
-        translateY(-3px);
-    }
-
-
-    /* =====================================================
+    /* =========================================================
        FOOTER
-    ===================================================== */
+    ========================================================= */
 
     footer {
+      padding: 35px 7%;
 
-      padding:
-        35px 20px;
+      border-top: 1px solid rgba(255,255,255,0.06);
 
-      text-align:
-        center;
+      text-align: center;
 
-      border-top:
-        1px solid
-        rgba(255,255,255,.06);
+      color: #64718a;
 
-      color:
-        #68768a;
+      font-size: 11px;
+    }
 
-      font-size:
-        11px;
+    footer strong {
+      color: #aeb9ca;
     }
 
 
-    footer span {
-      color:
-        var(--gold);
-    }
-
-
-    /* =====================================================
-       BACK TO TOP
-    ===================================================== */
-
-    #topButton {
-
-      position:
-        fixed;
-
-      right:
-        25px;
-
-      bottom:
-        25px;
-
-      width:
-        45px;
-
-      height:
-        45px;
-
-      display:
-        flex;
-
-      align-items:
-        center;
-
-      justify-content:
-        center;
-
-      border:
-        1px solid
-        var(--border);
-
-      border-radius:
-        13px;
-
-      background:
-        rgba(8,12,25,.85);
-
-      backdrop-filter:
-        blur(15px);
-
-      color:
-        white;
-
-      cursor:
-        pointer;
-
-      opacity:
-        0;
-
-      visibility:
-        hidden;
-
-      transform:
-        translateY(20px);
-
-      transition:
-        .3s;
-
-      z-index:
-        4000;
-    }
-
-
-    #topButton.show {
-
-      opacity:
-        1;
-
-      visibility:
-        visible;
-
-      transform:
-        translateY(0);
-    }
-
-
-    /* =====================================================
+    /* =========================================================
        REVEAL
-    ===================================================== */
+    ========================================================= */
 
     .reveal {
+      opacity: 0;
 
-      opacity:
-        0;
-
-      transform:
-        translateY(35px);
+      transform: translateY(30px);
 
       transition:
-        opacity .8s ease,
-        transform .8s ease;
+        opacity 0.8s ease,
+        transform 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
     }
 
 
-    .reveal.show {
+    /* =========================================================
+       BACK TO TOP
+    ========================================================= */
 
-      opacity:
-        1;
+    #topBtn {
+      position: fixed;
 
-      transform:
-        translateY(0);
+      right: 25px;
+      bottom: 25px;
+
+      width: 45px;
+      height: 45px;
+
+      border-radius: 50%;
+
+      border: 1px solid rgba(255,255,255,0.1);
+
+      background: rgba(8,14,27,0.8);
+
+      backdrop-filter: blur(12px);
+
+      color: #5edfff;
+
+      cursor: pointer;
+
+      opacity: 0;
+      visibility: hidden;
+
+      transition: 0.3s;
+
+      z-index: 500;
+    }
+
+    #topBtn.show {
+      opacity: 1;
+      visibility: visible;
     }
 
 
-    /* =====================================================
-       KEYFRAMES
-    ===================================================== */
-
-    @keyframes heroIn {
-
-      from {
-        opacity: 0;
-        transform: translateX(-30px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-
-    }
-
-
-    @keyframes heroCard {
-
-      from {
-        opacity: 0;
-        transform: translateY(35px) scale(.96);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-
-    }
-
-
-    @keyframes gradientMove {
-
-      0% {
-        background-position: 0% 50%;
-      }
-
-      50% {
-        background-position: 100% 50%;
-      }
-
-      100% {
-        background-position: 0% 50%;
-      }
-
-    }
-
-
-    /* =====================================================
+    /* =========================================================
        RESPONSIVE
-    ===================================================== */
+    ========================================================= */
 
-    @media (max-width: 900px) {
+    @media (max-width: 950px) {
 
-      .hero-grid {
-
-        grid-template-columns:
-          1fr;
-
-        text-align:
-          center;
-
+      .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
       }
 
       .hero-description {
-
-        margin-left:
-          auto;
-
-        margin-right:
-          auto;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .hero-buttons {
-
-        justify-content:
-          center;
+        justify-content: center;
       }
 
-      .hero-right {
-
-        order:
-          -1;
+      .profile-wrapper {
+        margin-top: 20px;
       }
 
-      .profile-card {
-
-        width:
-          320px;
+      .about-grid,
+      .experience-grid {
+        grid-template-columns: 1fr;
       }
 
-      .about-grid {
-
-        grid-template-columns:
-          1fr;
-
+      .leadership-grid {
+        grid-template-columns: 1fr 1fr;
       }
 
-      .cards {
-
-        grid-template-columns:
-          1fr;
-
+      .cert-grid {
+        grid-template-columns: 1fr 1fr;
       }
 
+      .contact-card {
+        grid-template-columns: 1fr;
+      }
     }
 
 
     @media (max-width: 700px) {
 
-      nav {
-
-        padding:
-          0 5%;
+      .navbar {
+        padding: 0 5%;
       }
 
       .nav-links {
+        position: fixed;
 
-        position:
-          absolute;
+        top: 78px;
+        left: 5%;
+        right: 5%;
 
-        top:
-          76px;
+        padding: 20px;
 
-        left:
-          5%;
+        display: none;
 
-        right:
-          5%;
+        flex-direction: column;
 
-        display:
-          none;
+        background: rgba(5,9,20,0.96);
 
-        flex-direction:
-          column;
+        border: 1px solid rgba(255,255,255,0.08);
 
-        align-items:
-          stretch;
+        border-radius: 18px;
 
-        gap:
-          0;
-
-        padding:
-          10px;
-
-        background:
-          rgba(7,10,20,.96);
-
-        backdrop-filter:
-          blur(20px);
-
-        border:
-          1px solid
-          var(--border);
-
-        border-radius:
-          15px;
+        backdrop-filter: blur(18px);
       }
 
       .nav-links.open {
-
-        display:
-          flex;
+        display: flex;
       }
 
-      .nav-links li a {
-
-        display:
-          block;
-
-        padding:
-          14px;
-      }
-
-      .menu-button {
-
-        display:
-          block;
-      }
-
-      .stats {
-
-        grid-template-columns:
-          1fr;
-
-        width:
-          90%;
+      .menu-btn {
+        display: block;
       }
 
       .hero {
-
-        padding-top:
-          115px;
-      }
-
-      .hero h1 {
-
-        font-size:
-          46px;
-
-        letter-spacing:
-          -1px;
-      }
-
-      .profile-card {
-
-        width:
-          290px;
-      }
-
-      .profile-inner {
-
-        min-height:
-          380px;
-      }
-
-      .profile-info {
-
-        padding-top:
-          200px;
-      }
-
-      .achievement {
-
-        padding:
-          55px 22px;
-      }
-
-      .achievement h3 {
-
-        font-size:
-          30px;
+        padding-left: 5%;
+        padding-right: 5%;
       }
 
       section {
-
-        padding:
-          85px 0;
+        padding: 80px 5%;
       }
 
-      .cursor-glow {
-
-        display:
-          none;
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
       }
 
+      .leadership-grid,
+      .cert-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-card {
+        width: 310px;
+      }
+
+      .contact-card {
+        padding: 30px;
+      }
     }
 
 
-  </style>
+    @media (max-width: 450px) {
 
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-card {
+        width: 280px;
+      }
+
+      .hero-subtitle {
+        font-size: 17px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+
+  </style>
 </head>
 
 
 <body>
 
-
-  <!-- =====================================================
+  <!-- =======================================================
        LOADER
-  ====================================================== -->
+  ======================================================== -->
 
   <div id="loader">
-
-    <div class="loader-logo">
-      MSB
+    <div class="loader-content">
+      <div class="loader-logo"></div>
+      <p>Loading portfolio</p>
     </div>
-
-    <div class="loader-line">
-      <span></span>
-    </div>
-
   </div>
 
 
-  <!-- BACKGROUND -->
+  <!-- =======================================================
+       BACKGROUND
+  ======================================================== -->
 
-  <div id="particles"></div>
-
-  <div class="glow glow-one"></div>
-  <div class="glow glow-two"></div>
-  <div class="glow glow-three"></div>
-
-  <div class="cursor-glow" id="cursorGlow"></div>
+  <div class="grid-bg"></div>
+  <div class="particles" id="particles"></div>
 
 
-  <!-- =====================================================
-       NAVIGATION
-  ====================================================== -->
+  <!-- =======================================================
+       NAVBAR
+  ======================================================== -->
 
-  <nav id="navbar">
+  <nav class="navbar">
 
-    <a href="#" class="logo">
-      SAFWAN<span>.</span>
+    <a href="#home" class="logo">
+      Safwan<span>.</span>
     </a>
 
+    <div class="nav-links" id="navLinks">
 
-    <ul class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#contact">Contact</a>
 
-      <li>
-        <a href="#about">
-          About
-        </a>
-      </li>
-
-      <li>
-        <a href="#achievement">
-          Achievement
-        </a>
-      </li>
-
-      <li>
-        <a href="#education">
-          Education
-        </a>
-      </li>
-
-      <li>
-        <a href="#strengths">
-          Strengths
-        </a>
-      </li>
-
-      <li>
-        <a
-          href="#contact"
-          class="nav-button"
-        >
-          Contact
-        </a>
-      </li>
-
-    </ul>
-
+    </div>
 
     <button
-      class="menu-button"
-      id="menuButton"
+      class="menu-btn"
+      id="menuBtn"
       aria-label="Open menu"
     >
       ☰
@@ -2224,1064 +1453,1149 @@
   </nav>
 
 
-  <!-- =====================================================
+  <!-- =======================================================
        HERO
-  ====================================================== -->
+  ======================================================== -->
 
-  <header class="hero">
+  <main>
 
-    <div class="hero-grid">
+    <section class="hero" id="home">
 
+      <div class="hero-container">
 
-      <div class="hero-left">
+        <div class="hero-content reveal">
 
+          <div class="eyebrow">
+            <span class="status-dot"></span>
+            Engineering & Leadership
+          </div>
 
-        <div class="status">
+          <h1>
+            Muhammad Safwan
+            <span>Shahrul Baharin.</span>
+          </h1>
 
-          <span class="status-dot"></span>
+          <div class="hero-subtitle">
+            <span id="typing" class="typing"></span>
+          </div>
 
-          TOP STUDENT • UNIKL BMI
+          <p class="hero-description">
+            Electrical Engineering Technology graduate with a strong
+            background in leadership, project and program management,
+            campus activities, and professional engineering environments.
+          </p>
 
-        </div>
+          <div class="hero-buttons">
 
+            <a
+              href="#about"
+              class="btn btn-primary"
+            >
+              Explore Profile
+            </a>
 
-        <h1>
+            <a
+              href="#contact"
+              class="btn btn-secondary"
+            >
+              Get In Touch
+            </a>
 
-          Muhammad Safwan
-
-          <span class="gold">
-            bin Shahrul Baharin
-          </span>
-
-        </h1>
-
-
-        <p class="hero-description">
-
-          A 28-year-old student at
-          <strong>Universiti Kuala Lumpur British Malaysian Institute</strong>,
-          passionate about learning, personal development and creating
-          a meaningful path for the future.
-
-          <br><br>
-
-          <span class="typing" id="typingText">
-            Student
-          </span>
-
-        </p>
-
-
-        <div class="hero-buttons">
-
-          <a
-            href="#about"
-            class="btn btn-primary"
-          >
-            Explore My Profile
-            →
-          </a>
-
-
-          <a
-            href="#achievement"
-            class="btn btn-secondary"
-          >
-            🏆 Achievement
-          </a>
+          </div>
 
         </div>
 
 
-      </div>
+        <div class="profile-wrapper reveal">
 
+          <div class="profile-card">
 
-      <!-- PROFILE -->
+            <div class="profile-inner">
 
-      <div class="hero-right">
+              <!--
+                Upload your photo as:
+                profile.jpg
 
-
-        <div class="profile-card">
-
-
-          <div class="profile-inner">
-
-
-            <!--
-              PROFILE PHOTO
-
-              Nanti kalau ada gambar:
-              tukar bahagian ini kepada:
+                Keep profile.jpg in the same folder
+                as index.html.
+              -->
 
               <img
                 src="profile.jpg"
-                alt="Muhammad Safwan"
+                alt="Muhammad Safwan bin Shahrul Baharin"
                 class="real-photo"
               >
-            -->
 
+              <div class="floating-badge">
+                UNI KL BMI
+              </div>
 
-            <div class="profile-photo">
+              <div class="profile-info">
 
-              👤
+                <small>Professional Profile</small>
 
-            </div>
+                <h3>Safwan Shahrul</h3>
 
+                <p>
+                  Electrical Engineering Technology
+                </p>
 
-            <div class="profile-info">
-
-              <small>
-                PERSONAL PORTFOLIO
-              </small>
-
-
-              <h2>
-                Muhammad Safwan
-              </h2>
-
-
-              <p>
-                Top Student at
-                UniKL British Malaysian Institute
-              </p>
+              </div>
 
             </div>
 
+          </div>
 
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         STATS
+    ====================================================== -->
+
+    <section class="stats">
+
+      <div class="section-container">
+
+        <div class="stats-grid">
+
+          <div class="stat-card reveal">
+            <div
+              class="stat-number"
+              data-target="3.43"
+            >
+              0
+            </div>
+
+            <p>UniKL BMI CGPA</p>
           </div>
 
 
-        </div>
-
-
-      </div>
-
-
-    </div>
-
-  </header>
-
-
-  <!-- =====================================================
-       STATS
-  ====================================================== -->
-
-  <div class="stats">
-
-
-    <div class="stat">
-
-      <div
-        class="stat-number counter"
-        data-target="28"
-      >
-        0
-      </div>
-
-      <div class="stat-label">
-        Years Old
-      </div>
-
-    </div>
-
-
-    <div class="stat">
-
-      <div class="stat-number">
-        #1
-      </div>
-
-      <div class="stat-label">
-        Top Student
-      </div>
-
-    </div>
-
-
-    <div class="stat">
-
-      <div class="stat-number">
-        UniKL
-      </div>
-
-      <div class="stat-label">
-        British Malaysian Institute
-      </div>
-
-    </div>
-
-
-  </div>
-
-
-  <!-- =====================================================
-       ABOUT
-  ====================================================== -->
-
-  <section id="about" class="reveal">
-
-
-    <div class="section-tag">
-      About Me
-    </div>
-
-
-    <h2 class="section-title">
-      A Journey of Learning
-      <br>
-      & Personal Growth
-    </h2>
-
-
-    <div class="about-grid">
-
-
-      <div class="about-text">
-
-
-        <p>
-
-          I’m
-          <strong>
-            Muhammad Safwan bin Shahrul Baharin
-          </strong>,
-          a 28-year-old student currently studying at
-          Universiti Kuala Lumpur British Malaysian Institute
-          (UniKL BMI).
-
-        </p>
-
-
-        <p>
-
-          I believe education is more than simply achieving
-          good results. It is about developing discipline,
-          gaining experience, learning from challenges and
-          continuously improving yourself.
-
-        </p>
-
-
-        <p>
-
-          Throughout my academic journey, I strive to give
-          my best in everything I do while developing the
-          knowledge, skills and mindset needed for my future.
-
-        </p>
-
-
-        <p>
-
-          Being recognised as a Top Student is an important
-          milestone, but I believe the journey of learning
-          never really ends.
-
-        </p>
-
-
-      </div>
-
-
-      <div class="about-card">
-
-
-        <div class="info-row">
-
-          <span class="info-label">
-            Full Name
-          </span>
-
-          <span class="info-value">
-            Muhammad Safwan
-          </span>
-
-        </div>
-
-
-        <div class="info-row">
-
-          <span class="info-label">
-            Age
-          </span>
-
-          <span class="info-value">
-            28
-          </span>
-
-        </div>
-
-
-        <div class="info-row">
-
-          <span class="info-label">
-            Institution
-          </span>
-
-          <span class="info-value">
-            UniKL BMI
-          </span>
-
-        </div>
-
-
-        <div class="info-row">
-
-          <span class="info-label">
-            Status
-          </span>
-
-          <span class="info-value">
-            Student
-          </span>
-
-        </div>
-
-
-        <div class="info-row">
-
-          <span class="info-label">
-            Recognition
-          </span>
-
-          <span class="info-value">
-            Top Student
-          </span>
-
-        </div>
-
-
-      </div>
-
-
-    </div>
-
-  </section>
-
-
-  <!-- =====================================================
-       ACHIEVEMENT
-  ====================================================== -->
-
-  <section id="achievement" class="reveal">
-
-
-    <div class="section-tag">
-      Achievement
-    </div>
-
-
-    <h2 class="section-title">
-      Academic Recognition
-    </h2>
-
-
-    <div class="achievement">
-
-
-      <div class="trophy">
-        🏆
-      </div>
-
-
-      <h3>
-        Top Student at UniKL BMI
-      </h3>
-
-
-      <p>
-
-        Being recognised as a Top Student at Universiti
-        Kuala Lumpur British Malaysian Institute represents
-        a meaningful milestone in my academic journey.
-
-        It reflects my commitment to learning, discipline,
-        consistency and continuous personal development.
-
-      </p>
-
-
-    </div>
-
-
-  </section>
-
-
-  <!-- =====================================================
-       EDUCATION
-  ====================================================== -->
-
-  <section id="education" class="reveal">
-
-
-    <div class="section-tag">
-      Education
-    </div>
-
-
-    <h2 class="section-title">
-      Academic Journey
-    </h2>
-
-
-    <div class="timeline">
-
-
-      <div class="timeline-item">
-
-
-        <div class="timeline-dot"></div>
-
-
-        <div class="timeline-card">
-
-
-          <div class="timeline-year">
-            CURRENT
+          <div class="stat-card reveal">
+            <div
+              class="stat-number"
+              data-target="3.26"
+            >
+              0
+            </div>
+
+            <p>Diploma CGPA</p>
           </div>
 
 
-          <h3>
-            Universiti Kuala Lumpur
-            British Malaysian Institute
-          </h3>
+          <div class="stat-card reveal">
+            <div
+              class="stat-number"
+              data-target="7"
+            >
+              0
+            </div>
+
+            <p>Years of Academic Journey</p>
+          </div>
 
 
-          <h4>
-            UniKL BMI
-          </h4>
+          <div class="stat-card reveal">
+            <div
+              class="stat-number"
+              data-target="2023"
+            >
+              0
+            </div>
 
+            <p>Degree Graduation</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ABOUT
+    ====================================================== -->
+
+    <section id="about">
+
+      <div class="section-container">
+
+        <div class="section-heading reveal">
+
+          <div class="section-label">
+            About Me
+          </div>
+
+          <h2>
+            Engineering mindset.
+            Leadership experience.
+          </h2>
 
           <p>
-
-            Currently pursuing my studies while developing
-            academic knowledge, practical skills and personal
-            experience.
-
+            A professional profile shaped by technical education,
+            campus leadership and real-world engineering exposure.
           </p>
 
+        </div>
+
+
+        <div class="about-grid">
+
+          <div class="glass-card reveal">
+
+            <h3>Who I Am</h3>
+
+            <p>
+              Muhammad Safwan bin Shahrul Baharin is an
+              <span class="highlight">
+                Electrical Engineering Technology
+              </span>
+              graduate from Universiti Kuala Lumpur —
+              British Malaysian Institute (UniKL BMI).
+            </p>
+
+            <br>
+
+            <p>
+              His academic journey combines engineering knowledge
+              with extensive involvement in student leadership,
+              event management, moderation and organisational activities.
+            </p>
+
+          </div>
+
+
+          <div class="glass-card reveal">
+
+            <h3>My Approach</h3>
+
+            <p>
+              Beyond technical knowledge, Safwan has developed
+              experience in communication, coordination, teamwork,
+              leadership and program management through various
+              university and professional activities.
+            </p>
+
+            <br>
+
+            <p>
+              His journey reflects a combination of
+              <span class="highlight">
+                technical capability and leadership development
+              </span>
+              in preparation for the professional engineering environment.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         EDUCATION
+    ====================================================== -->
+
+    <section id="education">
+
+      <div class="section-container">
+
+        <div class="section-heading reveal">
+
+          <div class="section-label">
+            Education
+          </div>
+
+          <h2>
+            Academic Journey
+          </h2>
+
+          <p>
+            A foundation built through engineering technology,
+            instrumentation and control.
+          </p>
 
         </div>
 
 
+        <div class="timeline">
+
+          <div class="timeline-item reveal">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-card">
+
+              <div class="timeline-date">
+                2020 — 2023
+              </div>
+
+              <h3>
+                Bachelor of Electrical Engineering Technology
+                with Honours
+              </h3>
+
+              <h4>
+                Universiti Kuala Lumpur — British Malaysian Institute
+              </h4>
+
+              <p>
+                Undergraduate degree focused on Electrical Engineering
+                Technology, providing technical and engineering knowledge
+                for professional development.
+              </p>
+
+              <span class="cgpa">
+                CGPA 3.43
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="timeline-item reveal">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-card">
+
+              <div class="timeline-date">
+                2016 — 2019
+              </div>
+
+              <h3>
+                Diploma in Plant Engineering Technology
+                (Instrumentation & Control)
+              </h3>
+
+              <h4>
+                Kolej Kemahiran Tinggi MARA (KKTM) Kemaman
+              </h4>
+
+              <p>
+                Diploma-level technical education with a focus on
+                plant engineering, instrumentation and control.
+              </p>
+
+              <span class="cgpa">
+                CGPA 3.26
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
 
-
-    </div>
-
-
-  </section>
+    </section>
 
 
-  <!-- =====================================================
-       STRENGTHS
-  ====================================================== -->
+    <!-- =====================================================
+         EXPERIENCE
+    ====================================================== -->
 
-  <section id="strengths" class="reveal">
+    <section id="experience">
 
+      <div class="section-container">
 
-    <div class="section-tag">
-      Personal Strengths
-    </div>
+        <div class="section-heading reveal">
 
+          <div class="section-label">
+            Experience
+          </div>
 
-    <h2 class="section-title">
-      What Drives Me
-    </h2>
+          <h2>
+            Professional Experience
+          </h2>
 
+          <p>
+            Bringing engineering knowledge into a professional
+            corporate environment.
+          </p>
 
-    <div class="cards">
-
-
-      <div class="card">
-
-
-        <div class="card-icon">
-          📚
         </div>
 
 
-        <h3>
-          Continuous Learning
-        </h3>
+        <div class="experience-grid">
+
+          <div class="experience-card reveal">
+
+            <div class="experience-icon">
+              ⚡
+            </div>
+
+            <h3>
+              Jardine Schindler Group
+            </h3>
+
+            <div class="role">
+              EI Analyst
+            </div>
+
+            <p>
+              Professional experience within the engineering and
+              corporate environment, applying technical knowledge,
+              analytical thinking and professional skills.
+            </p>
+
+          </div>
 
 
-        <p>
+          <div class="experience-card reveal">
 
-          I believe there is always something new to learn.
-          Knowledge and experience are important parts of
-          personal development.
+            <div class="experience-icon">
+              📊
+            </div>
 
-        </p>
+            <h3>
+              Project & Program Management
+            </h3>
 
+            <div class="role">
+              Leadership & Campus Programs
+            </div>
+
+            <p>
+              Experience supporting and managing university programs,
+              events, technical activities and student leadership
+              initiatives.
+            </p>
+
+          </div>
+
+        </div>
 
       </div>
 
+    </section>
 
-      <div class="card">
 
+    <!-- =====================================================
+         LEADERSHIP
+    ====================================================== -->
 
-        <div class="card-icon">
-          🎯
+    <section id="leadership">
+
+      <div class="section-container">
+
+        <div class="section-heading reveal">
+
+          <div class="section-label">
+            Leadership
+          </div>
+
+          <h2>
+            Leadership & Campus Involvement
+          </h2>
+
+          <p>
+            Active involvement in student organisations, events,
+            communication and university leadership.
+          </p>
+
         </div>
 
 
-        <h3>
-          Discipline
-        </h3>
+        <div class="leadership-grid">
+
+          <div class="leadership-card reveal">
+
+            <div class="number">
+              01
+            </div>
+
+            <h3>
+              President
+            </h3>
+
+            <p>
+              UniKL Leadership Club — served as President
+              after previously contributing as an Exco in
+              Public Relations.
+            </p>
+
+          </div>
 
 
-        <p>
+          <div class="leadership-card reveal">
 
-          Staying consistent and focused helps turn
-          long-term goals into meaningful achievements.
+            <div class="number">
+              02
+            </div>
 
-        </p>
+            <h3>
+              Vice President
+            </h3>
 
+            <p>
+              UniKL BMI Election Committee / Campus Election
+              Committee 2021.
+            </p>
+
+          </div>
+
+
+          <div class="leadership-card reveal">
+
+            <div class="number">
+              03
+            </div>
+
+            <h3>
+              Youth Leaders Talk
+            </h3>
+
+            <p>
+              Program Manager and Moderator for
+              Youth Leaders Talk.
+            </p>
+
+          </div>
+
+
+          <div class="leadership-card reveal">
+
+            <div class="number">
+              04
+            </div>
+
+            <h3>
+              Women's Leadership Program
+            </h3>
+
+            <p>
+              Deputy Program Manager for
+              Bicara Hari Wanita:
+              Empowering Women in Leadership.
+            </p>
+
+          </div>
+
+
+          <div class="leadership-card reveal">
+
+            <div class="number">
+              05
+            </div>
+
+            <h3>
+              Online Learning Townhall
+            </h3>
+
+            <p>
+              Deputy Program Manager for a townhall
+              discussing online learning, teaching
+              and student wellbeing.
+            </p>
+
+          </div>
+
+
+          <div class="leadership-card reveal">
+
+            <div class="number">
+              06
+            </div>
+
+            <h3>
+              Technical & Secretariat Roles
+            </h3>
+
+            <p>
+              Technical Exco for Leadership Masterclass
+              and Secretary for Industrial Talk.
+            </p>
+
+          </div>
+
+        </div>
 
       </div>
 
+    </section>
 
-      <div class="card">
 
+    <!-- =====================================================
+         OTHER INVOLVEMENT
+    ====================================================== -->
 
-        <div class="card-icon">
-          🚀
+    <section>
+
+      <div class="section-container">
+
+        <div class="section-heading reveal">
+
+          <div class="section-label">
+            More Involvement
+          </div>
+
+          <h2>
+            Beyond the Classroom
+          </h2>
+
+          <p>
+            Additional activities that contributed to communication,
+            teamwork and organisational development.
+          </p>
+
         </div>
 
 
-        <h3>
-          Growth Mindset
-        </h3>
+        <div class="about-grid">
+
+          <div class="glass-card reveal">
+
+            <h3>
+              🎤 Emcee & Moderator
+            </h3>
+
+            <p>
+              Active as an official emcee and moderator for
+              various UniKL events and programs, developing
+              public speaking and communication skills.
+            </p>
+
+          </div>
 
 
-        <p>
+          <div class="glass-card reveal">
 
-          Every challenge can become an opportunity to
-          learn, improve and move forward.
+            <h3>
+              🧭 Orientation Committee
+            </h3>
 
-        </p>
+            <p>
+              Served as an executive committee member for
+              student orientation activities at UniKL.
+            </p>
 
-
-      </div>
-
-
-    </div>
-
-
-  </section>
+          </div>
 
 
-  <!-- =====================================================
-       QUOTE
-  ====================================================== -->
+          <div class="glass-card reveal">
 
-  <section class="reveal">
+            <h3>
+              🚗 Malaysia Rover Scout
+            </h3>
 
+            <p>
+              Participated in the High Council of Transportation
+              for Malaysia Rover Scout during the diploma years.
+            </p>
 
-    <div class="quote-box">
-
-
-      <div class="quote">
-
-        “The journey does not end with an achievement.
-        <span>
-          It begins with the desire to keep growing.
-        </span>”
-
-      </div>
+          </div>
 
 
-    </div>
+          <div class="glass-card reveal">
 
+            <h3>
+              🤝 Team & Community
+            </h3>
 
-  </section>
+            <p>
+              Developed teamwork, coordination and interpersonal
+              skills through academic, leadership and organisational
+              activities.
+            </p>
 
+          </div>
 
-  <!-- =====================================================
-       CONTACT
-  ====================================================== -->
-
-  <section
-    id="contact"
-    class="contact reveal"
-  >
-
-
-    <div class="contact-box">
-
-
-      <div class="section-tag">
-        Connect
-      </div>
-
-
-      <h2 class="section-title">
-        Thank You for Visiting
-      </h2>
-
-
-      <p>
-
-        Thank you for taking the time to explore my
-        personal portfolio. This website represents
-        my academic journey, achievements and commitment
-        to continuous learning.
-
-      </p>
-
-
-      <a
-        href="mailto:your-email@example.com"
-        class="btn btn-primary"
-      >
-        ✉ Contact Me
-      </a>
-
-
-      <!--
-        SOCIAL LINKS
-
-        Tukar "#" kepada link sebenar nanti.
-      -->
-
-
-      <div class="socials">
-
-
-        <a
-          href="#"
-          class="social"
-          target="_blank"
-        >
-          LinkedIn
-        </a>
-
-
-        <a
-          href="#"
-          class="social"
-          target="_blank"
-        >
-          Instagram
-        </a>
-
-
-        <a
-          href="#"
-          class="social"
-          target="_blank"
-        >
-          Facebook
-        </a>
-
+        </div>
 
       </div>
 
-
-    </div>
-
-
-  </section>
+    </section>
 
 
-  <!-- =====================================================
+    <!-- =====================================================
+         CERTIFICATIONS
+    ====================================================== -->
+
+    <section>
+
+      <div class="section-container">
+
+        <div class="section-heading reveal">
+
+          <div class="section-label">
+            Professional Development
+          </div>
+
+          <h2>
+            Skills & Qualifications
+          </h2>
+
+          <p>
+            Technical and professional qualifications supporting
+            engineering and corporate work.
+          </p>
+
+        </div>
+
+
+        <div class="cert-grid">
+
+          <div class="cert-card reveal">
+
+            <span>🛡️</span>
+
+            <h3>
+              NTSP
+            </h3>
+
+            <p>
+              National Telecoms Security Program
+            </p>
+
+          </div>
+
+
+          <div class="cert-card reveal">
+
+            <span>⛑️</span>
+
+            <h3>
+              OGSP
+            </h3>
+
+            <p>
+              Oil & Gas Safety Passport
+            </p>
+
+          </div>
+
+
+          <div class="cert-card reveal">
+
+            <span>💻</span>
+
+            <h3>
+              SAP
+            </h3>
+
+            <p>
+              SAP Software Knowledge
+            </p>
+
+          </div>
+
+
+          <div class="cert-card reveal">
+
+            <span>🏅</span>
+
+            <h3>
+              SKM Level 4
+            </h3>
+
+            <p>
+              Malaysian Skills Certificate
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SKILLS
+    ====================================================== -->
+
+    <section>
+
+      <div class="section-container">
+
+        <div class="section-heading reveal">
+
+          <div class="section-label">
+            Core Skills
+          </div>
+
+          <h2>
+            What I Bring
+          </h2>
+
+        </div>
+
+
+        <div class="skills reveal">
+
+          <div class="skill">
+            Electrical Engineering Technology
+          </div>
+
+          <div class="skill">
+            Instrumentation & Control
+          </div>
+
+          <div class="skill">
+            Project Management
+          </div>
+
+          <div class="skill">
+            Program Management
+          </div>
+
+          <div class="skill">
+            Leadership
+          </div>
+
+          <div class="skill">
+            Public Speaking
+          </div>
+
+          <div class="skill">
+            Event Management
+          </div>
+
+          <div class="skill">
+            Communication
+          </div>
+
+          <div class="skill">
+            Teamwork
+          </div>
+
+          <div class="skill">
+            SAP
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         QUOTE
+    ====================================================== -->
+
+    <section class="quote-section">
+
+      <div class="section-container">
+
+        <div class="quote-box reveal">
+
+          <div class="quote-mark">
+            “
+          </div>
+
+          <h2>
+            Combining technical knowledge
+            with leadership to create meaningful impact.
+          </h2>
+
+          <p>
+            Muhammad Safwan bin Shahrul Baharin
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTACT
+    ====================================================== -->
+
+    <section id="contact">
+
+      <div class="section-container">
+
+        <div class="contact-card reveal">
+
+          <div>
+
+            <div class="section-label">
+              Contact
+            </div>
+
+            <h2>
+              Let's Connect.
+            </h2>
+
+            <p>
+              Interested in professional opportunities,
+              engineering projects, leadership initiatives
+              or meaningful collaborations?
+            </p>
+
+          </div>
+
+
+          <div class="contact-links">
+
+            <!-- Replace these links with the real profiles -->
+
+            <a
+              class="contact-link"
+              href="https://www.linkedin.com/in/safwanshahrul"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              🔗 LinkedIn Profile
+            </a>
+
+            <a
+              class="contact-link"
+              href="#home"
+            >
+              ↑ Back to Top
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =======================================================
        FOOTER
-  ====================================================== -->
+  ======================================================== -->
 
   <footer>
 
-    ©
-    <span id="year"></span>
+    <strong>
+      Muhammad Safwan bin Shahrul Baharin
+    </strong>
 
+    <br>
+
+    Electrical Engineering Technology · Leadership ·
+    Project & Program Management
+
+    <br><br>
+
+    © <span id="year"></span>
     Muhammad Safwan bin Shahrul Baharin.
-
     All rights reserved.
 
   </footer>
 
 
-  <!-- BACK TO TOP -->
+  <!-- =======================================================
+       BACK TO TOP
+  ======================================================== -->
 
   <button
-    id="topButton"
+    id="topBtn"
     aria-label="Back to top"
   >
     ↑
   </button>
 
 
-  <!-- =====================================================
+  <!-- =======================================================
        JAVASCRIPT
-  ====================================================== -->
+  ======================================================== -->
 
   <script>
 
-
-    /* =====================================================
+    /* =======================================================
        LOADER
-    ===================================================== */
+    ======================================================== */
 
-    window.addEventListener(
-      "load",
-      () => {
+    window.addEventListener("load", () => {
 
-        setTimeout(
-          () => {
+      setTimeout(() => {
 
-            document
-              .getElementById("loader")
-              .classList.add("hide");
+        document
+          .getElementById("loader")
+          .classList.add("hidden");
 
-          },
-          700
-        );
+      }, 700);
 
-      }
-    );
+    });
 
 
-    /* =====================================================
-       CURRENT YEAR
-    ===================================================== */
-
-    document
-      .getElementById("year")
-      .textContent =
-      new Date().getFullYear();
-
-
-    /* =====================================================
-       PARTICLES
-    ===================================================== */
-
-    const particles =
-      document.getElementById("particles");
-
-
-    for (
-      let i = 0;
-      i < 70;
-      i++
-    ) {
-
-      const particle =
-        document.createElement("div");
-
-
-      particle.className =
-        "particle";
-
-
-      particle.style.left =
-        Math.random() * 100 + "%";
-
-
-      particle.style.animationDuration =
-        (8 + Math.random() * 15) + "s";
-
-
-      particle.style.animationDelay =
-        Math.random() * 15 + "s";
-
-
-      const size =
-        1 + Math.random() * 2;
-
-
-      particle.style.width =
-        size + "px";
-
-
-      particle.style.height =
-        size + "px";
-
-
-      particles.appendChild(
-        particle
-      );
-
-    }
-
-
-    /* =====================================================
-       CURSOR GLOW
-    ===================================================== */
-
-    const cursorGlow =
-      document.getElementById(
-        "cursorGlow"
-      );
-
-
-    document.addEventListener(
-      "mousemove",
-      (event) => {
-
-        cursorGlow.style.left =
-          event.clientX + "px";
-
-
-        cursorGlow.style.top =
-          event.clientY + "px";
-
-      }
-    );
-
-
-    /* =====================================================
-       NAVBAR SCROLL
-    ===================================================== */
-
-    const navbar =
-      document.getElementById(
-        "navbar"
-      );
-
-
-    const topButton =
-      document.getElementById(
-        "topButton"
-      );
-
-
-    window.addEventListener(
-      "scroll",
-      () => {
-
-        if (
-          window.scrollY > 50
-        ) {
-
-          navbar.classList.add(
-            "scrolled"
-          );
-
-        } else {
-
-          navbar.classList.remove(
-            "scrolled"
-          );
-
-        }
-
-
-        if (
-          window.scrollY > 500
-        ) {
-
-          topButton.classList.add(
-            "show"
-          );
-
-        } else {
-
-          topButton.classList.remove(
-            "show"
-          );
-
-        }
-
-      }
-    );
-
-
-    /* =====================================================
-       BACK TO TOP
-    ===================================================== */
-
-    topButton.addEventListener(
-      "click",
-      () => {
-
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth"
-        });
-
-      }
-    );
-
-
-    /* =====================================================
+    /* =======================================================
        MOBILE MENU
-    ===================================================== */
+    ======================================================== */
 
-    const menuButton =
-      document.getElementById(
-        "menuButton"
-      );
-
+    const menuBtn =
+      document.getElementById("menuBtn");
 
     const navLinks =
-      document.getElementById(
-        "navLinks"
-      );
+      document.getElementById("navLinks");
 
 
-    menuButton.addEventListener(
-      "click",
-      () => {
+    menuBtn.addEventListener("click", () => {
 
-        navLinks.classList.toggle(
-          "open"
-        );
+      navLinks.classList.toggle("open");
 
-      }
-    );
+    });
 
 
     document
-      .querySelectorAll(
-        ".nav-links a"
-      )
-      .forEach(
-        link => {
+      .querySelectorAll(".nav-links a")
+      .forEach(link => {
 
-          link.addEventListener(
-            "click",
-            () => {
+        link.addEventListener("click", () => {
 
-              navLinks.classList.remove(
-                "open"
-              );
+          navLinks.classList.remove("open");
 
-            }
-          );
+        });
 
-        }
-      );
+      });
 
 
-    /* =====================================================
-       TYPING ANIMATION
-    ===================================================== */
+    /* =======================================================
+       TYPING EFFECT
+    ======================================================== */
 
-    const typingText =
-      document.getElementById(
-        "typingText"
-      );
-
+    const typingElement =
+      document.getElementById("typing");
 
     const words = [
 
-      "Student",
-
-      "Top Student at UniKL BMI",
-
-      "Continuous Learner",
-
-      "Future Professional"
+      "Electrical Engineering Technology Graduate",
+      "Project & Program Management",
+      "Leadership & Campus Development",
+      "Engineering Professional"
 
     ];
 
-
     let wordIndex = 0;
-
     let charIndex = 0;
-
     let deleting = false;
 
 
     function typeEffect() {
 
-      const current =
+      const currentWord =
         words[wordIndex];
 
 
       if (!deleting) {
 
-        typingText.textContent =
-          current.substring(
+        typingElement.textContent =
+          currentWord.substring(
             0,
             charIndex + 1
           );
 
         charIndex++;
 
-
-        if (
-          charIndex ===
-          current.length
-        ) {
+        if (charIndex === currentWord.length) {
 
           deleting = true;
 
-          setTimeout(
-            typeEffect,
-            1500
-          );
+          setTimeout(typeEffect, 1800);
 
           return;
-        }
 
+        }
 
       } else {
 
-        typingText.textContent =
-          current.substring(
+        typingElement.textContent =
+          currentWord.substring(
             0,
             charIndex - 1
           );
 
         charIndex--;
 
-
-        if (
-          charIndex === 0
-        ) {
+        if (charIndex === 0) {
 
           deleting = false;
 
           wordIndex =
-            (wordIndex + 1) %
-            words.length;
+            (wordIndex + 1) % words.length;
 
         }
 
       }
 
-
       setTimeout(
         typeEffect,
-        deleting ? 45 : 75
+        deleting ? 35 : 65
       );
 
     }
 
-
     typeEffect();
 
 
-    /* =====================================================
+    /* =======================================================
+       PARTICLES
+    ======================================================== */
+
+    const particles =
+      document.getElementById("particles");
+
+
+    for (let i = 0; i < 55; i++) {
+
+      const particle =
+        document.createElement("span");
+
+      particle.className =
+        "particle";
+
+      particle.style.left =
+        Math.random() * 100 + "%";
+
+      particle.style.animationDuration =
+        (8 + Math.random() * 15) + "s";
+
+      particle.style.animationDelay =
+        (-Math.random() * 15) + "s";
+
+      particle.style.opacity =
+        0.15 + Math.random() * 0.45;
+
+      particles.appendChild(particle);
+
+    }
+
+
+    /* =======================================================
        SCROLL REVEAL
-    ===================================================== */
+    ======================================================== */
 
     const revealElements =
-      document.querySelectorAll(
-        ".reveal"
-      );
+      document.querySelectorAll(".reveal");
 
 
     const revealObserver =
       new IntersectionObserver(
         (entries) => {
 
-          entries.forEach(
-            entry => {
+          entries.forEach(entry => {
 
-              if (
-                entry.isIntersecting
-              ) {
+            if (entry.isIntersecting) {
 
-                entry.target.classList.add(
-                  "show"
-                );
-
-              }
+              entry.target.classList.add(
+                "active"
+              );
 
             }
-          );
+
+          });
 
         },
         {
@@ -3290,123 +2604,163 @@
       );
 
 
-    revealElements.forEach(
-      element => {
+    revealElements.forEach(element => {
 
-        revealObserver.observe(
-          element
-        );
+      revealObserver.observe(element);
 
-      }
-    );
+    });
 
 
-    /* =====================================================
-       COUNTER
-    ===================================================== */
+    /* =======================================================
+       STATS COUNTER
+    ======================================================== */
 
     const counters =
       document.querySelectorAll(
-        ".counter"
+        ".stat-number"
       );
 
 
-    let counterStarted = false;
+    let countersStarted = false;
 
 
-    function runCounters() {
+    function startCounters() {
 
-      if (counterStarted)
-        return;
+      if (countersStarted) return;
 
-
-      const stats =
-        document.querySelector(
-          ".stats"
-        );
+      countersStarted = true;
 
 
-      const rect =
-        stats.getBoundingClientRect();
+      counters.forEach(counter => {
+
+        const target =
+          parseFloat(
+            counter.dataset.target
+          );
 
 
-      if (
-        rect.top <
-        window.innerHeight
-      ) {
+        let current = 0;
 
-        counterStarted = true;
+        const isYear =
+          target >= 1000;
 
-
-        counters.forEach(
-          counter => {
-
-            const target =
-              Number(
-                counter.dataset.target
-              );
+        const isDecimal =
+          target % 1 !== 0;
 
 
-            let current = 0;
+        const increment =
+          target / 80;
 
 
-            const increment =
-              target / 35;
+        const interval =
+          setInterval(() => {
+
+            current += increment;
 
 
-            function update() {
+            if (current >= target) {
 
-              current +=
-                increment;
+              current = target;
 
-
-              if (
-                current >= target
-              ) {
-
-                counter.textContent =
-                  target;
-
-                return;
-
-              }
-
-
-              counter.textContent =
-                Math.floor(
-                  current
-                );
-
-
-              requestAnimationFrame(
-                update
-              );
+              clearInterval(interval);
 
             }
 
 
-            update();
+            if (isYear) {
 
-          }
-        );
+              counter.textContent =
+                Math.floor(current);
 
-      }
+            }
+
+            else if (isDecimal) {
+
+              counter.textContent =
+                current.toFixed(2);
+
+            }
+
+            else {
+
+              counter.textContent =
+                Math.floor(current);
+
+            }
+
+          }, 20);
+
+      });
 
     }
 
 
-    window.addEventListener(
-      "scroll",
-      runCounters
-    );
+    const statsSection =
+      document.querySelector(".stats");
 
 
-    runCounters();
+    const statsObserver =
+      new IntersectionObserver(
+        entries => {
 
+          if (entries[0].isIntersecting) {
+
+            startCounters();
+
+          }
+
+        },
+        {
+          threshold: 0.3
+        }
+      );
+
+
+    statsObserver.observe(statsSection);
+
+
+    /* =======================================================
+       BACK TO TOP
+    ======================================================== */
+
+    const topBtn =
+      document.getElementById("topBtn");
+
+
+    window.addEventListener("scroll", () => {
+
+      if (window.scrollY > 500) {
+
+        topBtn.classList.add("show");
+
+      } else {
+
+        topBtn.classList.remove("show");
+
+      }
+
+    });
+
+
+    topBtn.addEventListener("click", () => {
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    });
+
+
+    /* =======================================================
+       CURRENT YEAR
+    ======================================================== */
+
+    document.getElementById("year")
+      .textContent =
+      new Date().getFullYear();
 
   </script>
 
-
 </body>
 </html>
-```
