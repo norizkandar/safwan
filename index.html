@@ -4,257 +4,259 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Muhammad Safwan bin Shahrul Baharin | Electrical Engineering Technology</title>
+  <title>Muhammad Safwan bin Shahrul Baharin | Electrical Engineering Technologist</title>
 
   <meta
     name="description"
-    content="Muhammad Safwan bin Shahrul Baharin — Electrical Engineering Technology graduate with experience in leadership, project and program management, and engineering."
+    content="Muhammad Safwan bin Shahrul Baharin — Electrical Engineering Technology graduate, EI Analyst, leader and technology professional."
   >
-
-  <meta name="theme-color" content="#07111f">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@500;600;700;800&display=swap"
     rel="stylesheet"
   >
 
   <style>
+    :root {
+      --blue: #0b3ea8;
+      --blue-dark: #061a4a;
+      --blue-light: #1769e0;
+      --electric: #29a9ff;
 
-    /* =========================================================
-       RESET
-    ========================================================= */
+      --gold: #d4a72c;
+      --gold-light: #f4d36b;
+
+      --white: #ffffff;
+      --soft: #f5f8ff;
+      --soft-blue: #edf4ff;
+
+      --text: #17233a;
+      --muted: #68758b;
+
+      --border: rgba(11, 62, 168, 0.12);
+
+      --shadow:
+        0 20px 60px rgba(7, 36, 91, 0.10);
+
+      --radius: 22px;
+    }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-    }
-
-    html {
       scroll-behavior: smooth;
     }
 
     body {
       font-family: "Inter", sans-serif;
-      background: #050914;
-      color: #f5f7fb;
+      background: var(--white);
+      color: var(--text);
       overflow-x: hidden;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     a {
-      color: inherit;
       text-decoration: none;
+      color: inherit;
     }
 
-    button {
-      font-family: inherit;
-    }
-
-
-    /* =========================================================
-       BACKGROUND
-    ========================================================= */
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -5;
-
-      background:
-        radial-gradient(
-          circle at 10% 10%,
-          rgba(0, 195, 255, 0.13),
-          transparent 30%
-        ),
-        radial-gradient(
-          circle at 90% 20%,
-          rgba(50, 100, 255, 0.12),
-          transparent 30%
-        ),
-        radial-gradient(
-          circle at 50% 90%,
-          rgba(0, 255, 190, 0.08),
-          transparent 35%
-        ),
-        #050914;
-    }
-
-    .grid-bg {
-      position: fixed;
-      inset: 0;
-      z-index: -4;
-      opacity: 0.18;
-      pointer-events: none;
-
-      background-image:
-        linear-gradient(
-          rgba(255,255,255,0.035) 1px,
-          transparent 1px
-        ),
-        linear-gradient(
-          90deg,
-          rgba(255,255,255,0.035) 1px,
-          transparent 1px
-        );
-
-      background-size: 60px 60px;
-    }
-
-
-    /* =========================================================
-       PARTICLES
-    ========================================================= */
-
-    .particles {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: -2;
-      overflow: hidden;
-    }
-
-    .particle {
-      position: absolute;
-      width: 3px;
-      height: 3px;
-      background: #42d9ff;
-      border-radius: 50%;
-      opacity: 0.5;
-
-      animation: floatParticle linear infinite;
-    }
-
-    @keyframes floatParticle {
-      from {
-        transform: translateY(110vh);
-      }
-
-      to {
-        transform: translateY(-10vh);
-      }
-    }
-
-
-    /* =========================================================
+    /* =========================
        LOADER
-    ========================================================= */
+    ========================= */
 
-    #loader {
+    .loader {
       position: fixed;
       inset: 0;
-      background: #050914;
+      background:
+        radial-gradient(circle at center, #123c91 0%, #061a4a 50%, #020b20 100%);
       display: flex;
       justify-content: center;
       align-items: center;
       z-index: 99999;
-      transition: opacity 0.6s ease, visibility 0.6s ease;
+      transition: opacity 0.7s ease, visibility 0.7s ease;
     }
 
-    #loader.hidden {
+    .loader.hide {
       opacity: 0;
       visibility: hidden;
     }
 
-    .loader-content {
+    .loader-box {
       text-align: center;
+      color: white;
     }
 
     .loader-logo {
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-
-      border: 2px solid rgba(255,255,255,0.08);
-      border-top-color: #43dcff;
-      border-right-color: #5b7cff;
-
-      animation: spin 1s linear infinite;
-
-      margin: auto auto 20px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 34px;
+      font-weight: 800;
+      letter-spacing: 4px;
     }
 
-    .loader-content p {
-      color: #8c9ab5;
-      font-size: 13px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
+    .loader-logo span {
+      color: var(--gold-light);
     }
 
-    @keyframes spin {
-      to {
-        transform: rotate(360deg);
+    .loader-line {
+      width: 220px;
+      height: 3px;
+      background: rgba(255,255,255,0.15);
+      margin: 25px auto 15px;
+      overflow: hidden;
+      border-radius: 20px;
+    }
+
+    .loader-line::before {
+      content: "";
+      display: block;
+      width: 45%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        var(--blue-light),
+        var(--electric),
+        var(--gold-light)
+      );
+      animation: loading 1.4s infinite ease-in-out;
+    }
+
+    @keyframes loading {
+      0% {
+        transform: translateX(-120%);
+      }
+
+      100% {
+        transform: translateX(320%);
       }
     }
 
+    .loader p {
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: #b9c8e6;
+    }
 
-    /* =========================================================
+    /* =========================
+       BACKGROUND
+    ========================= */
+
+    .bg-grid {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -2;
+      opacity: 0.45;
+
+      background-image:
+        linear-gradient(rgba(11, 62, 168, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(11, 62, 168, 0.035) 1px, transparent 1px);
+
+      background-size: 50px 50px;
+      mask-image: linear-gradient(
+        to bottom,
+        black 0%,
+        transparent 85%
+      );
+    }
+
+    .glow {
+      position: fixed;
+      width: 450px;
+      height: 450px;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: -3;
+      filter: blur(80px);
+      opacity: 0.14;
+    }
+
+    .glow.one {
+      background: var(--electric);
+      top: 5%;
+      left: -180px;
+    }
+
+    .glow.two {
+      background: var(--gold-light);
+      right: -180px;
+      top: 45%;
+    }
+
+    /* =========================
        NAVBAR
-    ========================================================= */
+    ========================= */
 
     .navbar {
       position: fixed;
       top: 0;
       left: 0;
-      right: 0;
+      width: 100%;
+      z-index: 999;
 
-      height: 78px;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      padding: 0 7%;
-
-      background: rgba(5, 9, 20, 0.68);
+      background: rgba(255,255,255,0.84);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
 
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(11,62,168,0.08);
+    }
 
-      z-index: 1000;
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 17px 25px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     .logo {
       font-family: "Montserrat", sans-serif;
       font-size: 20px;
       font-weight: 800;
-      letter-spacing: -0.5px;
+      color: var(--blue-dark);
+      letter-spacing: 1px;
     }
 
     .logo span {
-      color: #43dcff;
+      color: var(--gold);
     }
 
     .nav-links {
       display: flex;
-      gap: 30px;
       align-items: center;
+      gap: 27px;
     }
 
     .nav-links a {
-      font-size: 13px;
-      color: #9ba8c1;
-      transition: 0.3s;
       position: relative;
+      font-size: 13px;
+      font-weight: 600;
+      color: #526079;
+      transition: 0.3s;
     }
 
     .nav-links a:hover {
-      color: white;
+      color: var(--blue);
     }
 
     .nav-links a::after {
       content: "";
       position: absolute;
-      left: 0;
-      bottom: -7px;
       width: 0;
       height: 2px;
-      background: #43dcff;
+      bottom: -7px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(
+        90deg,
+        var(--blue),
+        var(--gold)
+      );
       transition: 0.3s;
     }
 
@@ -264,124 +266,127 @@
 
     .menu-btn {
       display: none;
-      border: 0;
+      border: none;
       background: none;
-      color: white;
       font-size: 25px;
+      color: var(--blue);
       cursor: pointer;
     }
 
-
-    /* =========================================================
+    /* =========================
        HERO
-    ========================================================= */
+    ========================= */
 
     .hero {
       min-height: 100vh;
+      padding: 150px 25px 90px;
+
+      position: relative;
+      overflow: hidden;
 
       display: flex;
       align-items: center;
-
-      padding: 130px 7% 80px;
-
-      position: relative;
     }
 
     .hero-container {
       width: 100%;
-      max-width: 1250px;
+      max-width: 1200px;
       margin: auto;
 
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
-      gap: 70px;
+      gap: 80px;
       align-items: center;
     }
 
-    .eyebrow {
+    .hero-badge {
       display: inline-flex;
       align-items: center;
       gap: 10px;
 
-      padding: 9px 14px;
+      padding: 8px 15px;
 
-      border: 1px solid rgba(67,220,255,0.18);
-      background: rgba(67,220,255,0.06);
-
+      border: 1px solid rgba(11,62,168,0.15);
+      background: rgba(255,255,255,0.75);
       border-radius: 50px;
 
-      color: #6ee5ff;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
+      color: var(--blue);
 
       letter-spacing: 1.5px;
       text-transform: uppercase;
 
-      margin-bottom: 22px;
+      box-shadow: 0 8px 30px rgba(11,62,168,0.08);
     }
 
-    .status-dot {
-      width: 7px;
-      height: 7px;
+    .hero-badge::before {
+      content: "";
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
-      background: #46e0a0;
-      box-shadow: 0 0 12px #46e0a0;
+      background: #20c997;
+      box-shadow: 0 0 12px #20c997;
     }
 
     .hero h1 {
-      font-family: "Montserrat", sans-serif;
+      margin-top: 25px;
 
-      font-size: clamp(45px, 6vw, 78px);
-      line-height: 1.02;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(42px, 6vw, 75px);
+      line-height: 1.04;
       letter-spacing: -3px;
 
-      margin-bottom: 24px;
+      color: var(--blue-dark);
     }
 
     .hero h1 span {
-      background: linear-gradient(
-        90deg,
-        #ffffff,
-        #6ce4ff,
-        #6d82ff
-      );
+      display: block;
+
+      background:
+        linear-gradient(
+          100deg,
+          var(--blue),
+          var(--electric),
+          var(--gold)
+        );
 
       -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      -webkit-text-fill-color: transparent;
     }
 
-    .hero-subtitle {
-      min-height: 32px;
+    .hero-role {
+      margin-top: 24px;
 
-      font-size: 20px;
-      color: #b6c2d9;
-      font-weight: 600;
+      font-size: 18px;
+      font-weight: 700;
 
-      margin-bottom: 18px;
-    }
-
-    .typing {
-      color: #43dcff;
+      color: var(--blue);
     }
 
     .hero-description {
-      max-width: 650px;
+      max-width: 680px;
+      margin-top: 18px;
 
-      color: #8491aa;
+      color: var(--muted);
       font-size: 16px;
-
-      margin-bottom: 34px;
     }
 
     .hero-buttons {
       display: flex;
-      gap: 14px;
       flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 32px;
     }
 
     .btn {
-      padding: 13px 21px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+
+      min-width: 150px;
+
+      padding: 13px 22px;
 
       border-radius: 12px;
 
@@ -389,50 +394,63 @@
       font-weight: 700;
 
       transition: 0.3s;
-
-      cursor: pointer;
-
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
     }
 
     .btn-primary {
-      color: #031018;
+      color: white;
 
-      background: linear-gradient(
-        135deg,
-        #5de6ff,
-        #6d86ff
-      );
+      background:
+        linear-gradient(
+          135deg,
+          var(--blue),
+          var(--blue-light)
+        );
 
       box-shadow:
-        0 10px 30px rgba(67,220,255,0.15);
+        0 12px 25px rgba(11,62,168,0.22);
     }
 
     .btn-primary:hover {
-      transform: translateY(-3px);
+      transform: translateY(-4px);
+
       box-shadow:
-        0 15px 35px rgba(67,220,255,0.25);
+        0 18px 35px rgba(11,62,168,0.28);
     }
 
-    .btn-secondary {
-      border: 1px solid rgba(255,255,255,0.1);
-      background: rgba(255,255,255,0.035);
-      color: white;
+    .btn-gold {
+      color: var(--blue-dark);
+
+      background: linear-gradient(
+        135deg,
+        var(--gold-light),
+        var(--gold)
+      );
+
+      box-shadow:
+        0 12px 25px rgba(212,167,44,0.20);
     }
 
-    .btn-secondary:hover {
+    .btn-gold:hover {
+      transform: translateY(-4px);
+    }
+
+    .btn-outline {
+      color: var(--blue);
+      border: 1px solid rgba(11,62,168,0.2);
+      background: white;
+    }
+
+    .btn-outline:hover {
+      background: var(--soft-blue);
       transform: translateY(-3px);
-      background: rgba(255,255,255,0.07);
     }
 
+    /* =========================
+       HERO PHOTO
+    ========================= */
 
-    /* =========================================================
-       PROFILE CARD
-    ========================================================= */
-
-    .profile-wrapper {
+    .hero-visual {
+      position: relative;
       display: flex;
       justify-content: center;
     }
@@ -441,274 +459,427 @@
       position: relative;
 
       width: min(390px, 100%);
-      aspect-ratio: 0.78;
+      padding: 15px;
+
+      background: rgba(255,255,255,0.75);
+      border: 1px solid rgba(11,62,168,0.15);
 
       border-radius: 30px;
 
-      padding: 8px;
+      box-shadow:
+        0 35px 80px rgba(7,36,91,0.14);
+
+      backdrop-filter: blur(15px);
+    }
+
+    .profile-card::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+
+      border-radius: 32px;
 
       background:
         linear-gradient(
           135deg,
-          rgba(67,220,255,0.5),
-          rgba(76,95,255,0.25),
-          rgba(255,255,255,0.04)
+          var(--blue),
+          transparent 35%,
+          var(--gold),
+          transparent 70%,
+          var(--electric)
         );
 
-      box-shadow:
-        0 35px 90px rgba(0,0,0,0.45),
-        0 0 70px rgba(67,220,255,0.08);
+      z-index: -1;
+      opacity: 0.55;
     }
 
-    .profile-inner {
+    .photo-frame {
       position: relative;
-      width: 100%;
-      height: 100%;
-
-      border-radius: 24px;
       overflow: hidden;
 
-      background: #0a1120;
+      border-radius: 22px;
+
+      background: var(--soft-blue);
     }
 
     .real-photo {
-      position: absolute;
-      inset: 0;
-
+      display: block;
       width: 100%;
-      height: 100%;
+      height: 480px;
 
       object-fit: cover;
-      object-position: center;
 
-      z-index: 1;
+      transition: 0.7s;
     }
 
-    .profile-inner::after {
-      content: "";
+    .profile-card:hover .real-photo {
+      transform: scale(1.035);
+    }
 
+    .photo-overlay {
       position: absolute;
       inset: 0;
 
       background:
         linear-gradient(
           to top,
-          rgba(4,7,16,0.98) 0%,
-          rgba(4,7,16,0.55) 38%,
-          rgba(4,7,16,0.05) 75%
+          rgba(3,20,55,0.72),
+          transparent 45%
         );
-
-      z-index: 2;
-      pointer-events: none;
     }
 
-    .profile-info {
+    .photo-info {
       position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
 
-      left: 25px;
-      right: 25px;
-      bottom: 25px;
-
-      z-index: 3;
+      color: white;
     }
 
-    .profile-info small {
-      color: #5edfff;
-      text-transform: uppercase;
+    .photo-info small {
+      display: block;
+
+      color: var(--gold-light);
+
+      font-size: 10px;
+      font-weight: 700;
       letter-spacing: 2px;
-      font-size: 10px;
-      font-weight: 800;
+      text-transform: uppercase;
     }
 
-    .profile-info h3 {
+    .photo-info h3 {
+      margin-top: 4px;
+
       font-family: "Montserrat", sans-serif;
-      font-size: 23px;
-      margin: 5px 0;
+      font-size: 19px;
     }
 
-    .profile-info p {
-      color: #aab5c9;
-      font-size: 12px;
-    }
-
-    .floating-badge {
+    .floating-tech {
       position: absolute;
 
-      top: 22px;
-      right: 22px;
+      padding: 10px 15px;
 
-      z-index: 4;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(11,62,168,0.12);
 
-      padding: 9px 12px;
+      border-radius: 12px;
 
-      border-radius: 10px;
+      box-shadow: 0 15px 35px rgba(7,36,91,0.12);
 
-      background: rgba(4,8,17,0.65);
-      border: 1px solid rgba(255,255,255,0.1);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--blue);
 
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(10px);
 
-      font-size: 10px;
-      font-weight: 800;
-
-      color: #dffbff;
-
-      letter-spacing: 1px;
+      animation: float 4s ease-in-out infinite;
     }
 
+    .tech-one {
+      top: 12%;
+      left: -35px;
+    }
 
-    /* =========================================================
-       SECTION
-    ========================================================= */
+    .tech-two {
+      right: -35px;
+      bottom: 20%;
+      animation-delay: 1s;
+    }
+
+    .tech-three {
+      left: -25px;
+      bottom: 7%;
+      animation-delay: 2s;
+    }
+
+    @keyframes float {
+      0%,100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    /* =========================
+       SECTIONS
+    ========================= */
 
     section {
-      padding: 110px 7%;
+      padding: 105px 25px;
+    }
+
+    .section-soft {
+      background:
+        linear-gradient(
+          180deg,
+          #ffffff,
+          #f5f8ff
+        );
     }
 
     .section-container {
-      max-width: 1150px;
+      max-width: 1200px;
       margin: auto;
     }
 
     .section-heading {
+      max-width: 720px;
       margin-bottom: 55px;
     }
 
-    .section-label {
-      color: #45ddff;
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
 
       font-size: 11px;
       font-weight: 800;
+      letter-spacing: 2px;
 
-      letter-spacing: 3px;
       text-transform: uppercase;
+      color: var(--gold);
+    }
 
-      margin-bottom: 12px;
+    .eyebrow::before {
+      content: "";
+      width: 30px;
+      height: 2px;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--blue),
+          var(--gold)
+        );
     }
 
     .section-heading h2 {
+      margin-top: 12px;
+
       font-family: "Montserrat", sans-serif;
-
       font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.1;
 
-      letter-spacing: -1.5px;
+      color: var(--blue-dark);
+    }
+
+    .section-heading h2 span {
+      color: var(--blue);
     }
 
     .section-heading p {
-      max-width: 650px;
-
-      color: #7e8ba4;
-      margin-top: 14px;
+      margin-top: 15px;
+      color: var(--muted);
     }
 
-
-    /* =========================================================
+    /* =========================
        STATS
-    ========================================================= */
-
-    .stats {
-      padding-top: 30px;
-    }
+    ========================= */
 
     .stats-grid {
+      max-width: 1200px;
+      margin: 0 auto 10px;
+
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
+      gap: 18px;
     }
 
     .stat-card {
-      padding: 27px 20px;
+      position: relative;
 
-      background: rgba(255,255,255,0.035);
+      padding: 27px;
 
-      border: 1px solid rgba(255,255,255,0.07);
+      background: white;
 
+      border: 1px solid var(--border);
       border-radius: 18px;
 
-      text-align: center;
+      box-shadow: 0 15px 40px rgba(7,36,91,0.06);
 
-      transition: 0.35s;
+      overflow: hidden;
     }
 
-    .stat-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(67,220,255,0.25);
-      background: rgba(67,220,255,0.045);
+    .stat-card::after {
+      content: "";
+
+      position: absolute;
+
+      width: 80px;
+      height: 80px;
+
+      right: -35px;
+      top: -35px;
+
+      background: var(--soft-blue);
+      border-radius: 50%;
     }
 
     .stat-number {
-      font-family: "Montserrat", sans-serif;
+      position: relative;
+      z-index: 2;
 
-      font-size: 30px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 33px;
       font-weight: 800;
 
-      color: #65e2ff;
+      color: var(--blue);
     }
 
-    .stat-card p {
-      margin-top: 5px;
+    .stat-label {
+      margin-top: 3px;
 
-      color: #8390a8;
-      font-size: 12px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+
+      color: var(--muted);
+      text-transform: uppercase;
     }
 
-
-    /* =========================================================
+    /* =========================
        ABOUT
-    ========================================================= */
+    ========================= */
 
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 25px;
+      gap: 50px;
+      align-items: center;
     }
 
-    .glass-card {
-      background: rgba(255,255,255,0.035);
-
-      border: 1px solid rgba(255,255,255,0.07);
-
-      border-radius: 22px;
-
-      padding: 32px;
-
-      backdrop-filter: blur(14px);
-
-      transition: 0.35s;
+    .about-text p {
+      margin-bottom: 18px;
+      color: var(--muted);
     }
 
-    .glass-card:hover {
-      border-color: rgba(67,220,255,0.2);
-      transform: translateY(-4px);
+    .about-highlight {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 25px;
     }
 
-    .glass-card h3 {
+    .highlight-box {
+      padding: 20px;
+
+      background: white;
+
+      border: 1px solid var(--border);
+      border-radius: 15px;
+
+      box-shadow: 0 12px 30px rgba(7,36,91,0.05);
+    }
+
+    .highlight-box strong {
+      display: block;
+
+      color: var(--blue);
+
       font-family: "Montserrat", sans-serif;
-
-      margin-bottom: 15px;
-
-      font-size: 20px;
-    }
-
-    .glass-card p {
-      color: #8793aa;
       font-size: 14px;
-      line-height: 1.9;
     }
 
-    .highlight {
-      color: #61e3ff;
-      font-weight: 700;
+    .highlight-box span {
+      display: block;
+
+      margin-top: 5px;
+
+      font-size: 12px;
+      color: var(--muted);
     }
 
+    .about-panel {
+      position: relative;
 
-    /* =========================================================
-       EDUCATION
-    ========================================================= */
+      padding: 35px;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--blue-dark),
+          var(--blue)
+        );
+
+      border-radius: 25px;
+
+      color: white;
+
+      overflow: hidden;
+
+      box-shadow: 0 25px 60px rgba(11,62,168,0.22);
+    }
+
+    .about-panel::before {
+      content: "";
+
+      position: absolute;
+
+      width: 220px;
+      height: 220px;
+
+      right: -80px;
+      top: -80px;
+
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 50%;
+    }
+
+    .about-panel::after {
+      content: "";
+
+      position: absolute;
+
+      width: 150px;
+      height: 150px;
+
+      right: -30px;
+      top: -30px;
+
+      border: 1px solid rgba(244,211,107,0.35);
+      border-radius: 50%;
+    }
+
+    .about-panel h3 {
+      position: relative;
+      z-index: 2;
+
+      font-family: "Montserrat", sans-serif;
+      font-size: 24px;
+    }
+
+    .about-panel p {
+      position: relative;
+      z-index: 2;
+
+      margin-top: 15px;
+
+      color: #d8e4ff;
+      font-size: 14px;
+    }
+
+    .about-panel .mini-line {
+      position: relative;
+      z-index: 2;
+
+      width: 55px;
+      height: 3px;
+
+      margin-top: 25px;
+
+      background: var(--gold-light);
+    }
+
+    /* =========================
+       TIMELINE
+    ========================= */
 
     .timeline {
       position: relative;
-      max-width: 900px;
+      max-width: 950px;
       margin: auto;
     }
 
@@ -717,143 +888,129 @@
 
       position: absolute;
 
-      left: 15px;
+      left: 20px;
       top: 0;
       bottom: 0;
 
-      width: 1px;
+      width: 2px;
 
       background:
         linear-gradient(
           to bottom,
-          #43dcff,
-          rgba(67,220,255,0.05)
+          var(--blue),
+          var(--gold),
+          transparent
         );
     }
 
     .timeline-item {
       position: relative;
 
-      padding-left: 55px;
+      padding-left: 65px;
       margin-bottom: 35px;
     }
 
     .timeline-dot {
       position: absolute;
 
-      left: 8px;
-      top: 7px;
+      left: 10px;
+      top: 25px;
 
-      width: 15px;
-      height: 15px;
+      width: 22px;
+      height: 22px;
 
       border-radius: 50%;
 
-      background: #43dcff;
+      background: white;
+
+      border: 5px solid var(--blue);
 
       box-shadow:
-        0 0 0 5px rgba(67,220,255,0.08),
-        0 0 20px rgba(67,220,255,0.5);
+        0 0 0 5px rgba(11,62,168,0.08);
     }
 
     .timeline-card {
       padding: 28px;
 
-      background: rgba(255,255,255,0.035);
+      background: white;
 
-      border: 1px solid rgba(255,255,255,0.07);
+      border: 1px solid var(--border);
+      border-radius: 18px;
 
-      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(7,36,91,0.06);
+
+      transition: 0.3s;
     }
 
-    .timeline-date {
-      color: #4fdfff;
+    .timeline-card:hover {
+      transform: translateX(7px);
 
-      font-size: 11px;
+      border-color: rgba(11,62,168,0.25);
+      box-shadow: 0 20px 50px rgba(7,36,91,0.10);
+    }
+
+    .timeline-year {
+      display: inline-block;
+
+      padding: 5px 11px;
+
+      border-radius: 20px;
+
+      background: var(--soft-blue);
+      color: var(--blue);
+
+      font-size: 10px;
       font-weight: 800;
-
-      letter-spacing: 2px;
-      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .timeline-card h3 {
-      margin-top: 8px;
+      margin-top: 12px;
 
       font-family: "Montserrat", sans-serif;
+      font-size: 18px;
 
-      font-size: 20px;
+      color: var(--blue-dark);
     }
 
     .timeline-card h4 {
-      color: #aab5c9;
+      margin-top: 4px;
 
-      margin: 5px 0 12px;
+      color: var(--gold);
 
       font-size: 13px;
-      font-weight: 500;
     }
 
     .timeline-card p {
-      color: #7e8ba3;
+      margin-top: 10px;
+
+      color: var(--muted);
       font-size: 13px;
     }
 
-    .cgpa {
-      display: inline-block;
-
-      margin-top: 15px;
-
-      padding: 6px 10px;
-
-      border-radius: 8px;
-
-      background: rgba(67,220,255,0.07);
-
-      border: 1px solid rgba(67,220,255,0.12);
-
-      color: #62e3ff;
-
-      font-size: 11px;
-      font-weight: 800;
-    }
-
-
-    /* =========================================================
+    /* =========================
        EXPERIENCE
-    ========================================================= */
+    ========================= */
 
     .experience-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-
-      gap: 20px;
+      gap: 25px;
     }
 
     .experience-card {
       position: relative;
 
-      padding: 30px;
+      padding: 35px;
 
+      background: white;
+
+      border: 1px solid var(--border);
       border-radius: 22px;
 
-      background:
-        linear-gradient(
-          145deg,
-          rgba(255,255,255,0.05),
-          rgba(255,255,255,0.02)
-        );
-
-      border: 1px solid rgba(255,255,255,0.07);
+      box-shadow: var(--shadow);
 
       overflow: hidden;
-
-      transition: 0.35s;
-    }
-
-    .experience-card:hover {
-      transform: translateY(-5px);
-
-      border-color: rgba(67,220,255,0.2);
     }
 
     .experience-card::before {
@@ -861,359 +1018,495 @@
 
       position: absolute;
 
-      top: 0;
       left: 0;
+      top: 0;
 
       width: 100%;
-      height: 2px;
+      height: 4px;
 
       background:
         linear-gradient(
           90deg,
-          #43dcff,
-          #657cff,
-          transparent
+          var(--blue),
+          var(--electric),
+          var(--gold)
         );
     }
 
     .experience-icon {
-      width: 45px;
-      height: 45px;
-
-      border-radius: 13px;
+      width: 55px;
+      height: 55px;
 
       display: flex;
       align-items: center;
       justify-content: center;
 
-      background: rgba(67,220,255,0.08);
+      border-radius: 15px;
 
-      border: 1px solid rgba(67,220,255,0.12);
+      background: var(--soft-blue);
 
-      margin-bottom: 18px;
+      font-size: 24px;
 
-      font-size: 20px;
+      margin-bottom: 22px;
     }
 
     .experience-card h3 {
       font-family: "Montserrat", sans-serif;
-      font-size: 19px;
+
+      color: var(--blue-dark);
+      font-size: 21px;
     }
 
     .experience-card .role {
-      color: #5fdfff;
-      font-size: 12px;
-      margin: 5px 0 13px;
+      margin-top: 5px;
+
+      color: var(--gold);
+
+      font-size: 13px;
       font-weight: 700;
     }
 
     .experience-card p {
-      color: #7f8ba3;
+      margin-top: 15px;
+
+      color: var(--muted);
       font-size: 13px;
     }
 
-
-    /* =========================================================
+    /* =========================
        LEADERSHIP
-    ========================================================= */
+    ========================= */
 
     .leadership-grid {
       display: grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
-
+      grid-template-columns: repeat(3, 1fr);
       gap: 18px;
     }
 
     .leadership-card {
-      padding: 28px;
+      padding: 25px;
 
-      border-radius: 20px;
+      background: white;
 
-      background: rgba(255,255,255,0.035);
+      border: 1px solid var(--border);
+      border-radius: 18px;
 
-      border: 1px solid rgba(255,255,255,0.07);
+      box-shadow: 0 15px 40px rgba(7,36,91,0.05);
 
-      transition: 0.35s;
+      transition: 0.3s;
     }
 
     .leadership-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-7px);
 
-      background: rgba(67,220,255,0.045);
-
-      border-color: rgba(67,220,255,0.2);
+      box-shadow: 0 25px 55px rgba(7,36,91,0.10);
     }
 
-    .leadership-card .number {
-      font-size: 11px;
+    .leadership-number {
+      font-family: "Montserrat", sans-serif;
 
-      color: #4edfff;
-
+      font-size: 12px;
       font-weight: 800;
 
-      letter-spacing: 2px;
+      color: var(--gold);
     }
 
     .leadership-card h3 {
-      font-family: "Montserrat", sans-serif;
+      margin-top: 9px;
 
-      font-size: 17px;
+      font-size: 15px;
+      line-height: 1.4;
 
-      margin: 13px 0 9px;
+      color: var(--blue-dark);
     }
 
     .leadership-card p {
-      color: #7f8ba2;
+      margin-top: 9px;
+
+      color: var(--muted);
       font-size: 12px;
     }
 
-
-    /* =========================================================
+    /* =========================
        CERTIFICATIONS
-    ========================================================= */
+    ========================= */
 
     .cert-grid {
       display: grid;
-
-      grid-template-columns:
-        repeat(4, 1fr);
-
-      gap: 15px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
     }
 
     .cert-card {
-      padding: 24px;
+      padding: 25px;
+
+      background: white;
+
+      border: 1px solid var(--border);
+      border-radius: 18px;
 
       text-align: center;
 
-      border-radius: 18px;
-
-      background: rgba(255,255,255,0.035);
-
-      border: 1px solid rgba(255,255,255,0.07);
-
-      transition: 0.3s;
+      box-shadow: 0 15px 40px rgba(7,36,91,0.05);
     }
 
-    .cert-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(67,220,255,0.22);
-    }
-
-    .cert-card span {
-      display: block;
-
-      font-size: 26px;
-
-      margin-bottom: 10px;
-    }
-
-    .cert-card h3 {
-      font-size: 13px;
-    }
-
-    .cert-card p {
-      color: #77849d;
-
-      font-size: 10px;
-
-      margin-top: 5px;
-    }
-
-
-    /* =========================================================
-       SKILLS
-    ========================================================= */
-
-    .skills {
-      display: flex;
-
-      flex-wrap: wrap;
-
-      gap: 10px;
-    }
-
-    .skill {
-      padding: 9px 14px;
-
-      border-radius: 50px;
-
-      background: rgba(67,220,255,0.055);
-
-      border: 1px solid rgba(67,220,255,0.12);
-
-      color: #b9eefa;
-
-      font-size: 12px;
-
-      transition: 0.3s;
-    }
-
-    .skill:hover {
-      background: rgba(67,220,255,0.1);
-      transform: translateY(-2px);
-    }
-
-
-    /* =========================================================
-       QUOTE
-    ========================================================= */
-
-    .quote-section {
-      padding-top: 60px;
-      padding-bottom: 100px;
-    }
-
-    .quote-box {
-      max-width: 900px;
+    .cert-icon {
+      width: 55px;
+      height: 55px;
 
       margin: auto;
 
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-      padding: 60px 30px;
-
-      border-radius: 28px;
-
-      background:
-        radial-gradient(
-          circle at center,
-          rgba(67,220,255,0.08),
-          rgba(255,255,255,0.025)
-        );
-
-      border: 1px solid rgba(255,255,255,0.07);
-    }
-
-    .quote-mark {
-      font-size: 50px;
-      color: #43dcff;
-
-      line-height: 1;
-    }
-
-    .quote-box h2 {
-      max-width: 700px;
-
-      margin: 15px auto;
-
-      font-family: "Montserrat", sans-serif;
-
-      font-size: clamp(25px, 4vw, 38px);
-
-      line-height: 1.3;
-    }
-
-    .quote-box p {
-      color: #7e8aa3;
-      font-size: 13px;
-    }
-
-
-    /* =========================================================
-       CONTACT
-    ========================================================= */
-
-    .contact-card {
-      display: grid;
-
-      grid-template-columns: 1.3fr 0.7fr;
-
-      gap: 30px;
-
-      padding: 45px;
-
-      border-radius: 25px;
+      border-radius: 50%;
 
       background:
         linear-gradient(
           135deg,
-          rgba(67,220,255,0.07),
-          rgba(255,255,255,0.025)
+          var(--blue),
+          var(--blue-light)
         );
 
-      border: 1px solid rgba(255,255,255,0.08);
+      color: white;
+
+      font-size: 21px;
     }
 
-    .contact-card h2 {
+    .cert-card h3 {
+      margin-top: 15px;
+
+      font-size: 14px;
+      color: var(--blue-dark);
+    }
+
+    .cert-card p {
+      margin-top: 5px;
+
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    /* =========================
+       SKILLS
+    ========================= */
+
+    .skills-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .skills-box {
+      padding: 32px;
+
+      background: white;
+
+      border: 1px solid var(--border);
+      border-radius: 22px;
+
+      box-shadow: var(--shadow);
+    }
+
+    .skills-box h3 {
+      margin-bottom: 20px;
+
       font-family: "Montserrat", sans-serif;
 
-      font-size: 32px;
-
-      margin-bottom: 10px;
+      color: var(--blue-dark);
     }
 
-    .contact-card p {
-      color: #8290a9;
-      font-size: 14px;
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      padding: 8px 13px;
+
+      border-radius: 9px;
+
+      background: var(--soft-blue);
+
+      border: 1px solid rgba(11,62,168,0.08);
+
+      color: var(--blue);
+
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .skill.gold {
+      background: #fff8e3;
+      color: #9b7410;
+      border-color: rgba(212,167,44,0.2);
+    }
+
+    /* =========================
+       QUOTE
+    ========================= */
+
+    .quote-section {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .quote-box {
+      position: relative;
+
+      max-width: 950px;
+      margin: auto;
+
+      padding: 55px 50px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #f4f8ff,
+          #ffffff
+        );
+
+      border: 1px solid var(--border);
+
+      border-radius: 25px;
+
+      text-align: center;
+
+      overflow: hidden;
+    }
+
+    .quote-box::before {
+      content: "“";
+
+      position: absolute;
+
+      left: 30px;
+      top: -20px;
+
+      font-family: Georgia, serif;
+      font-size: 160px;
+
+      color: rgba(11,62,168,0.06);
+    }
+
+    .quote-box p {
+      position: relative;
+      z-index: 2;
+
+      font-family: "Montserrat", sans-serif;
+
+      font-size: clamp(20px, 3vw, 31px);
+      font-weight: 700;
+
+      line-height: 1.4;
+
+      color: var(--blue-dark);
+    }
+
+    .quote-box span {
+      display: block;
+
+      margin-top: 17px;
+
+      font-size: 12px;
+      font-weight: 700;
+
+      color: var(--gold);
+
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact-section {
+      position: relative;
+
+      background:
+        linear-gradient(
+          135deg,
+          #061a4a,
+          #0b3ea8
+        );
+
+      color: white;
+
+      overflow: hidden;
+    }
+
+    .contact-section::before {
+      content: "";
+
+      position: absolute;
+
+      width: 450px;
+      height: 450px;
+
+      border: 1px solid rgba(255,255,255,0.08);
+
+      border-radius: 50%;
+
+      right: -180px;
+      top: -180px;
+    }
+
+    .contact-section::after {
+      content: "";
+
+      position: absolute;
+
+      width: 300px;
+      height: 300px;
+
+      border: 1px solid rgba(244,211,107,0.12);
+
+      border-radius: 50%;
+
+      left: -150px;
+      bottom: -150px;
+    }
+
+    .contact-inner {
+      position: relative;
+      z-index: 2;
+
+      max-width: 1000px;
+      margin: auto;
+
+      text-align: center;
+    }
+
+    .contact-inner .eyebrow {
+      color: var(--gold-light);
+    }
+
+    .contact-inner h2 {
+      margin-top: 12px;
+
+      font-family: "Montserrat", sans-serif;
+
+      font-size: clamp(32px, 5vw, 55px);
+      line-height: 1.1;
+    }
+
+    .contact-inner p {
+      max-width: 650px;
+      margin: 18px auto 30px;
+
+      color: #cddafa;
     }
 
     .contact-links {
       display: flex;
-
-      flex-direction: column;
-
-      gap: 10px;
-
       justify-content: center;
+      flex-wrap: wrap;
+      gap: 13px;
     }
 
     .contact-link {
-      padding: 13px 15px;
+      padding: 13px 19px;
 
-      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.16);
 
-      background: rgba(255,255,255,0.04);
+      border-radius: 11px;
 
-      border: 1px solid rgba(255,255,255,0.06);
-
-      color: #dce5f4;
+      background: rgba(255,255,255,0.08);
 
       font-size: 12px;
+      font-weight: 700;
 
       transition: 0.3s;
     }
 
     .contact-link:hover {
-      transform: translateX(5px);
+      background: var(--gold);
+      color: var(--blue-dark);
 
-      border-color: rgba(67,220,255,0.2);
-
-      color: #63e3ff;
+      transform: translateY(-4px);
     }
 
-
-    /* =========================================================
+    /* =========================
        FOOTER
-    ========================================================= */
+    ========================= */
 
     footer {
-      padding: 35px 7%;
+      padding: 25px;
 
-      border-top: 1px solid rgba(255,255,255,0.06);
+      background: #04122f;
+
+      color: #8fa1c5;
 
       text-align: center;
-
-      color: #64718a;
 
       font-size: 11px;
     }
 
     footer strong {
-      color: #aeb9ca;
+      color: white;
     }
 
+    footer span {
+      color: var(--gold-light);
+    }
 
-    /* =========================================================
+    /* =========================
+       BACK TO TOP
+    ========================= */
+
+    .back-top {
+      position: fixed;
+
+      right: 22px;
+      bottom: 22px;
+
+      width: 45px;
+      height: 45px;
+
+      border: none;
+
+      border-radius: 13px;
+
+      background: var(--blue);
+
+      color: white;
+
+      font-size: 18px;
+
+      cursor: pointer;
+
+      opacity: 0;
+      visibility: hidden;
+
+      transition: 0.3s;
+
+      box-shadow: 0 12px 30px rgba(11,62,168,0.25);
+
+      z-index: 500;
+    }
+
+    .back-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-top:hover {
+      background: var(--gold);
+      color: var(--blue-dark);
+
+      transform: translateY(-4px);
+    }
+
+    /* =========================
        REVEAL
-    ========================================================= */
+    ========================= */
 
     .reveal {
       opacity: 0;
-
-      transform: translateY(30px);
+      transform: translateY(35px);
 
       transition:
         opacity 0.8s ease,
@@ -1225,51 +1518,11 @@
       transform: translateY(0);
     }
 
-
-    /* =========================================================
-       BACK TO TOP
-    ========================================================= */
-
-    #topBtn {
-      position: fixed;
-
-      right: 25px;
-      bottom: 25px;
-
-      width: 45px;
-      height: 45px;
-
-      border-radius: 50%;
-
-      border: 1px solid rgba(255,255,255,0.1);
-
-      background: rgba(8,14,27,0.8);
-
-      backdrop-filter: blur(12px);
-
-      color: #5edfff;
-
-      cursor: pointer;
-
-      opacity: 0;
-      visibility: hidden;
-
-      transition: 0.3s;
-
-      z-index: 500;
-    }
-
-    #topBtn.show {
-      opacity: 1;
-      visibility: visible;
-    }
-
-
-    /* =========================================================
+    /* =========================
        RESPONSIVE
-    ========================================================= */
+    ========================= */
 
-    @media (max-width: 950px) {
+    @media (max-width: 1000px) {
 
       .hero-container {
         grid-template-columns: 1fr;
@@ -1285,58 +1538,46 @@
         justify-content: center;
       }
 
-      .profile-wrapper {
+      .hero-visual {
         margin-top: 20px;
       }
 
-      .about-grid,
-      .experience-grid {
-        grid-template-columns: 1fr;
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .leadership-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .cert-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .contact-card {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
-
-    @media (max-width: 700px) {
-
-      .navbar {
-        padding: 0 5%;
-      }
+    @media (max-width: 800px) {
 
       .nav-links {
-        position: fixed;
+        position: absolute;
 
-        top: 78px;
-        left: 5%;
-        right: 5%;
+        top: 70px;
+        left: 20px;
+        right: 20px;
 
         padding: 20px;
 
         display: none;
-
         flex-direction: column;
 
-        background: rgba(5,9,20,0.96);
+        background: rgba(255,255,255,0.96);
 
-        border: 1px solid rgba(255,255,255,0.08);
-
+        border: 1px solid var(--border);
         border-radius: 18px;
 
-        backdrop-filter: blur(18px);
+        box-shadow: var(--shadow);
       }
 
-      .nav-links.open {
+      .nav-links.active {
         display: flex;
       }
 
@@ -1344,532 +1585,465 @@
         display: block;
       }
 
-      .hero {
-        padding-left: 5%;
-        padding-right: 5%;
+      .about-grid,
+      .experience-grid,
+      .skills-wrapper {
+        grid-template-columns: 1fr;
       }
 
+      .real-photo {
+        height: 430px;
+      }
+
+      .tech-one {
+        left: -10px;
+      }
+
+      .tech-two {
+        right: -10px;
+      }
+    }
+
+    @media (max-width: 600px) {
+
       section {
-        padding: 80px 5%;
+        padding: 75px 18px;
+      }
+
+      .hero {
+        padding:
+          130px
+          18px
+          70px;
+      }
+
+      .hero h1 {
+        font-size: 43px;
+        letter-spacing: -2px;
+      }
+
+      .hero-role {
+        font-size: 15px;
+      }
+
+      .hero-description {
+        font-size: 14px;
       }
 
       .stats-grid {
         grid-template-columns: 1fr 1fr;
+        gap: 10px;
       }
 
-      .leadership-grid,
+      .stat-card {
+        padding: 20px 15px;
+      }
+
+      .stat-number {
+        font-size: 26px;
+      }
+
+      .about-highlight {
+        grid-template-columns: 1fr;
+      }
+
+      .leadership-grid {
+        grid-template-columns: 1fr;
+      }
+
       .cert-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
       }
 
-      .profile-card {
-        width: 310px;
+      .quote-box {
+        padding: 40px 25px;
       }
 
-      .contact-card {
-        padding: 30px;
-      }
-    }
-
-
-    @media (max-width: 450px) {
-
-      .hero h1 {
-        letter-spacing: -2px;
+      .contact-links {
+        flex-direction: column;
       }
 
-      .stats-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .profile-card {
-        width: 280px;
-      }
-
-      .hero-subtitle {
-        font-size: 17px;
-      }
-
-      .btn {
+      .contact-link {
         width: 100%;
       }
-    }
 
+      .floating-tech {
+        display: none;
+      }
+    }
   </style>
 </head>
 
-
 <body>
 
-  <!-- =======================================================
+  <!-- =========================
        LOADER
-  ======================================================== -->
+  ========================= -->
 
-  <div id="loader">
-    <div class="loader-content">
-      <div class="loader-logo"></div>
-      <p>Loading portfolio</p>
+  <div class="loader" id="loader">
+    <div class="loader-box">
+      <div class="loader-logo">
+        SAFWAN<span>.</span>
+      </div>
+
+      <div class="loader-line"></div>
+
+      <p>ENGINEERING • LEADERSHIP • FUTURE</p>
     </div>
   </div>
 
+  <!-- BACKGROUND -->
 
-  <!-- =======================================================
-       BACKGROUND
-  ======================================================== -->
+  <div class="bg-grid"></div>
 
-  <div class="grid-bg"></div>
-  <div class="particles" id="particles"></div>
+  <div class="glow one"></div>
+  <div class="glow two"></div>
 
-
-  <!-- =======================================================
+  <!-- =========================
        NAVBAR
-  ======================================================== -->
+  ========================= -->
 
   <nav class="navbar">
 
-    <a href="#home" class="logo">
-      Safwan<span>.</span>
-    </a>
+    <div class="nav-container">
 
-    <div class="nav-links" id="navLinks">
+      <a href="#home" class="logo">
+        SAFWAN<span>.</span>
+      </a>
 
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#education">Education</a>
-      <a href="#experience">Experience</a>
-      <a href="#leadership">Leadership</a>
-      <a href="#contact">Contact</a>
+      <button class="menu-btn" id="menuBtn">
+        ☰
+      </button>
+
+      <div class="nav-links" id="navLinks">
+
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#contact">Contact</a>
+
+      </div>
 
     </div>
 
-    <button
-      class="menu-btn"
-      id="menuBtn"
-      aria-label="Open menu"
-    >
-      ☰
-    </button>
-
   </nav>
 
-
-  <!-- =======================================================
+  <!-- =========================
        HERO
-  ======================================================== -->
+  ========================= -->
 
-  <main>
+  <section class="hero" id="home">
 
-    <section class="hero" id="home">
+    <div class="hero-container">
 
-      <div class="hero-container">
+      <div class="hero-content reveal">
 
-        <div class="hero-content reveal">
-
-          <div class="eyebrow">
-            <span class="status-dot"></span>
-            Engineering & Leadership
-          </div>
-
-          <h1>
-            Muhammad Safwan
-            <span>Shahrul Baharin.</span>
-          </h1>
-
-          <div class="hero-subtitle">
-            <span id="typing" class="typing"></span>
-          </div>
-
-          <p class="hero-description">
-            Electrical Engineering Technology graduate with a strong
-            background in leadership, project and program management,
-            campus activities, and professional engineering environments.
-          </p>
-
-          <div class="hero-buttons">
-
-            <a
-              href="#about"
-              class="btn btn-primary"
-            >
-              Explore Profile
-            </a>
-
-            <a
-              href="#contact"
-              class="btn btn-secondary"
-            >
-              Get In Touch
-            </a>
-
-          </div>
-
+        <div class="hero-badge">
+          Available for professional opportunities
         </div>
 
+        <h1>
+          Muhammad Safwan
+          <span>bin Shahrul Baharin</span>
+        </h1>
 
-        <div class="profile-wrapper reveal">
+        <div class="hero-role">
+          Electrical Engineering Technologist
+        </div>
 
-          <div class="profile-card">
+        <p class="hero-description">
+          Engineering professional with a background in Electrical
+          Engineering Technology, instrumentation and control, leadership,
+          campus activities and professional operations.
+        </p>
 
-            <div class="profile-inner">
+        <div class="hero-buttons">
 
-              <!--
-                Upload your photo as:
-                profile.jpg
+          <a
+            href="#experience"
+            class="btn btn-primary"
+          >
+            Explore Experience
+          </a>
 
-                Keep profile.jpg in the same folder
-                as index.html.
-              -->
+          <a
+            href="#contact"
+            class="btn btn-gold"
+          >
+            Connect With Me
+          </a>
 
-              <img
-                src="profile.jpg"
-                alt="Muhammad Safwan bin Shahrul Baharin"
-                class="real-photo"
-              >
-
-              <div class="floating-badge">
-                UNI KL BMI
-              </div>
-
-              <div class="profile-info">
-
-                <small>Professional Profile</small>
-
-                <h3>Safwan Shahrul</h3>
-
-                <p>
-                  Electrical Engineering Technology
-                </p>
-
-              </div>
-
-            </div>
-
-          </div>
+          <a
+            href="https://www.linkedin.com/in/safwanshahrul"
+            target="_blank"
+            class="btn btn-outline"
+          >
+            LinkedIn ↗
+          </a>
 
         </div>
 
       </div>
 
-    </section>
+      <div class="hero-visual reveal">
 
+        <div class="profile-card">
 
-    <!-- =====================================================
-         STATS
-    ====================================================== -->
+          <div class="photo-frame">
 
-    <section class="stats">
-
-      <div class="section-container">
-
-        <div class="stats-grid">
-
-          <div class="stat-card reveal">
-            <div
-              class="stat-number"
-              data-target="3.43"
+            <img
+              src="profile.jpg"
+              alt="Muhammad Safwan bin Shahrul Baharin"
+              class="real-photo"
             >
-              0
-            </div>
 
-            <p>UniKL BMI CGPA</p>
-          </div>
+            <div class="photo-overlay"></div>
 
+            <div class="photo-info">
 
-          <div class="stat-card reveal">
-            <div
-              class="stat-number"
-              data-target="3.26"
-            >
-              0
-            </div>
-
-            <p>Diploma CGPA</p>
-          </div>
-
-
-          <div class="stat-card reveal">
-            <div
-              class="stat-number"
-              data-target="7"
-            >
-              0
-            </div>
-
-            <p>Years of Academic Journey</p>
-          </div>
-
-
-          <div class="stat-card reveal">
-            <div
-              class="stat-number"
-              data-target="2023"
-            >
-              0
-            </div>
-
-            <p>Degree Graduation</p>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         ABOUT
-    ====================================================== -->
-
-    <section id="about">
-
-      <div class="section-container">
-
-        <div class="section-heading reveal">
-
-          <div class="section-label">
-            About Me
-          </div>
-
-          <h2>
-            Engineering mindset.
-            Leadership experience.
-          </h2>
-
-          <p>
-            A professional profile shaped by technical education,
-            campus leadership and real-world engineering exposure.
-          </p>
-
-        </div>
-
-
-        <div class="about-grid">
-
-          <div class="glass-card reveal">
-
-            <h3>Who I Am</h3>
-
-            <p>
-              Muhammad Safwan bin Shahrul Baharin is an
-              <span class="highlight">
-                Electrical Engineering Technology
-              </span>
-              graduate from Universiti Kuala Lumpur —
-              British Malaysian Institute (UniKL BMI).
-            </p>
-
-            <br>
-
-            <p>
-              His academic journey combines engineering knowledge
-              with extensive involvement in student leadership,
-              event management, moderation and organisational activities.
-            </p>
-
-          </div>
-
-
-          <div class="glass-card reveal">
-
-            <h3>My Approach</h3>
-
-            <p>
-              Beyond technical knowledge, Safwan has developed
-              experience in communication, coordination, teamwork,
-              leadership and program management through various
-              university and professional activities.
-            </p>
-
-            <br>
-
-            <p>
-              His journey reflects a combination of
-              <span class="highlight">
-                technical capability and leadership development
-              </span>
-              in preparation for the professional engineering environment.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         EDUCATION
-    ====================================================== -->
-
-    <section id="education">
-
-      <div class="section-container">
-
-        <div class="section-heading reveal">
-
-          <div class="section-label">
-            Education
-          </div>
-
-          <h2>
-            Academic Journey
-          </h2>
-
-          <p>
-            A foundation built through engineering technology,
-            instrumentation and control.
-          </p>
-
-        </div>
-
-
-        <div class="timeline">
-
-          <div class="timeline-item reveal">
-
-            <div class="timeline-dot"></div>
-
-            <div class="timeline-card">
-
-              <div class="timeline-date">
-                2020 — 2023
-              </div>
+              <small>Professional Profile</small>
 
               <h3>
-                Bachelor of Electrical Engineering Technology
-                with Honours
+                Safwan Shahrul
               </h3>
 
-              <h4>
-                Universiti Kuala Lumpur — British Malaysian Institute
-              </h4>
-
-              <p>
-                Undergraduate degree focused on Electrical Engineering
-                Technology, providing technical and engineering knowledge
-                for professional development.
-              </p>
-
-              <span class="cgpa">
-                CGPA 3.43
-              </span>
-
-            </div>
-
-          </div>
-
-
-          <div class="timeline-item reveal">
-
-            <div class="timeline-dot"></div>
-
-            <div class="timeline-card">
-
-              <div class="timeline-date">
-                2016 — 2019
-              </div>
-
-              <h3>
-                Diploma in Plant Engineering Technology
-                (Instrumentation & Control)
-              </h3>
-
-              <h4>
-                Kolej Kemahiran Tinggi MARA (KKTM) Kemaman
-              </h4>
-
-              <p>
-                Diploma-level technical education with a focus on
-                plant engineering, instrumentation and control.
-              </p>
-
-              <span class="cgpa">
-                CGPA 3.26
-              </span>
-
             </div>
 
           </div>
 
         </div>
 
+        <div class="floating-tech tech-one">
+          ⚡ Electrical Engineering
+        </div>
+
+        <div class="floating-tech tech-two">
+          ◈ Leadership
+        </div>
+
+        <div class="floating-tech tech-three">
+          ◉ Technology
+        </div>
+
       </div>
 
-    </section>
+    </div>
 
+  </section>
 
-    <!-- =====================================================
-         EXPERIENCE
-    ====================================================== -->
+  <!-- =========================
+       STATS
+  ========================= -->
 
-    <section id="experience">
+  <div class="stats-grid reveal">
 
-      <div class="section-container">
+    <div class="stat-card">
+      <div class="stat-number">3.43</div>
+      <div class="stat-label">Bachelor CGPA</div>
+    </div>
 
-        <div class="section-heading reveal">
+    <div class="stat-card">
+      <div class="stat-number">3.26</div>
+      <div class="stat-label">Diploma CGPA</div>
+    </div>
 
-          <div class="section-label">
-            Experience
-          </div>
+    <div class="stat-card">
+      <div class="stat-number">2020–23</div>
+      <div class="stat-label">UniKL BMI</div>
+    </div>
 
-          <h2>
-            Professional Experience
-          </h2>
+    <div class="stat-card">
+      <div class="stat-number">2016–19</div>
+      <div class="stat-label">KKTM Kemaman</div>
+    </div>
+
+  </div>
+
+  <!-- =========================
+       ABOUT
+  ========================= -->
+
+  <section id="about">
+
+    <div class="section-container">
+
+      <div class="section-heading reveal">
+
+        <div class="eyebrow">
+          Profile
+        </div>
+
+        <h2>
+          Engineering mind.
+          <span>Leadership vision.</span>
+        </h2>
+
+        <p>
+          A technology-focused professional combining technical education,
+          leadership experience and professional exposure.
+        </p>
+
+      </div>
+
+      <div class="about-grid">
+
+        <div class="about-text reveal">
 
           <p>
-            Bringing engineering knowledge into a professional
-            corporate environment.
+            Muhammad Safwan bin Shahrul Baharin, also known as Safwan
+            Shahrul, is an Electrical Engineering Technology graduate from
+            Universiti Kuala Lumpur — British Malaysian Institute (UniKL BMI).
+          </p>
+
+          <p>
+            His academic journey began with a Diploma in Plant Engineering
+            Technology (Instrumentation and Control) at KKTM Kemaman before
+            continuing into a Bachelor's degree in Electrical Engineering
+            Technology with Honours.
+          </p>
+
+          <p>
+            Beyond academics, he has developed extensive leadership and
+            organisational experience through university committees,
+            leadership clubs, events, emceeing and youth programmes.
+          </p>
+
+          <div class="about-highlight">
+
+            <div class="highlight-box">
+              <strong>Engineering</strong>
+              <span>Electrical, instrumentation & control</span>
+            </div>
+
+            <div class="highlight-box">
+              <strong>Leadership</strong>
+              <span>Campus, youth & organisational leadership</span>
+            </div>
+
+            <div class="highlight-box">
+              <strong>Technology</strong>
+              <span>SAP, technical operations & digital systems</span>
+            </div>
+
+            <div class="highlight-box">
+              <strong>Communication</strong>
+              <span>Official emcee & programme moderator</span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="about-panel reveal">
+
+          <h3>
+            Building the Future
+          </h3>
+
+          <div class="mini-line"></div>
+
+          <p>
+            Combining engineering knowledge, technology and leadership to
+            create meaningful impact in professional environments.
+          </p>
+
+          <p>
+            With experience ranging from technical engineering education to
+            leadership and professional operations, Safwan brings a balanced
+            approach between technical capability and people skills.
           </p>
 
         </div>
 
+      </div>
 
-        <div class="experience-grid">
+    </div>
 
-          <div class="experience-card reveal">
+  </section>
 
-            <div class="experience-icon">
-              ⚡
-            </div>
+  <!-- =========================
+       EDUCATION
+  ========================= -->
+
+  <section
+    id="education"
+    class="section-soft"
+  >
+
+    <div class="section-container">
+
+      <div class="section-heading reveal">
+
+        <div class="eyebrow">
+          Education
+        </div>
+
+        <h2>
+          Academic
+          <span>Journey</span>
+        </h2>
+
+        <p>
+          A strong technical foundation built through engineering technology
+          education.
+        </p>
+
+      </div>
+
+      <div class="timeline">
+
+        <div class="timeline-item reveal">
+
+          <div class="timeline-dot"></div>
+
+          <div class="timeline-card">
+
+            <span class="timeline-year">
+              2020 — 2023
+            </span>
 
             <h3>
-              Jardine Schindler Group
+              Bachelor of Electrical Engineering Technology with Honours
             </h3>
 
-            <div class="role">
-              EI Analyst
-            </div>
+            <h4>
+              Universiti Kuala Lumpur — British Malaysian Institute (UniKL BMI)
+            </h4>
 
             <p>
-              Professional experience within the engineering and
-              corporate environment, applying technical knowledge,
-              analytical thinking and professional skills.
+              Graduated with a CGPA of 3.43, developing advanced knowledge
+              related to electrical engineering technology and professional
+              technical practice.
             </p>
 
           </div>
 
+        </div>
 
-          <div class="experience-card reveal">
+        <div class="timeline-item reveal">
 
-            <div class="experience-icon">
-              📊
-            </div>
+          <div class="timeline-dot"></div>
+
+          <div class="timeline-card">
+
+            <span class="timeline-year">
+              2016 — 2019
+            </span>
 
             <h3>
-              Project & Program Management
+              Diploma in Plant Engineering Technology
+              (Instrumentation and Control)
             </h3>
 
-            <div class="role">
-              Leadership & Campus Programs
-            </div>
+            <h4>
+              Kolej Kemahiran Tinggi MARA (KKTM) Kemaman
+            </h4>
 
             <p>
-              Experience supporting and managing university programs,
-              events, technical activities and student leadership
-              initiatives.
+              Built a technical foundation in plant engineering,
+              instrumentation and control with a CGPA of 3.26.
             </p>
 
           </div>
@@ -1878,488 +2052,539 @@
 
       </div>
 
-    </section>
+    </div>
 
+  </section>
 
-    <!-- =====================================================
-         LEADERSHIP
-    ====================================================== -->
+  <!-- =========================
+       EXPERIENCE
+  ========================= -->
 
-    <section id="leadership">
+  <section id="experience">
 
-      <div class="section-container">
+    <div class="section-container">
 
-        <div class="section-heading reveal">
+      <div class="section-heading reveal">
 
-          <div class="section-label">
-            Leadership
+        <div class="eyebrow">
+          Career
+        </div>
+
+        <h2>
+          Professional
+          <span>Experience</span>
+        </h2>
+
+        <p>
+          Technical and professional exposure within an international
+          engineering environment.
+        </p>
+
+      </div>
+
+      <div class="experience-grid">
+
+        <div class="experience-card reveal">
+
+          <div class="experience-icon">
+            ⚙️
           </div>
 
-          <h2>
-            Leadership & Campus Involvement
-          </h2>
+          <h3>
+            Jardine Schindler Group
+          </h3>
+
+          <div class="role">
+            EI Analyst
+          </div>
 
           <p>
-            Active involvement in student organisations, events,
-            communication and university leadership.
+            Professional experience with Jardine Schindler Group, contributing
+            within a technology and engineering-oriented working environment.
+          </p>
+
+          <p>
+            The role complements an academic background in electrical
+            engineering technology with professional exposure and analytical
+            responsibilities.
           </p>
 
         </div>
 
+        <div class="experience-card reveal">
 
-        <div class="leadership-grid">
-
-          <div class="leadership-card reveal">
-
-            <div class="number">
-              01
-            </div>
-
-            <h3>
-              President
-            </h3>
-
-            <p>
-              UniKL Leadership Club — served as President
-              after previously contributing as an Exco in
-              Public Relations.
-            </p>
-
+          <div class="experience-icon">
+            ◈
           </div>
 
+          <h3>
+            Technical & Professional Development
+          </h3>
 
-          <div class="leadership-card reveal">
-
-            <div class="number">
-              02
-            </div>
-
-            <h3>
-              Vice President
-            </h3>
-
-            <p>
-              UniKL BMI Election Committee / Campus Election
-              Committee 2021.
-            </p>
-
+          <div class="role">
+            Engineering • Safety • Systems
           </div>
-
-
-          <div class="leadership-card reveal">
-
-            <div class="number">
-              03
-            </div>
-
-            <h3>
-              Youth Leaders Talk
-            </h3>
-
-            <p>
-              Program Manager and Moderator for
-              Youth Leaders Talk.
-            </p>
-
-          </div>
-
-
-          <div class="leadership-card reveal">
-
-            <div class="number">
-              04
-            </div>
-
-            <h3>
-              Women's Leadership Program
-            </h3>
-
-            <p>
-              Deputy Program Manager for
-              Bicara Hari Wanita:
-              Empowering Women in Leadership.
-            </p>
-
-          </div>
-
-
-          <div class="leadership-card reveal">
-
-            <div class="number">
-              05
-            </div>
-
-            <h3>
-              Online Learning Townhall
-            </h3>
-
-            <p>
-              Deputy Program Manager for a townhall
-              discussing online learning, teaching
-              and student wellbeing.
-            </p>
-
-          </div>
-
-
-          <div class="leadership-card reveal">
-
-            <div class="number">
-              06
-            </div>
-
-            <h3>
-              Technical & Secretariat Roles
-            </h3>
-
-            <p>
-              Technical Exco for Leadership Masterclass
-              and Secretary for Industrial Talk.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         OTHER INVOLVEMENT
-    ====================================================== -->
-
-    <section>
-
-      <div class="section-container">
-
-        <div class="section-heading reveal">
-
-          <div class="section-label">
-            More Involvement
-          </div>
-
-          <h2>
-            Beyond the Classroom
-          </h2>
 
           <p>
-            Additional activities that contributed to communication,
-            teamwork and organisational development.
+            Developed additional professional competencies through industry
+            qualifications, technical programmes and workplace systems.
+          </p>
+
+          <p>
+            Experience includes exposure to SAP and professional safety
+            requirements within technical working environments.
           </p>
 
         </div>
 
+      </div>
 
-        <div class="about-grid">
+    </div>
 
-          <div class="glass-card reveal">
+  </section>
 
-            <h3>
-              🎤 Emcee & Moderator
-            </h3>
+  <!-- =========================
+       LEADERSHIP
+  ========================= -->
 
-            <p>
-              Active as an official emcee and moderator for
-              various UniKL events and programs, developing
-              public speaking and communication skills.
-            </p>
+  <section
+    id="leadership"
+    class="section-soft"
+  >
 
-          </div>
+    <div class="section-container">
 
+      <div class="section-heading reveal">
 
-          <div class="glass-card reveal">
-
-            <h3>
-              🧭 Orientation Committee
-            </h3>
-
-            <p>
-              Served as an executive committee member for
-              student orientation activities at UniKL.
-            </p>
-
-          </div>
-
-
-          <div class="glass-card reveal">
-
-            <h3>
-              🚗 Malaysia Rover Scout
-            </h3>
-
-            <p>
-              Participated in the High Council of Transportation
-              for Malaysia Rover Scout during the diploma years.
-            </p>
-
-          </div>
-
-
-          <div class="glass-card reveal">
-
-            <h3>
-              🤝 Team & Community
-            </h3>
-
-            <p>
-              Developed teamwork, coordination and interpersonal
-              skills through academic, leadership and organisational
-              activities.
-            </p>
-
-          </div>
-
+        <div class="eyebrow">
+          Leadership
         </div>
+
+        <h2>
+          Leading beyond
+          <span>the classroom.</span>
+        </h2>
+
+        <p>
+          Leadership experience developed through student organisations,
+          university programmes and youth activities.
+        </p>
 
       </div>
 
-    </section>
+      <div class="leadership-grid">
 
+        <div class="leadership-card reveal">
 
-    <!-- =====================================================
-         CERTIFICATIONS
-    ====================================================== -->
-
-    <section>
-
-      <div class="section-container">
-
-        <div class="section-heading reveal">
-
-          <div class="section-label">
-            Professional Development
+          <div class="leadership-number">
+            01
           </div>
 
-          <h2>
-            Skills & Qualifications
-          </h2>
+          <h3>
+            Vice President — UniKL BMI Election Committee
+          </h3>
 
           <p>
-            Technical and professional qualifications supporting
-            engineering and corporate work.
+            Served as Vice President of the Campus Election Committee in 2021.
           </p>
 
         </div>
 
+        <div class="leadership-card reveal">
 
-        <div class="cert-grid">
-
-          <div class="cert-card reveal">
-
-            <span>🛡️</span>
-
-            <h3>
-              NTSP
-            </h3>
-
-            <p>
-              National Telecoms Security Program
-            </p>
-
+          <div class="leadership-number">
+            02
           </div>
 
+          <h3>
+            President — UniKL Leadership Club
+          </h3>
 
-          <div class="cert-card reveal">
+          <p>
+            Served as President in 2021 after previously contributing as
+            Exco Public Relations in 2020.
+          </p>
 
-            <span>⛑️</span>
+        </div>
 
-            <h3>
-              OGSP
-            </h3>
+        <div class="leadership-card reveal">
 
-            <p>
-              Oil & Gas Safety Passport
-            </p>
-
+          <div class="leadership-number">
+            03
           </div>
 
+          <h3>
+            Youth Leaders Talk
+          </h3>
 
-          <div class="cert-card reveal">
+          <p>
+            Programme Manager and Moderator for the 2020 youth leadership
+            programme.
+          </p>
 
-            <span>💻</span>
+        </div>
 
-            <h3>
-              SAP
-            </h3>
+        <div class="leadership-card reveal">
 
-            <p>
-              SAP Software Knowledge
-            </p>
-
+          <div class="leadership-number">
+            04
           </div>
 
+          <h3>
+            Bicara Hari Wanita
+          </h3>
 
-          <div class="cert-card reveal">
+          <p>
+            Served as Deputy Programme Manager for the leadership-focused
+            programme.
+          </p>
 
-            <span>🏅</span>
+        </div>
 
-            <h3>
-              SKM Level 4
-            </h3>
+        <div class="leadership-card reveal">
 
-            <p>
-              Malaysian Skills Certificate
-            </p>
-
+          <div class="leadership-number">
+            05
           </div>
+
+          <h3>
+            Townhall Online Learning
+          </h3>
+
+          <p>
+            Deputy Programme Manager for a programme covering online learning,
+            teaching and depression.
+          </p>
+
+        </div>
+
+        <div class="leadership-card reveal">
+
+          <div class="leadership-number">
+            06
+          </div>
+
+          <h3>
+            Leadership Masterclass
+          </h3>
+
+          <p>
+            Contributed as Technical Exco for the leadership development
+            programme.
+          </p>
+
+        </div>
+
+        <div class="leadership-card reveal">
+
+          <div class="leadership-number">
+            07
+          </div>
+
+          <h3>
+            Industrial Talk
+          </h3>
+
+          <p>
+            Served as Secretary and contributed to programme coordination.
+          </p>
+
+        </div>
+
+        <div class="leadership-card reveal">
+
+          <div class="leadership-number">
+            08
+          </div>
+
+          <h3>
+            Orientation Crew
+          </h3>
+
+          <p>
+            Executive committee member for the university orientation crew in
+            2021.
+          </p>
+
+        </div>
+
+        <div class="leadership-card reveal">
+
+          <div class="leadership-number">
+            09
+          </div>
+
+          <h3>
+            Official UniKL Emcee
+          </h3>
+
+          <p>
+            Served as an official emcee for UniKL events and programmes.
+          </p>
 
         </div>
 
       </div>
 
-    </section>
+    </div>
 
+  </section>
 
-    <!-- =====================================================
-         SKILLS
-    ====================================================== -->
+  <!-- =========================
+       MORE INVOLVEMENT
+  ========================= -->
 
-    <section>
+  <section>
 
-      <div class="section-container">
+    <div class="section-container">
 
-        <div class="section-heading reveal">
+      <div class="section-heading reveal">
 
-          <div class="section-label">
-            Core Skills
+        <div class="eyebrow">
+          Community
+        </div>
+
+        <h2>
+          More
+          <span>Involvement</span>
+        </h2>
+
+      </div>
+
+      <div class="experience-grid">
+
+        <div class="experience-card reveal">
+
+          <div class="experience-icon">
+            🏅
           </div>
 
-          <h2>
-            What I Bring
-          </h2>
+          <h3>
+            Malaysia Rover Scout
+          </h3>
+
+          <div class="role">
+            High Council of Transportation
+          </div>
+
+          <p>
+            During his diploma years at KKTM Kemaman, Safwan served as part
+            of the High Council of Transportation for Malaysia Rover Scout
+            around 2016/2017.
+          </p>
 
         </div>
 
+        <div class="experience-card reveal">
 
-        <div class="skills reveal">
-
-          <div class="skill">
-            Electrical Engineering Technology
+          <div class="experience-icon">
+            🎤
           </div>
 
-          <div class="skill">
-            Instrumentation & Control
+          <h3>
+            Public Speaking & Event Management
+          </h3>
+
+          <div class="role">
+            Moderator • Emcee • Programme Management
           </div>
 
-          <div class="skill">
-            Project Management
+          <p>
+            Experience in moderating discussions, hosting official university
+            events and managing programmes involving students and youth.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       CERTIFICATIONS
+  ========================= -->
+
+  <section class="section-soft">
+
+    <div class="section-container">
+
+      <div class="section-heading reveal">
+
+        <div class="eyebrow">
+          Qualifications
+        </div>
+
+        <h2>
+          Professional
+          <span>Credentials</span>
+        </h2>
+
+      </div>
+
+      <div class="cert-grid">
+
+        <div class="cert-card reveal">
+
+          <div class="cert-icon">
+            🛡️
           </div>
 
-          <div class="skill">
-            Program Management
+          <h3>
+            NTSP
+          </h3>
+
+          <p>
+            National Telecoms Security Program
+          </p>
+
+        </div>
+
+        <div class="cert-card reveal">
+
+          <div class="cert-icon">
+            ⛑️
           </div>
 
-          <div class="skill">
-            Leadership
-          </div>
+          <h3>
+            OGSP
+          </h3>
 
-          <div class="skill">
-            Public Speaking
-          </div>
+          <p>
+            Oil & Gas Safety Passport
+          </p>
 
-          <div class="skill">
-            Event Management
-          </div>
+        </div>
 
-          <div class="skill">
-            Communication
-          </div>
+        <div class="cert-card reveal">
 
-          <div class="skill">
-            Teamwork
-          </div>
-
-          <div class="skill">
+          <div class="cert-icon">
             SAP
           </div>
 
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         QUOTE
-    ====================================================== -->
-
-    <section class="quote-section">
-
-      <div class="section-container">
-
-        <div class="quote-box reveal">
-
-          <div class="quote-mark">
-            “
-          </div>
-
-          <h2>
-            Combining technical knowledge
-            with leadership to create meaningful impact.
-          </h2>
+          <h3>
+            SAP
+          </h3>
 
           <p>
-            Muhammad Safwan bin Shahrul Baharin
+            Enterprise systems exposure
+          </p>
+
+        </div>
+
+        <div class="cert-card reveal">
+
+          <div class="cert-icon">
+            4
+          </div>
+
+          <h3>
+            SKM Level 4
+          </h3>
+
+          <p>
+            Skills certification
           </p>
 
         </div>
 
       </div>
 
-    </section>
+    </div>
 
+  </section>
 
-    <!-- =====================================================
-         CONTACT
-    ====================================================== -->
+  <!-- =========================
+       SKILLS
+  ========================= -->
 
-    <section id="contact">
+  <section>
 
-      <div class="section-container">
+    <div class="section-container">
 
-        <div class="contact-card reveal">
+      <div class="section-heading reveal">
 
-          <div>
+        <div class="eyebrow">
+          Capabilities
+        </div>
 
-            <div class="section-label">
-              Contact
+        <h2>
+          Technical &
+          <span>Professional Skills</span>
+        </h2>
+
+      </div>
+
+      <div class="skills-wrapper">
+
+        <div class="skills-box reveal">
+
+          <h3>
+            Technical
+          </h3>
+
+          <div class="skill-list">
+
+            <div class="skill">
+              Electrical Engineering
             </div>
 
-            <h2>
-              Let's Connect.
-            </h2>
+            <div class="skill">
+              Instrumentation
+            </div>
 
-            <p>
-              Interested in professional opportunities,
-              engineering projects, leadership initiatives
-              or meaningful collaborations?
-            </p>
+            <div class="skill">
+              Control Systems
+            </div>
+
+            <div class="skill">
+              Plant Engineering
+            </div>
+
+            <div class="skill">
+              SAP
+            </div>
+
+            <div class="skill">
+              Technical Analysis
+            </div>
 
           </div>
 
+        </div>
 
-          <div class="contact-links">
+        <div class="skills-box reveal">
 
-            <!-- Replace these links with the real profiles -->
+          <h3>
+            Professional
+          </h3>
 
-            <a
-              class="contact-link"
-              href="https://www.linkedin.com/in/safwanshahrul"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              🔗 LinkedIn Profile
-            </a>
+          <div class="skill-list">
 
-            <a
-              class="contact-link"
-              href="#home"
-            >
-              ↑ Back to Top
-            </a>
+            <div class="skill gold">
+              Leadership
+            </div>
+
+            <div class="skill gold">
+              Event Management
+            </div>
+
+            <div class="skill gold">
+              Public Speaking
+            </div>
+
+            <div class="skill gold">
+              Moderation
+            </div>
+
+            <div class="skill gold">
+              Communication
+            </div>
+
+            <div class="skill gold">
+              Teamwork
+            </div>
 
           </div>
 
@@ -2367,56 +2592,116 @@
 
       </div>
 
-    </section>
+    </div>
 
-  </main>
+  </section>
 
+  <!-- =========================
+       QUOTE
+  ========================= -->
 
-  <!-- =======================================================
+  <section class="quote-section">
+
+    <div class="quote-box reveal">
+
+      <p>
+        “Engineering builds the solution.
+        Leadership builds the people behind it.”
+      </p>
+
+      <span>
+        Safwan Shahrul
+      </span>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       CONTACT
+  ========================= -->
+
+  <section
+    id="contact"
+    class="contact-section"
+  >
+
+    <div class="contact-inner reveal">
+
+      <div class="eyebrow">
+        Let's Connect
+      </div>
+
+      <h2>
+        Ready for the
+        <br>
+        next opportunity?
+      </h2>
+
+      <p>
+        For professional networking, collaboration or career opportunities,
+        feel free to connect through the platforms below.
+      </p>
+
+      <div class="contact-links">
+
+        <a
+          href="https://www.linkedin.com/in/safwanshahrul"
+          target="_blank"
+          class="contact-link"
+        >
+          LinkedIn ↗
+        </a>
+
+        <a
+          href="#home"
+          class="contact-link"
+        >
+          Back to Portfolio ↑
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
        FOOTER
-  ======================================================== -->
+  ========================= -->
 
   <footer>
 
-    <strong>
-      Muhammad Safwan bin Shahrul Baharin
-    </strong>
+    <p>
+      © <span id="year"></span>
+      <strong>Muhammad Safwan bin Shahrul Baharin</strong>.
+      All rights reserved.
+    </p>
 
-    <br>
-
-    Electrical Engineering Technology · Leadership ·
-    Project & Program Management
-
-    <br><br>
-
-    © <span id="year"></span>
-    Muhammad Safwan bin Shahrul Baharin.
-    All rights reserved.
+    <p style="margin-top:5px;">
+      Electrical Engineering Technology • Leadership • Technology
+    </p>
 
   </footer>
 
-
-  <!-- =======================================================
-       BACK TO TOP
-  ======================================================== -->
+  <!-- BACK TO TOP -->
 
   <button
-    id="topBtn"
-    aria-label="Back to top"
+    class="back-top"
+    id="backTop"
   >
     ↑
   </button>
 
-
-  <!-- =======================================================
+  <!-- =========================
        JAVASCRIPT
-  ======================================================== -->
+  ========================= -->
 
   <script>
 
-    /* =======================================================
+    /* =========================
        LOADER
-    ======================================================== */
+    ========================= */
 
     window.addEventListener("load", () => {
 
@@ -2424,16 +2709,16 @@
 
         document
           .getElementById("loader")
-          .classList.add("hidden");
+          .classList.add("hide");
 
       }, 700);
 
     });
 
 
-    /* =======================================================
+    /* =========================
        MOBILE MENU
-    ======================================================== */
+    ========================= */
 
     const menuBtn =
       document.getElementById("menuBtn");
@@ -2441,10 +2726,9 @@
     const navLinks =
       document.getElementById("navLinks");
 
-
     menuBtn.addEventListener("click", () => {
 
-      navLinks.classList.toggle("open");
+      navLinks.classList.toggle("active");
 
     });
 
@@ -2455,142 +2739,33 @@
 
         link.addEventListener("click", () => {
 
-          navLinks.classList.remove("open");
+          navLinks.classList.remove("active");
 
         });
 
       });
 
 
-    /* =======================================================
-       TYPING EFFECT
-    ======================================================== */
-
-    const typingElement =
-      document.getElementById("typing");
-
-    const words = [
-
-      "Electrical Engineering Technology Graduate",
-      "Project & Program Management",
-      "Leadership & Campus Development",
-      "Engineering Professional"
-
-    ];
-
-    let wordIndex = 0;
-    let charIndex = 0;
-    let deleting = false;
-
-
-    function typeEffect() {
-
-      const currentWord =
-        words[wordIndex];
-
-
-      if (!deleting) {
-
-        typingElement.textContent =
-          currentWord.substring(
-            0,
-            charIndex + 1
-          );
-
-        charIndex++;
-
-        if (charIndex === currentWord.length) {
-
-          deleting = true;
-
-          setTimeout(typeEffect, 1800);
-
-          return;
-
-        }
-
-      } else {
-
-        typingElement.textContent =
-          currentWord.substring(
-            0,
-            charIndex - 1
-          );
-
-        charIndex--;
-
-        if (charIndex === 0) {
-
-          deleting = false;
-
-          wordIndex =
-            (wordIndex + 1) % words.length;
-
-        }
-
-      }
-
-      setTimeout(
-        typeEffect,
-        deleting ? 35 : 65
-      );
-
-    }
-
-    typeEffect();
-
-
-    /* =======================================================
-       PARTICLES
-    ======================================================== */
-
-    const particles =
-      document.getElementById("particles");
-
-
-    for (let i = 0; i < 55; i++) {
-
-      const particle =
-        document.createElement("span");
-
-      particle.className =
-        "particle";
-
-      particle.style.left =
-        Math.random() * 100 + "%";
-
-      particle.style.animationDuration =
-        (8 + Math.random() * 15) + "s";
-
-      particle.style.animationDelay =
-        (-Math.random() * 15) + "s";
-
-      particle.style.opacity =
-        0.15 + Math.random() * 0.45;
-
-      particles.appendChild(particle);
-
-    }
-
-
-    /* =======================================================
+    /* =========================
        SCROLL REVEAL
-    ======================================================== */
+    ========================= */
 
     const revealElements =
       document.querySelectorAll(".reveal");
 
-
     const revealObserver =
       new IntersectionObserver(
-        (entries) => {
+
+        entries => {
 
           entries.forEach(entry => {
 
             if (entry.isIntersecting) {
 
-              entry.target.classList.add(
-                "active"
+              entry.target.classList.add("active");
+
+              revealObserver.unobserve(
+                entry.target
               );
 
             }
@@ -2598,9 +2773,11 @@
           });
 
         },
+
         {
           threshold: 0.12
         }
+
       );
 
 
@@ -2611,138 +2788,30 @@
     });
 
 
-    /* =======================================================
-       STATS COUNTER
-    ======================================================== */
-
-    const counters =
-      document.querySelectorAll(
-        ".stat-number"
-      );
-
-
-    let countersStarted = false;
-
-
-    function startCounters() {
-
-      if (countersStarted) return;
-
-      countersStarted = true;
-
-
-      counters.forEach(counter => {
-
-        const target =
-          parseFloat(
-            counter.dataset.target
-          );
-
-
-        let current = 0;
-
-        const isYear =
-          target >= 1000;
-
-        const isDecimal =
-          target % 1 !== 0;
-
-
-        const increment =
-          target / 80;
-
-
-        const interval =
-          setInterval(() => {
-
-            current += increment;
-
-
-            if (current >= target) {
-
-              current = target;
-
-              clearInterval(interval);
-
-            }
-
-
-            if (isYear) {
-
-              counter.textContent =
-                Math.floor(current);
-
-            }
-
-            else if (isDecimal) {
-
-              counter.textContent =
-                current.toFixed(2);
-
-            }
-
-            else {
-
-              counter.textContent =
-                Math.floor(current);
-
-            }
-
-          }, 20);
-
-      });
-
-    }
-
-
-    const statsSection =
-      document.querySelector(".stats");
-
-
-    const statsObserver =
-      new IntersectionObserver(
-        entries => {
-
-          if (entries[0].isIntersecting) {
-
-            startCounters();
-
-          }
-
-        },
-        {
-          threshold: 0.3
-        }
-      );
-
-
-    statsObserver.observe(statsSection);
-
-
-    /* =======================================================
+    /* =========================
        BACK TO TOP
-    ======================================================== */
+    ========================= */
 
-    const topBtn =
-      document.getElementById("topBtn");
+    const backTop =
+      document.getElementById("backTop");
 
 
     window.addEventListener("scroll", () => {
 
       if (window.scrollY > 500) {
 
-        topBtn.classList.add("show");
+        backTop.classList.add("show");
 
       } else {
 
-        topBtn.classList.remove("show");
+        backTop.classList.remove("show");
 
       }
 
     });
 
 
-    topBtn.addEventListener("click", () => {
+    backTop.addEventListener("click", () => {
 
       window.scrollTo({
         top: 0,
@@ -2752,13 +2821,104 @@
     });
 
 
-    /* =======================================================
-       CURRENT YEAR
-    ======================================================== */
+    /* =========================
+       YEAR
+    ========================= */
 
-    document.getElementById("year")
-      .textContent =
-      new Date().getFullYear();
+    document
+      .getElementById("year")
+      .textContent = new Date().getFullYear();
+
+
+    /* =========================
+       CURSOR GLOW
+    ========================= */
+
+    const cursorGlow =
+      document.createElement("div");
+
+    cursorGlow.style.position = "fixed";
+    cursorGlow.style.width = "220px";
+    cursorGlow.style.height = "220px";
+    cursorGlow.style.borderRadius = "50%";
+    cursorGlow.style.pointerEvents = "none";
+    cursorGlow.style.zIndex = "-1";
+    cursorGlow.style.background =
+      "radial-gradient(circle, rgba(41,169,255,0.09), transparent 70%)";
+    cursorGlow.style.transform =
+      "translate(-50%, -50%)";
+
+    document.body.appendChild(cursorGlow);
+
+
+    document.addEventListener(
+      "mousemove",
+      event => {
+
+        cursorGlow.style.left =
+          event.clientX + "px";
+
+        cursorGlow.style.top =
+          event.clientY + "px";
+
+      }
+    );
+
+
+    /* =========================
+       ACTIVE NAV
+    ========================= */
+
+    const sections =
+      document.querySelectorAll("section[id]");
+
+    const navItems =
+      document.querySelectorAll(
+        ".nav-links a"
+      );
+
+
+    window.addEventListener(
+      "scroll",
+      () => {
+
+        let current = "";
+
+        sections.forEach(section => {
+
+          const sectionTop =
+            section.offsetTop - 180;
+
+          if (
+            window.scrollY >= sectionTop
+          ) {
+
+            current =
+              section.getAttribute("id");
+
+          }
+
+        });
+
+
+        navItems.forEach(link => {
+
+          link.style.color = "";
+
+          if (
+            link.getAttribute("href") ===
+            "#" + current
+          ) {
+
+            link.style.color =
+              "var(--blue)";
+
+          }
+
+        });
+
+      }
+    );
 
   </script>
 
